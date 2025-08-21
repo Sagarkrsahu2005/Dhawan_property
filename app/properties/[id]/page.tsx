@@ -488,12 +488,33 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
 
     setFormErrors({})
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    try {
+      const name = String(formData.get("name") || "").trim()
+      const email = String(formData.get("email") || "").trim()
+      const phone = String(formData.get("phone") || "").trim()
+      const message = String(formData.get("message") || "").trim()
 
-    alert("Thank you for your message! Our agent will contact you soon.")
-    setIsSubmitting(false)
-    e.currentTarget.reset()
+      const res = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          message,
+          page: `property-${propertyData?.id ?? "detail"}`,
+        }),
+      })
+
+      if (!res.ok) throw new Error("Failed to submit inquiry")
+
+      alert("Thank you for your message! Our agent will contact you soon.")
+      e.currentTarget.reset()
+    } catch (err) {
+      alert("Something went wrong. Please try again or contact us directly.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const floorPlanTypes = propertyData && propertyData.floorPlans ? Object.keys(propertyData.floorPlans) : []

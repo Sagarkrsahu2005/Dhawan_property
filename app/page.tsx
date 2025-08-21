@@ -23,6 +23,15 @@ export default function HomePage() {
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
 
+  // Inline (on-page) Quick Inquiry form state
+  const [qName, setQName] = useState("")
+  const [qEmail, setQEmail] = useState("")
+  const [qPhone, setQPhone] = useState("")
+  const [qLookingFor, setQLookingFor] = useState("")
+  const [qMessage, setQMessage] = useState("")
+  const [qSubmitting, setQSubmitting] = useState(false)
+  const [qSubmitted, setQSubmitted] = useState(false)
+
   useEffect(() => {
     const alreadyShown = typeof window !== "undefined" && window.localStorage.getItem("inq_shown")
     const t = setTimeout(() => {
@@ -48,6 +57,32 @@ export default function HomePage() {
       alert("Something went wrong. Please try again or contact us directly.")
     } finally {
       setSubmitting(false)
+    }
+  }
+
+  const handleInlineSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!qName || !qPhone) return
+    setQSubmitting(true)
+    try {
+      const res = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: qName,
+          phone: qPhone,
+          email: qEmail,
+          lookingFor: qLookingFor,
+          message: qMessage,
+          page: "home-inline",
+        }),
+      })
+      if (!res.ok) throw new Error("Request failed")
+      setQSubmitted(true)
+    } catch (err) {
+      alert("Something went wrong. Please try again or contact us directly.")
+    } finally {
+      setQSubmitting(false)
     }
   }
 
@@ -476,30 +511,37 @@ export default function HomePage() {
             </div>
             <Card className="p-6">
               <h3 className="text-xl font-semibold text-navy-900 mb-4">Quick Inquiry</h3>
-              <form
-                className="space-y-4"
-                onSubmit={(e) => {
-                  e.preventDefault()
-                  alert("Thank you for your inquiry! We will contact you soon.")
-                }}
-              >
-                <Input placeholder="Your Name" required />
-                <Input placeholder="Phone Number" type="tel" required />
-                <Select required>
-                  <SelectTrigger>
-                    <SelectValue placeholder="I'm looking for..." />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="buy">Buy Property</SelectItem>
-                    <SelectItem value="sell">Sell Property</SelectItem>
-                    <SelectItem value="rent">Rent Property</SelectItem>
-                    <SelectItem value="invest">Investment Options</SelectItem>
-                  </SelectContent>
-                </Select>
-                <Button type="submit" className="w-full bg-navy-900 hover:bg-navy-800 text-white">
-                  Submit Inquiry
-                </Button>
-              </form>
+              {qSubmitted ? (
+                <div className="space-y-3">
+                  <p className="text-green-700 bg-green-50 border border-green-200 rounded-md p-3">
+                    Thank you! Your inquiry has been received. Our team will contact you soon.
+                  </p>
+                  <Button onClick={() => setQSubmitted(false)} variant="outline" className="w-full">
+                    Submit another inquiry
+                  </Button>
+                </div>
+              ) : (
+                <form onSubmit={handleInlineSubmit} className="space-y-3">
+                  <Input placeholder="Your Name" value={qName} onChange={(e) => setQName(e.target.value)} required />
+                  <Input placeholder="Email" type="email" value={qEmail} onChange={(e) => setQEmail(e.target.value)} />
+                  <Input placeholder="Phone Number" type="tel" value={qPhone} onChange={(e) => setQPhone(e.target.value)} required />
+                  <Select value={qLookingFor} onValueChange={setQLookingFor}>
+                    <SelectTrigger>
+                      <SelectValue placeholder="I'm looking for..." />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="buy">Buy Property</SelectItem>
+                      <SelectItem value="sell">Sell Property</SelectItem>
+                      <SelectItem value="rent">Rent Property</SelectItem>
+                      <SelectItem value="invest">Investment Options</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <Textarea placeholder="Message (optional)" value={qMessage} onChange={(e) => setQMessage(e.target.value)} rows={3} />
+                  <Button type="submit" disabled={qSubmitting} className="w-full bg-navy-900 hover:bg-navy-800 text-white">
+                    {qSubmitting ? "Sending..." : "Submit Inquiry"}
+                  </Button>
+                </form>
+              )}
             </Card>
           </div>
         </div>
