@@ -42,16 +42,15 @@ import {
 import Link from "next/link"
 
 const propertiesData = {
-  "1": {
+  "1":{
     id: 1,
     title: "Luxury Villa in Sector 47",
-    price: 42000000,
     location: "Sector 47, Gurgaon, Haryana",
     bedrooms: 4,
     bathrooms: 5,
     area: 3200,
     yearBuilt: 2023,
-    type: "Villa",
+    type:  "Villa",
     status: "New Launch",
     description:
       "Experience luxury living at its finest in this stunning 4-bedroom villa located in the prestigious Sector 47 of Gurgaon. This contemporary home features spacious interiors, premium finishes, and world-class amenities.",
@@ -112,7 +111,6 @@ const propertiesData = {
   "2": {
     id: 2,
     title: "Modern Apartment in DLF Phase 2",
-    price: 18500000,
     location: "DLF Phase 2, Gurgaon, Haryana",
     bedrooms: 3,
     bathrooms: 3,
@@ -177,7 +175,6 @@ const propertiesData = {
   "3": {
     id: 3,
     title: "Premium Office Space in Cyber City",
-    price: 35000000,
     location: "Cyber City, Gurgaon, Haryana",
     bedrooms: 0,
     bathrooms: 4,
@@ -603,7 +600,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                   </div>
                   <div className="text-left lg:text-right">
                     <div className="text-2xl lg:text-3xl font-bold text-white mb-2">
-                      {formatPrice(propertyData.price)}
+                      Price on Request
                     </div>
                     <Button className="bg-gold-500/90 hover:bg-gold-600 text-navy-900 backdrop-blur-sm">
                       Schedule Visit

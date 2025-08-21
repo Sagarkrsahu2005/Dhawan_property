@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -9,8 +10,47 @@ import { MapPin, Bed, Bath, Square, Phone, Star } from "lucide-react"
 import Link from "next/link"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Textarea } from "@/components/ui/textarea"
 
 export default function HomePage() {
+  const [showInquiry, setShowInquiry] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [name, setName] = useState("")
+  const [phone, setPhone] = useState("")
+  const [lookingFor, setLookingFor] = useState("")
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
+
+  useEffect(() => {
+    const alreadyShown = typeof window !== "undefined" && window.localStorage.getItem("inq_shown")
+    const t = setTimeout(() => {
+      if (!alreadyShown) setShowInquiry(true)
+    }, 3000)
+    return () => clearTimeout(t)
+  }, [])
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!name || !phone) return
+    setSubmitting(true)
+    try {
+      const res = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, phone, email, lookingFor, message, page: "home" }),
+      })
+      if (!res.ok) throw new Error("Request failed")
+      setSubmitted(true)
+      if (typeof window !== "undefined") window.localStorage.setItem("inq_shown", "1")
+    } catch (err) {
+      alert("Something went wrong. Please try again or contact us directly.")
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
   const latestProject = {
     id: 1,
     title: "Luxury Villa in Sector 47",
@@ -467,6 +507,90 @@ export default function HomePage() {
 
       {/* Footer */}
       <Footer />
+
+      {/* Quick Inquiry Modal (auto-opens after 3s) */}
+      <Dialog open={showInquiry} onOpenChange={setShowInquiry}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle>Quick Inquiry</DialogTitle>
+            <DialogDescription>Share your details and well get back to you shortly.</DialogDescription>
+          </DialogHeader>
+
+          {submitted ? (
+            <div className="space-y-4 py-2">
+              <p className="text-green-700 bg-green-50 border border-green-200 rounded-md p-3">
+                Thank you! Your inquiry has been received. Our team will contact you soon.
+              </p>
+              <DialogFooter>
+                <Button onClick={() => setShowInquiry(false)} className="bg-navy-900 hover:bg-navy-800 text-white">
+                  Close
+                </Button>
+              </DialogFooter>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <Input
+                placeholder="Your Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+              <Input
+                placeholder="Email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <Input
+                placeholder="Phone Number"
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                required
+              />
+              <Select value={lookingFor} onValueChange={setLookingFor}>
+                <SelectTrigger>
+                  <SelectValue placeholder="I'm looking for..." />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="buy">Buy Property</SelectItem>
+                  <SelectItem value="sell">Sell Property</SelectItem>
+                  <SelectItem value="rent">Rent Property</SelectItem>
+                  <SelectItem value="invest">Investment Options</SelectItem>
+                </SelectContent>
+              </Select>
+              <Textarea
+                placeholder="Message (optional)"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                rows={3}
+              />
+              <div className="flex items-center justify-between text-xs text-gray-500">
+                <span>Well never share your details.</span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (typeof window !== "undefined") window.localStorage.setItem("inq_shown", "1")
+                    setShowInquiry(false)
+                  }}
+                  className="underline"
+                >
+                  No thanks
+                </button>
+              </div>
+              <DialogFooter>
+                <Button
+                  type="submit"
+                  disabled={submitting}
+                  className="w-full bg-navy-900 hover:bg-navy-800 text-white"
+                >
+                  {submitting ? "Sending..." : "Submit Inquiry"}
+                </Button>
+              </DialogFooter>
+            </form>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }
