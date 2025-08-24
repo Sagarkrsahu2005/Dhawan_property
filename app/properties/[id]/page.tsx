@@ -1,8 +1,6 @@
 "use client"
 
-import type React from "react"
-
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -40,347 +38,48 @@ import {
   ArrowRight,
 } from "lucide-react"
 import Link from "next/link"
-
-const propertiesData = {
-  "1":{
-    id: 1,
-    title: "Luxury Villa in Sector 47",
-    location: "Sector 47, Gurgaon, Haryana",
-    bedrooms: 4,
-    bathrooms: 5,
-    area: 3200,
-    yearBuilt: 2023,
-    type:  "Villa",
-    status: "New Launch",
-    description:
-      "Experience luxury living at its finest in this stunning 4-bedroom villa located in the prestigious Sector 47 of Gurgaon. This contemporary home features spacious interiors, premium finishes, and world-class amenities.",
-    images: [
-      "/luxury-villa-garden-pool.png",
-      "/luxury-modern-residence.png",
-      "/modern-apartment-building.png",
-      "/comfortable-family-house.png",
-    ],
-    floorPlans: {
-      "4BHK": [
-        {
-          image: "/modern-villa-floor-plan.png",
-          label: "Type A • 3,200 sq.ft",
-          downloadUrl: "/floor-plans/villa-4bhk-a.pdf",
-        },
-        {
-          image: "/modern-villa-floor-plan.png",
-          label: "Type B • 3,400 sq.ft",
-          downloadUrl: "/floor-plans/villa-4bhk-b.pdf",
-        },
-      ],
-      Penthouse: [
-        {
-          image: "/modern-villa-floor-plan.png",
-          label: "Penthouse • 4,500 sq.ft",
-          downloadUrl: "/floor-plans/villa-penthouse.pdf",
-        },
-      ],
-    },
-    amenities: [
-      { name: "Swimming Pool", icon: Waves },
-      { name: "Private Garden", icon: Trees },
-      { name: "Parking (2 Cars)", icon: Car },
-      { name: "Home Gym", icon: Dumbbell },
-      { name: "24/7 Security", icon: Shield },
-      { name: "Smart Home", icon: Home },
-      { name: "High Speed WiFi", icon: Wifi },
-      { name: "Power Backup", icon: Zap },
-      { name: "Club House", icon: Building },
-      { name: "Kids Play Area", icon: Users },
-    ],
-    nearbyPlaces: [
-      { name: "DLF Cyber Hub", distance: "2.5 km", type: "Business" },
-      { name: "Medanta Hospital", distance: "3.2 km", type: "Healthcare" },
-      { name: "DPS School", distance: "1.8 km", type: "Education" },
-      { name: "Ambience Mall", distance: "4.1 km", type: "Shopping" },
-      { name: "Golf Course", distance: "2.0 km", type: "Recreation" },
-      { name: "Metro Station", distance: "1.5 km", type: "Transport" },
-    ],
-    agent: {
-      name: "Rajesh Dhawan",
-      phone: "+91 98765 43210",
-      email: "rajesh@dhawanproperties.in",
-      image: "/professional-real-estate-agent.png",
-    },
-  },
-  "2": {
-    id: 2,
-    title: "Modern Apartment in DLF Phase 2",
-    location: "DLF Phase 2, Gurgaon, Haryana",
-    bedrooms: 3,
-    bathrooms: 3,
-    area: 1850,
-    yearBuilt: 2022,
-    type: "Apartment",
-    status: "Ready to Move",
-    description:
-      "Spacious 3BHK apartment in the heart of DLF Phase 2 with modern amenities and excellent connectivity to major business hubs.",
-    images: [
-      "/modern-apartment-building.png",
-      "/luxury-modern-residence.png",
-      "/comfortable-family-house.png",
-      "/luxury-villa-garden-pool.png",
-    ],
-    floorPlans: {
-      "2BHK": [
-        {
-          image: "/modern-villa-floor-plan.png",
-          label: "Type A • 1,200 sq.ft",
-          downloadUrl: "/floor-plans/apt-2bhk-a.pdf",
-        },
-      ],
-      "3BHK": [
-        {
-          image: "/modern-villa-floor-plan.png",
-          label: "Type A • 1,850 sq.ft",
-          downloadUrl: "/floor-plans/apt-3bhk-a.pdf",
-        },
-        {
-          image: "/modern-villa-floor-plan.png",
-          label: "Type B • 1,950 sq.ft",
-          downloadUrl: "/floor-plans/apt-3bhk-b.pdf",
-        },
-      ],
-    },
-    amenities: [
-      { name: "Swimming Pool", icon: Waves },
-      { name: "Gym & Fitness", icon: Dumbbell },
-      { name: "Covered Parking", icon: Car },
-      { name: "24/7 Security", icon: Shield },
-      { name: "Power Backup", icon: Zap },
-      { name: "High Speed WiFi", icon: Wifi },
-      { name: "Club House", icon: Building },
-      { name: "Kids Play Area", icon: Users },
-    ],
-    nearbyPlaces: [
-      { name: "Cyber City", distance: "1.2 km", type: "Business" },
-      { name: "Fortis Hospital", distance: "2.8 km", type: "Healthcare" },
-      { name: "Delhi Public School", distance: "1.5 km", type: "Education" },
-      { name: "DLF Mall", distance: "0.8 km", type: "Shopping" },
-      { name: "City Park", distance: "1.0 km", type: "Recreation" },
-      { name: "IFFCO Chowk Metro", distance: "2.2 km", type: "Transport" },
-    ],
-    agent: {
-      name: "Priya Sharma",
-      phone: "+91 98765 43211",
-      email: "priya@dhawanproperties.in",
-      image: "/professional-real-estate-agent.png",
-    },
-  },
-  "3": {
-    id: 3,
-    title: "Premium Office Space in Cyber City",
-    location: "Cyber City, Gurgaon, Haryana",
-    bedrooms: 0,
-    bathrooms: 4,
-    area: 2500,
-    yearBuilt: 2023,
-    type: "Commercial",
-    status: "New Launch",
-    description:
-      "State-of-the-art office space in the heart of Cyber City with modern infrastructure, high-speed connectivity, and premium amenities for businesses.",
-    images: [
-      "/modern-glass-office.png",
-      "/modern-apartment-building.png",
-      "/luxury-modern-residence.png",
-      "/comfortable-family-house.png",
-    ],
-    floorPlans: {
-      "Small Office": [
-        {
-          image: "/modern-villa-floor-plan.png",
-          label: "Type A • 1,500 sq.ft",
-          downloadUrl: "/floor-plans/office-small-a.pdf",
-        },
-      ],
-      "Large Office": [
-        {
-          image: "/modern-villa-floor-plan.png",
-          label: "Type A • 2,500 sq.ft",
-          downloadUrl: "/floor-plans/office-large-a.pdf",
-        },
-        {
-          image: "/modern-villa-floor-plan.png",
-          label: "Type B • 3,000 sq.ft",
-          downloadUrl: "/floor-plans/office-large-b.pdf",
-        },
-      ],
-    },
-    amenities: [
-      { name: "High Speed WiFi", icon: Wifi },
-      { name: "Power Backup", icon: Zap },
-      { name: "Parking", icon: Car },
-      { name: "24/7 Security", icon: Shield },
-      { name: "Conference Rooms", icon: Building },
-      { name: "Cafeteria", icon: Users },
-    ],
-    nearbyPlaces: [
-      { name: "DLF Cyber Hub", distance: "0.5 km", type: "Business" },
-      { name: "Medanta Hospital", distance: "2.0 km", type: "Healthcare" },
-      { name: "Cyber City Metro", distance: "0.3 km", type: "Transport" },
-      { name: "DLF Mall", distance: "1.5 km", type: "Shopping" },
-      { name: "Golf Course", distance: "2.5 km", type: "Recreation" },
-    ],
-    agent: {
-      name: "Amit Kumar",
-      phone: "+91 98765 43212",
-      email: "amit@dhawanproperties.in",
-      image: "/professional-real-estate-agent.png",
-    },
-  },
-}
-
-const FullScreenViewer = ({
-  images,
-  currentIndex,
-  isOpen,
-  onClose,
-  onNext,
-  onPrev,
-}: {
-  images: string[]
-  currentIndex: number
-  isOpen: boolean
-  onClose: () => void
-  onNext: () => void
-  onPrev: () => void
-}) => {
-  const [zoom, setZoom] = useState(1)
-  const [position, setPosition] = useState({ x: 0, y: 0 })
-  const [isDragging, setIsDragging] = useState(false)
-  const [dragStart, setDragStart] = useState({ x: 0, y: 0 })
-
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden"
-      const handleKeyDown = (e: KeyboardEvent) => {
-        if (e.key === "Escape") onClose()
-        if (e.key === "ArrowLeft") onPrev()
-        if (e.key === "ArrowRight") onNext()
-      }
-      document.addEventListener("keydown", handleKeyDown)
-      return () => {
-        document.body.style.overflow = "unset"
-        document.removeEventListener("keydown", handleKeyDown)
-      }
-    }
-  }, [isOpen, onClose, onNext, onPrev])
-
-  const handleZoomIn = () => setZoom((prev) => Math.min(prev * 1.5, 5))
-  const handleZoomOut = () => setZoom((prev) => Math.max(prev / 1.5, 0.5))
-  const handleReset = () => {
-    setZoom(1)
-    setPosition({ x: 0, y: 0 })
-  }
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    setIsDragging(true)
-    setDragStart({ x: e.clientX - position.x, y: e.clientY - position.y })
-  }
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (isDragging && zoom > 1) {
-      setPosition({
-        x: e.clientX - dragStart.x,
-        y: e.clientY - dragStart.y,
-      })
-    }
-  }
-
-  const handleMouseUp = () => setIsDragging(false)
-
-  if (!isOpen) return null
-
-  return (
-    <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center">
-      {/* Controls */}
-      <div className="absolute top-4 right-4 flex items-center space-x-2 z-10">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={handleZoomOut}
-          className="bg-white/10 border-white/20 text-white hover:bg-white/20"
-        >
-          <ZoomOut className="w-4 h-4" />
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={handleZoomIn}
-          className="bg-white/10 border-white/20 text-white hover:bg-white/20"
-        >
-          <ZoomIn className="w-4 h-4" />
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={handleReset}
-          className="bg-white/10 border-white/20 text-white hover:bg-white/20"
-        >
-          <RotateCcw className="w-4 h-4" />
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={onClose}
-          className="bg-white/10 border-white/20 text-white hover:bg-white/20"
-        >
-          <X className="w-4 h-4" />
-        </Button>
-      </div>
-
-      {/* Navigation */}
-      <Button
-        variant="outline"
-        size="sm"
-        onClick={onPrev}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/10 border border-white/20 text-white hover:bg-white/20 z-10"
-      >
-        <ArrowLeft className="w-6 h-6" />
-      </Button>
-      <Button
-        variant="outline"
-        size="sm"
-        onClick={onNext}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/10 border border-white/20 text-white hover:bg-white/20 z-10"
-      >
-        <ArrowRight className="w-6 h-6" />
-      </Button>
-
-      {/* Image */}
-      <div
-        className="relative w-full h-full flex items-center justify-center cursor-move"
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-      >
-        <img
-          src={images[currentIndex] || "/placeholder.svg"}
-          alt={`Image ${currentIndex + 1}`}
-          className="max-w-full max-h-full object-contain transition-transform duration-200"
-          style={{
-            transform: `scale(${zoom}) translate(${position.x / zoom}px, ${position.y / zoom}px)`,
-            cursor: zoom > 1 ? (isDragging ? "grabbing" : "grab") : "default",
-          }}
-          draggable={false}
-        />
-      </div>
-
-      {/* Image counter */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 text-white">
-        {currentIndex + 1} / {images.length}
-      </div>
-    </div>
-  )
-}
+import { getPropertyById } from "@/lib/property-data"
 
 export default function PropertyDetailPage({ params }: { params: { id: string } }) {
+  // Quick Enquiry form state
+  const [isEnquiryOpen, setIsEnquiryOpen] = useState(false)
+  const [enquiryName, setEnquiryName] = useState("")
+  const [enquiryPhone, setEnquiryPhone] = useState("")
+  const [enquiryMessage, setEnquiryMessage] = useState("")
+  const [enquirySubmitted, setEnquirySubmitted] = useState(false)
+
+  const handleEnquirySubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: enquiryName,
+          phone: enquiryPhone,
+          message: enquiryMessage,
+          page: `property-${propertyData.id}`,
+        }),
+      });
+      if (!res.ok) throw new Error("Failed to submit");
+      setEnquirySubmitted(true);
+      setEnquiryName("");
+      setEnquiryPhone("");
+      setEnquiryMessage("");
+      setTimeout(() => {
+        setIsEnquiryOpen(false);
+        setEnquirySubmitted(false);
+      }, 1500);
+    } catch (err) {
+      alert("Something went wrong. Please try again later.");
+    }
+  }
+
+  // Add a stub for handleFormSubmit to resolve missing function error
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Add your form submission logic here
+  }
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isLiked, setIsLiked] = useState(false)
   const [isFullScreenOpen, setIsFullScreenOpen] = useState(false)
@@ -393,7 +92,26 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const propertyData = propertiesData[params.id as keyof typeof propertiesData]
+  // Handle params - could be a Promise or already resolved
+  const resolvedParams = params instanceof Promise ? React.use(params) : params
+  const propertyData = getPropertyById(resolvedParams.id)
+
+  // If property not found, show error
+  if (!propertyData) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+        <div className="text-center backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Property Not Found</h1>
+          <p className="text-gray-600 mb-6">The property you're looking for doesn't exist or has been removed.</p>
+          <Link href="/properties">
+            <Button className="bg-navy-900 hover:bg-navy-800 text-white">
+              Back to Properties
+            </Button>
+          </Link>
+        </div>
+      </div>
+    )
+  }
 
   const formatPrice = (price: number) => {
     if (price >= 10000000) {
@@ -406,14 +124,17 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
   }
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % propertyData.images.length)
+    if (!propertyData.images || propertyData.images.length === 0) return
+    setCurrentImageIndex((prev) => (prev + 1) % (propertyData.images?.length || 1))
   }
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + propertyData.images.length) % propertyData.images.length)
+    if (!propertyData.images || propertyData.images.length === 0) return
+    setCurrentImageIndex((prev) => (prev - 1 + (propertyData.images?.length || 1)) % (propertyData.images?.length || 1))
   }
 
-  const openFullScreen = (images: string[], index: number) => {
+  const openFullScreen = (images: string[] | undefined, index: number) => {
+    if (!images || images.length === 0) return
     setFullScreenImages(images)
     setFullScreenImageIndex(index)
     setIsFullScreenOpen(true)
@@ -426,6 +147,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
   const prevFullScreenImage = () => {
     setFullScreenImageIndex((prev) => (prev - 1 + fullScreenImages.length) % fullScreenImages.length)
   }
+
 
   const nextFloorPlan = () => {
     if (!propertyData.floorPlans || !activeFloorPlanType) return
@@ -441,79 +163,17 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
     setCurrentFloorPlanIndex((prev) => (prev - 1 + currentPlans.length) % currentPlans.length)
   }
 
+  // Normalize floor plan type for robust tab selection
+  const normalizeType = (type: string) => type.trim().toLowerCase().replace(/\s+/g, ' ')
   const handleFloorPlanTypeChange = (type: string) => {
-    setActiveFloorPlanType(type)
-    setCurrentFloorPlanIndex(0)
-  }
-
-  const validateForm = (formData: FormData) => {
-    const errors: { [key: string]: string } = {}
-
-    const name = formData.get("name") as string
-    const email = formData.get("email") as string
-    const phone = formData.get("phone") as string
-    const message = formData.get("message") as string
-
-    if (!name || name.trim().length < 2) {
-      errors.name = "Name must be at least 2 characters long"
-    }
-
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      errors.email = "Please enter a valid email address"
-    }
-
-    if (!phone || !/^[+]?[\d\s-()]{10,}$/.test(phone)) {
-      errors.phone = "Please enter a valid phone number"
-    }
-
-    if (!message || message.trim().length < 10) {
-      errors.message = "Message must be at least 10 characters long"
-    }
-
-    return errors
-  }
-
-  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    const formData = new FormData(e.currentTarget)
-    const errors = validateForm(formData)
-
-    if (Object.keys(errors).length > 0) {
-      setFormErrors(errors)
-      setIsSubmitting(false)
-      return
-    }
-
-    setFormErrors({})
-
-    try {
-      const name = String(formData.get("name") || "").trim()
-      const email = String(formData.get("email") || "").trim()
-      const phone = String(formData.get("phone") || "").trim()
-      const message = String(formData.get("message") || "").trim()
-
-      const res = await fetch("/api/inquiry", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          email,
-          phone,
-          message,
-          page: `property-${propertyData?.id ?? "detail"}`,
-        }),
-      })
-
-      if (!res.ok) throw new Error("Failed to submit inquiry")
-
-      alert("Thank you for your message! Our agent will contact you soon.")
-      e.currentTarget.reset()
-    } catch (err) {
-      alert("Something went wrong. Please try again or contact us directly.")
-    } finally {
-      setIsSubmitting(false)
+    // Find the actual key in propertyData.floorPlans that matches the normalized type
+    if (!propertyData.floorPlans) return
+    const actualKey = Object.keys(propertyData.floorPlans).find(
+      (key) => normalizeType(key) === normalizeType(type)
+    )
+    if (actualKey) {
+      setActiveFloorPlanType(actualKey)
+      setCurrentFloorPlanIndex(0)
     }
   }
 
@@ -567,7 +227,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                 Contact
               </Link>
             </div>
-            <a href={`tel:${propertyData.agent.phone}`}>
+            <a href={`tel:${propertyData.agent?.phone || ''}`}>
               <Button className="bg-navy-900 hover:bg-navy-800 text-white">
                 <Phone className="w-4 h-4 mr-2" />
                 Call Now
@@ -601,7 +261,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
           <div className="lg:col-span-2">
             <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden group">
               <img
-                src={propertyData.images[currentImageIndex] || "/placeholder.svg"}
+                src={propertyData.images?.[currentImageIndex] || "/placeholder.svg"}
                 alt={propertyData.title}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 cursor-pointer"
                 style={{ aspectRatio: "16/9", objectFit: "cover" }}
@@ -623,9 +283,13 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                     <div className="text-2xl lg:text-3xl font-bold text-white mb-2">
                       Price on Request
                     </div>
-                    <Button className="bg-gold-500/90 hover:bg-gold-600 text-navy-900 backdrop-blur-sm">
-                      Schedule Visit
+                    <Button
+                      className="bg-gold-500/90 hover:bg-gold-600 text-navy-900 backdrop-blur-sm"
+                      asChild
+                    >
+                      <a href="/contact">Schedule Visit</a>
                     </Button>
+
                   </div>
                 </div>
               </div>
@@ -658,11 +322,43 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                   <Share2 className="w-5 h-5 text-white" />
                 </button>
               </div>
+
+              {/* Fullscreen Modal for Property Images */}
+              {isFullScreenOpen && fullScreenImages.length > 0 && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80">
+                  <button
+                    className="absolute top-6 right-6 text-white bg-black/60 rounded-full p-2 hover:bg-black/80"
+                    onClick={() => setIsFullScreenOpen(false)}
+                    aria-label="Close fullscreen"
+                  >
+                    <X className="w-8 h-8" />
+                  </button>
+                  <button
+                    className="absolute left-8 top-1/2 -translate-y-1/2 text-white bg-black/60 rounded-full p-2 hover:bg-black/80"
+                    onClick={prevFullScreenImage}
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="w-10 h-10" />
+                  </button>
+                  <img
+                    src={fullScreenImages[fullScreenImageIndex]}
+                    alt="Property Fullscreen"
+                    className="max-h-[90vh] max-w-[90vw] rounded-2xl shadow-2xl object-contain"
+                  />
+                  <button
+                    className="absolute right-8 top-1/2 -translate-y-1/2 text-white bg-black/60 rounded-full p-2 hover:bg-black/80"
+                    onClick={nextFullScreenImage}
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="w-10 h-10" />
+                  </button>
+                </div>
+              )}
             </div>
 
             {/* Thumbnail Gallery */}
             <div className="flex space-x-4 mt-4 overflow-x-auto">
-              {propertyData.images.map((image, index) => (
+              {(propertyData.images || []).map((image, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentImageIndex(index)}
@@ -723,7 +419,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                 <Calendar className="w-4 h-4 mr-2" />
                 Schedule Visit
               </Button>
-              <a href={`tel:${propertyData.agent.phone}`}>
+              <a href={`tel:${propertyData.agent?.phone || ''}`}>
                 <Button
                   variant="outline"
                   className="w-full border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white bg-transparent"
@@ -772,28 +468,108 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
+
             {/* Description */}
             <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
               <h3 className="text-2xl font-bold text-navy-900 mb-4">Description</h3>
               <p className="text-gray-700 leading-relaxed">{propertyData.description}</p>
             </div>
 
+            {/* Sizes Section */}
+            {propertyData.sizes && propertyData.sizes.length > 0 && (
+              <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
+                <h3 className="text-2xl font-bold text-navy-900 mb-6">Sizes</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {propertyData.sizes.map((size, idx) => (
+                    <div key={idx} className="flex justify-between items-center p-4 backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl">
+                      <span className="font-semibold text-navy-900">{size.type}</span>
+                      <span className="text-gold-600 font-semibold">{size.size}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Project Specifications (for all properties) */}
+            {propertyData.projectSpecs && (
+              <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
+                <h3 className="text-2xl font-bold text-navy-900 mb-6">Project Specifications</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                  {/* Clean, consistent card layout for all specs */}
+                  {propertyData.projectSpecs.landParcel && (
+                    <div className="flex flex-col items-center justify-center p-6 min-h-[120px] bg-white rounded-xl shadow border border-gray-200 text-center break-words">
+                      <span className="text-3xl font-extrabold text-navy-900 mb-1">{propertyData.projectSpecs.landParcel} <span className="text-lg font-bold">Acres</span></span>
+                      <span className="text-gray-700 text-base font-semibold">Acres</span>
+                      <span className="text-gray-700 text-sm font-medium">Land Parcel</span>
+                    </div>
+                  )}
+                  {propertyData.projectSpecs.towers && (
+                    <div className="flex flex-col items-center justify-center p-6 min-h-[120px] bg-white rounded-xl shadow border border-gray-200 text-center break-words">
+                      <span className="text-3xl font-extrabold text-navy-900 mb-1">{propertyData.projectSpecs.towers}</span>
+                      <span className="text-gray-700 text-base font-semibold">Towers</span>
+                    </div>
+                  )}
+                  {propertyData.projectSpecs.floors && (
+                    <div className="flex flex-col items-center justify-center p-6 min-h-[120px] bg-white rounded-xl shadow border border-gray-200 text-center break-words">
+                      <span className="text-2xl font-extrabold text-navy-900 mb-1 whitespace-pre-line break-words">{propertyData.projectSpecs.floors}</span>
+                      <span className="text-gray-700 text-base font-semibold">Floors</span>
+                    </div>
+                  )}
+                  {/* {propertyData.projectSpecs.openArea && (
+                    <div className="flex flex-col items-center justify-center p-6 min-h-[120px] bg-white rounded-xl shadow border border-gray-200 text-center break-words">
+                      <span className="text-xl font-extrabold text-navy-900 mb-1 whitespace-pre-line break-words">{propertyData.projectSpecs.openArea}</span>
+                      <span className="text-gray-700 text-base font-semibold">Open Area</span>
+                    </div>
+                  )} */}
+                  {propertyData.projectSpecs.clubHouse && (
+                    <div className="flex flex-col items-center justify-center p-6 min-h-[120px] bg-white rounded-xl shadow border border-gray-200 text-center break-words">
+                      <span className="text-2xl font-extrabold text-navy-900 mb-1">{propertyData.projectSpecs.clubHouse} <span className="text-base font-bold">sq. ft.</span></span>
+                      <span className="text-gray-700 text-base font-semibold">Club House</span>
+                    </div>
+                  )}
+                  {propertyData.projectSpecs.carParking && (
+                    <div className="flex flex-col items-center justify-center p-6 min-h-[120px] bg-white rounded-xl shadow border border-gray-200 text-center break-words">
+                      <span className="text-xl font-extrabold text-navy-900 mb-1 whitespace-pre-line break-words">{propertyData.projectSpecs.carParking}</span>
+                      <span className="text-gray-700 text-base font-semibold">Car Parking</span>
+                    </div>
+                  )}
+                  {propertyData.projectSpecs.possession && (
+                    <div className="flex flex-col items-center justify-center p-6 min-h-[120px] bg-white rounded-xl shadow border border-gray-200 text-center break-words">
+                      <span className="text-3xl font-extrabold text-navy-900 mb-1">{propertyData.projectSpecs.possession}</span>
+                      <span className="text-gray-700 text-base font-semibold">Possession</span>
+                    </div>
+                  )}
+                  {propertyData.projectSpecs.waitTime && (
+                    <div className="flex flex-col items-center justify-center p-6 min-h-[120px] bg-white rounded-xl shadow border border-gray-200 text-center break-words">
+                      <span className="text-xl font-extrabold text-navy-900 mb-1 whitespace-pre-line break-words">{propertyData.projectSpecs.waitTime}</span>
+                      <span className="text-gray-700 text-base font-semibold">Wait Time</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
             {/* Amenities */}
             <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
               <h3 className="text-2xl font-bold text-navy-900 mb-6">Amenities</h3>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {propertyData.amenities.map((amenity, index) => {
-                  const IconComponent = amenity.icon
-                  return (
+                {propertyData.amenities && propertyData.amenities.length > 0 ? (
+                  propertyData.amenities.map((amenity, index) => (
                     <div
                       key={index}
                       className="flex items-center space-x-3 p-3 backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl"
                     >
-                      <IconComponent className="w-5 h-5 text-navy-900" />
-                      <span className="text-gray-700 font-medium">{amenity.name}</span>
+                      <div className="w-5 h-5 bg-navy-900 rounded-full flex items-center justify-center">
+                        <span className="text-white text-xs">✓</span>
+                      </div>
+                      <span className="text-gray-700 font-medium">{amenity}</span>
                     </div>
-                  )
-                })}
+                  ))
+                ) : (
+                  <div className="col-span-full text-center text-gray-500 py-8">
+                    Amenities information will be updated soon.
+                  </div>
+                )}
               </div>
             </div>
 
@@ -808,7 +584,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                       key={type}
                       onClick={() => handleFloorPlanTypeChange(type)}
                       className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                        activeFloorPlanType === type
+                        normalizeType(activeFloorPlanType) === normalizeType(type)
                           ? "bg-navy-900 text-white"
                           : "bg-white/50 text-navy-900 hover:bg-white/70"
                       }`}
@@ -825,14 +601,13 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                       <img
                         src={
                           propertyData.floorPlans[activeFloorPlanType][currentFloorPlanIndex]?.image ||
-                          "/placeholder.svg" ||
                           "/placeholder.svg"
                         }
                         alt="Floor Plan"
                         className="w-full h-full object-contain cursor-pointer transition-transform hover:scale-105"
                         onClick={() =>
                           openFullScreen(
-                            propertyData.floorPlans[activeFloorPlanType].map((plan) => plan.image),
+                            (propertyData.floorPlans?.[activeFloorPlanType] || []).map((plan) => plan.image),
                             currentFloorPlanIndex,
                           )
                         }
@@ -873,7 +648,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                         className="border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white bg-transparent"
                         onClick={() => {
                           const downloadUrl =
-                            propertyData.floorPlans[activeFloorPlanType][currentFloorPlanIndex]?.downloadUrl
+                            propertyData.floorPlans?.[activeFloorPlanType]?.[currentFloorPlanIndex]?.downloadUrl
                           if (downloadUrl) {
                             // In a real app, this would trigger a download
                             alert("Floor plan download started!")
@@ -901,6 +676,38 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                     )}
                   </div>
                 )}
+
+                {/* Fullscreen Floor Plan Modal */}
+                {isFullScreenOpen && fullScreenImages.length > 0 && (
+                  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80">
+                    <button
+                      className="absolute top-6 right-6 text-white bg-black/60 rounded-full p-2 hover:bg-black/80"
+                      onClick={() => setIsFullScreenOpen(false)}
+                      aria-label="Close fullscreen"
+                    >
+                      <X className="w-8 h-8" />
+                    </button>
+                    <button
+                      className="absolute left-8 top-1/2 -translate-y-1/2 text-white bg-black/60 rounded-full p-2 hover:bg-black/80"
+                      onClick={prevFullScreenImage}
+                      aria-label="Previous image"
+                    >
+                      <ChevronLeft className="w-10 h-10" />
+                    </button>
+                    <img
+                      src={fullScreenImages[fullScreenImageIndex]}
+                      alt="Floor Plan Fullscreen"
+                      className="max-h-[90vh] max-w-[90vw] rounded-2xl shadow-2xl object-contain"
+                    />
+                    <button
+                      className="absolute right-8 top-1/2 -translate-y-1/2 text-white bg-black/60 rounded-full p-2 hover:bg-black/80"
+                      onClick={nextFullScreenImage}
+                      aria-label="Next image"
+                    >
+                      <ChevronRight className="w-10 h-10" />
+                    </button>
+                  </div>
+                )}
               </div>
             )}
 
@@ -908,18 +715,24 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
             <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
               <h3 className="text-2xl font-bold text-navy-900 mb-6">Nearby Places</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {propertyData.nearbyPlaces.map((place, index) => (
-                  <div
-                    key={index}
-                    className="flex justify-between items-center p-4 backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl"
-                  >
-                    <div>
-                      <div className="font-semibold text-navy-900">{place.name}</div>
-                      <div className="text-sm text-gray-600">{place.type}</div>
+                {propertyData.nearbyPlaces && propertyData.nearbyPlaces.length > 0 ? (
+                  propertyData.nearbyPlaces.map((place, index) => (
+                    <div
+                      key={index}
+                      className="flex justify-between items-center p-4 backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl"
+                    >
+                      <div>
+                        <div className="font-semibold text-navy-900">{place.name}</div>
+                        <div className="text-sm text-gray-600">{place.type}</div>
+                      </div>
+                      <div className="text-gold-600 font-semibold">{place.distance}</div>
                     </div>
-                    <div className="text-gold-600 font-semibold">{place.distance}</div>
+                  ))
+                ) : (
+                  <div className="col-span-full text-center text-gray-500 py-8">
+                    Nearby places information will be updated soon.
                   </div>
-                ))}
+                )}
               </div>
             </div>
 
@@ -928,7 +741,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
               <h3 className="text-2xl font-bold text-navy-900 mb-6">Location</h3>
               <div className="backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl overflow-hidden">
                 <iframe
-                  src={`https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${encodeURIComponent(propertyData.location)}`}
+                  src={propertyData.mapEmbedUrl || `https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${encodeURIComponent(propertyData.location)}`}
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
@@ -957,12 +770,12 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
               {/* Agent Info */}
               <div className="flex items-center space-x-4 mb-6 p-4 backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl">
                 <img
-                  src={propertyData.agent.image || "/placeholder.svg"}
-                  alt={propertyData.agent.name}
+                  src={propertyData.agent?.image || "/placeholder.svg"}
+                  alt={propertyData.agent?.name || ''}
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
-                  <div className="font-semibold text-navy-900">{propertyData.agent.name}</div>
+                  <div className="font-semibold text-navy-900">{propertyData.agent?.name}</div>
                   <div className="text-sm text-gray-600">Property Consultant</div>
                   <div className="flex items-center text-gold-500">
                     {[...Array(5)].map((_, i) => (
@@ -1044,7 +857,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
 
               <div className="mt-6 space-y-3">
                 <a
-                  href={`https://wa.me/${propertyData.agent.phone.replace(/[^0-9]/g, "")}`}
+                  href={`https://wa.me/${propertyData.agent?.phone?.replace(/[^0-9]/g, "") || ''}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -1056,7 +869,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                   </Button>
                 </a>
                 <div className="flex space-x-2">
-                  <a href={`tel:${propertyData.agent.phone}`} className="flex-1">
+                  <a href={`tel:${propertyData.agent?.phone || ''}`} className="flex-1">
                     <Button
                       variant="outline"
                       className="w-full border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white bg-transparent"
@@ -1065,7 +878,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                       Call
                     </Button>
                   </a>
-                  <a href={`mailto:${propertyData.agent.email}`} className="flex-1">
+                  <a href={`mailto:${propertyData.agent?.email || ''}`} className="flex-1">
                     <Button
                       variant="outline"
                       className="w-full border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white bg-transparent"
@@ -1142,14 +955,14 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
       {/* Sticky CTA Bar (Mobile) */}
       <div className="fixed bottom-0 left-0 right-0 lg:hidden backdrop-blur-md bg-white/90 border-t border-white/30 p-4 shadow-2xl">
         <div className="flex space-x-3">
-          <a href={`tel:${propertyData.agent.phone}`} className="flex-1">
+          <a href={`tel:${propertyData.agent?.phone || ''}`} className="flex-1">
             <Button className="w-full bg-navy-900 hover:bg-navy-800 text-white">
               <Phone className="w-4 h-4 mr-2" />
               Call
             </Button>
           </a>
           <a
-            href={`https://wa.me/${propertyData.agent.phone.replace(/[^0-9]/g, "")}`}
+            href={`https://wa.me/${propertyData.agent?.phone?.replace(/[^0-9]/g, "") || ''}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1"
@@ -1173,15 +986,6 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
           </Button>
         </div>
       </div>
-
-      <FullScreenViewer
-        images={fullScreenImages}
-        currentIndex={fullScreenImageIndex}
-        isOpen={isFullScreenOpen}
-        onClose={() => setIsFullScreenOpen(false)}
-        onNext={nextFullScreenImage}
-        onPrev={prevFullScreenImage}
-      />
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12 mt-16">

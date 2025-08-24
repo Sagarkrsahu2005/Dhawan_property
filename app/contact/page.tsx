@@ -22,11 +22,28 @@ export default function ContactPage() {
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 3000)
+    try {
+      const res = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email || undefined,
+          lookingFor: formData.purpose || undefined,
+          budget: formData.budget || undefined,
+          message: formData.message || undefined,
+          page: "contact",
+        }),
+      })
+      if (!res.ok) throw new Error("Failed to submit")
+      setIsSubmitted(true)
+      setFormData({ name: "", phone: "", email: "", purpose: "", budget: "", message: "" })
+    } catch (err) {
+      alert("Something went wrong. Please try again later.")
+    }
   }
 
   const handleInputChange = (field: string, value: string) => {

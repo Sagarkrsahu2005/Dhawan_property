@@ -5,6 +5,7 @@ type InquiryPayload = {
   phone: string
   email?: string
   lookingFor?: string
+  budget?: string
   message?: string
   page?: string
 }
@@ -27,6 +28,7 @@ export async function POST(request: Request) {
       phone: String(body.phone).trim(),
       email: body.email ? String(body.email).trim() : undefined,
       lookingFor: body.lookingFor ? String(body.lookingFor) : undefined,
+      budget: body.budget ? String(body.budget) : undefined,
       message: body.message ? String(body.message) : undefined,
       page: body.page ? String(body.page) : request.headers.get("referer") || "home",
     }

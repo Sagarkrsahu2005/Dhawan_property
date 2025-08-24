@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { properties } from "@/lib/property-data"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -86,13 +87,8 @@ export default function HomePage() {
     }
   }
 
-  const latestProject = {
-    id: 1,
-    title: "Luxury Villa in Sector 47",
-    location: "Sector 47, Gurgaon, Haryana",
-    image: "/luxury-modern-residence.png",
-    status: "New Launch",
-  }
+  // Use the first property as the latest project (hero section)
+  const latestProject = properties[0]
 
   return (
     <div className="min-h-screen bg-white">
@@ -141,20 +137,20 @@ export default function HomePage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href={`/properties/${latestProject.id}`}>
-                  <Button
-                    size="lg"
-                    className="bg-gold-500 hover:bg-gold-600 text-navy-900 font-semibold shadow-2xl hover:shadow-gold-500/25 transition-all duration-300"
-                  >
-                    View Details
-                  </Button>
-                </Link>
                 <Button
+                  asChild
+                  size="lg"
+                  className="bg-gold-500 hover:bg-gold-600 text-navy-900 font-semibold shadow-2xl hover:shadow-gold-500/25 transition-all duration-300"
+                >
+                  <Link href={`/properties/${latestProject.id}`}>View Details</Link>
+                </Button>
+                <Button
+                  asChild
                   size="lg"
                   variant="outline"
                   className="border-white/30 text-white hover:bg-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300"
                 >
-                  Schedule Visit
+                  <Link href="/contact">Schedule Visit</Link>
                 </Button>
               </div>
             </div>
@@ -186,16 +182,14 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <div className="flex justify-between items-center">
+                  <div className="flex items-center gap-4 mt-2">
                     <div>
                       <span className="text-gray-400 text-sm">Contact for Pricing</span>
                       <div className="text-3xl font-bold text-gold-400">Price on Request</div>
                     </div>
-                    <Link href={`/properties/${latestProject.id}`}>
-                      <Button className="bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm border border-white/30">
-                        Explore →
-                      </Button>
-                    </Link>
+                    <Button asChild className="bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm border border-white/30 whitespace-nowrap">
+                      <Link href="/contact">Schedule Visit</Link>
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -255,9 +249,9 @@ export default function HomePage() {
                   </SelectContent>
                 </Select>
 
-                <Link href="/properties">
-                  <Button className="w-full bg-navy-900 hover:bg-navy-800 text-white">Search Properties</Button>
-                </Link>
+                <Button asChild className="w-full bg-navy-900 hover:bg-navy-800 text-white">
+                  <Link href="/properties">Search Properties</Link>
+                </Button>
               </div>
             </CardContent>
           </Card>
@@ -276,68 +270,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                id: 1,
-                title: "Luxury Villa in Sector 47",
-                location: "Gurgaon, Haryana",
-                bedrooms: 4,
-                bathrooms: 5,
-                area: "3200 sq.ft",
-                tag: "New Launch",
-                image: "/luxury-modern-residence.png",
-              },
-              {
-                id: 2,
-                title: "Premium Apartment",
-                location: "Dwarka, Delhi",
-                bedrooms: 3,
-                bathrooms: 3,
-                area: "1850 sq.ft",
-                tag: "Ready to Move",
-                image: "/modern-apartment-building.png",
-              },
-              {
-                id: 3,
-                title: "Commercial Space",
-                location: "Cyber City, Gurgaon",
-                bedrooms: 0,
-                bathrooms: 2,
-                area: "2500 sq.ft",
-                tag: "Investment",
-                image: "/modern-glass-office.png",
-              },
-              {
-                id: 4,
-                title: "Penthouse Suite",
-                location: "Golf Course Road",
-                bedrooms: 5,
-                bathrooms: 6,
-                area: "4500 sq.ft",
-                tag: "Exclusive",
-                image: "/luxury-villa-garden-pool.png",
-              },
-              {
-                id: 5,
-                title: "Family Home",
-                location: "Faridabad, Haryana",
-                bedrooms: 3,
-                bathrooms: 2,
-                area: "1650 sq.ft",
-                tag: "Best Value",
-                image: "/comfortable-family-house.png",
-              },
-              {
-                id: 6,
-                title: "Studio Apartment",
-                location: "Noida Extension",
-                bedrooms: 1,
-                bathrooms: 1,
-                area: "850 sq.ft",
-                tag: "Affordable",
-                image: "/modern-studio-apartment.png",
-              },
-            ].map((property) => (
+            {properties.slice(0, 6).map((property) => (
               <Card key={property.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
                 <div className="relative">
                   <img
@@ -345,7 +278,13 @@ export default function HomePage() {
                     alt={property.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <Badge className="absolute top-4 left-4 bg-gold-500 text-navy-900">{property.tag}</Badge>
+                  {property.id === latestProject.id ? (
+                    <Badge className="absolute top-4 left-4 bg-gold-500 text-navy-900">New Launch</Badge>
+                  ) : (
+                    property.tag && (
+                      <Badge className="absolute top-4 left-4 bg-gray-200 text-navy-900">{property.tag}</Badge>
+                    )
+                  )}
                 </div>
                 <CardContent className="p-6">
                   <div className="mb-2">
@@ -368,12 +307,12 @@ export default function HomePage() {
                     </div>
                     <div className="flex items-center">
                       <Square className="w-4 h-4 mr-1" />
-                      <span>{property.area}</span>
+                      <span>{property.area} sq.ft</span>
                     </div>
                   </div>
-                  <Link href={`/properties/${property.id}`}>
-                    <Button className="w-full bg-navy-900 hover:bg-navy-800 text-white">View Details</Button>
-                  </Link>
+                  <Button asChild className="w-full bg-navy-900 hover:bg-navy-800 text-white">
+                    <Link href={`/properties/${property.id}`}>View Details</Link>
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -396,14 +335,9 @@ export default function HomePage() {
                 From first-time homebuyers to seasoned investors, we provide personalized guidance and end-to-end
                 support throughout your property journey.
               </p>
-              <Link href="/about">
-                <Button
-                  variant="outline"
-                  className="border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white bg-transparent"
-                >
-                  Learn More About Us
-                </Button>
-              </Link>
+              <Button asChild variant="outline" className="border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white bg-transparent">
+                <Link href="/about">Learn More About Us</Link>
+              </Button>
             </div>
             <div className="grid grid-cols-2 gap-6">
               <Card className="text-center p-6">
