@@ -14,6 +14,7 @@ export interface ProjectSpecs {
   apartmentsPerFloor?: string;
   threeSideOpen?: boolean;
   bookingAmount?: string;
+  rera?: string;
 }
 
 export interface Property {
@@ -42,6 +43,483 @@ export interface Property {
 }
 
 export const properties: Property[] = [
+
+  {
+    id: 18,
+    title: "Max Estate 360",
+    location: "Gurgaon/Gurugram, Haryana",
+    bedrooms: 3,
+    bathrooms: 3,
+    area: 2611,
+    yearBuilt: 2028,
+    type: "residential",
+    status: "new-launch",
+    tag: "Luxury Highrise",
+  image: "https://maxestates.in/wp-content/uploads/2024/07/estate-360-spotlight-1.jpg",
+    amenities: [
+      "11.8 Acre Land Parcel (First Phase: 9.43 Acres)",
+      "6 Towers, 17 Floors, 4 Units Per Floor",
+      "3 Level Basement Parking",
+      "Club House (First Phase)",
+      "Direct Booking Available",
+      "Flexible Payment Plans: 25:25:25:25 or 30:40:30",
+      "Modern Security & Amenities",
+      "Close to IGI Airport (35 min)",
+      "Close to Sector 55-56 Metro (25 min)"
+    ],
+    description: `Max Estate 360 is a luxury highrise project in Gurgaon, spread over 11.8 acres (first phase: 9.43 acres) with 6 towers, 17 floors, and 4 units per floor. The project features a clubhouse, 3-level basement parking, flexible payment plans, and excellent connectivity to IGI Airport and Sector 55-56 Metro.`,
+    projectSpecs: {
+      landParcel: "11.8 Acres (First Phase: 9.43 Acres)",
+      towers: 6,
+      floors: "17",
+      unitsPerFloor: "4",
+      clubHouse: "First Phase Clubhouse",
+      carParking: "3 Level Basement",
+      paymentPlan: "25:25:25:25 or 30:40:30",
+      possession: "2028"
+    },
+    sizes: [
+      { type: "2 BR + Store", size: "2,149 sq. ft." },
+      { type: "3 BR + Servant", size: "2,611 sq. ft." },
+      { type: "4 BR + Servant", size: "3,531 sq. ft." }
+    ],
+    images: [
+      "https://maxestates.in/wp-content/uploads/2024/07/estate-360-spotlight-1.jpg",
+      "https://maxestates.in/wp-content/uploads/2024/07/estate-360-spotlight-2.jpg",
+      "https://maxestates.in/wp-content/uploads/2024/07/estate-360-amenities-big-10.jpg",
+      "https://maxestates.in/wp-content/uploads/2024/07/estate-360-spotlight-3.jpg"
+    ],
+    floorPlans: {
+      "2 BR + Store": [
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-173109.png", label: "2 BR + Store", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-173109.png", size: "2,149 sq. ft." }
+      ],
+      "3 BR + Servant": [
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-173109.png", label: "3 BR + Servant", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-173109.png", size: "2,611 sq. ft." }
+      ],
+      "4 BR + Servant": [
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-173109.png", label: "4 BR + Servant", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-173109.png", size: "3,531 sq. ft." }
+      ]
+    },
+    nearbyPlaces: [
+      { name: "DPS", type: "School", distance: "5 KM" },
+      { name: "Gyannanda School", type: "School", distance: "7 KM" },
+      { name: "S N International School", type: "School", distance: "6 KM" },
+      { name: "Prime Scholars School", type: "School", distance: "4 KM" },
+      { name: "Medanta Hospital", type: "Hospital", distance: "8 KM" },
+      { name: "Forties Hospital", type: "Hospital", distance: "8 KM" },
+      { name: "Manipal Hospital", type: "Hospital", distance: "6 KM" },
+      { name: "Sri Balaji’s Multi Hospital", type: "Hospital", distance: "4 KM" }
+    ],
+    agent: {
+      name: "Kapil Dhawan",
+      phone: "+91 98765 43210",
+      email: "Kapil@dhawanproperties.in",
+      image: "/professional-real-estate-agent.png"
+    },
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14035.758748515758!2d76.9486518871582!3d28.421076700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d178a86b5ae6f%3A0x99f9b67e04618c25!2sEstate%20360%20by%20Max%20Estates!5e0!3m2!1sen!2sin!4v1756150190367!5m2!1sen!2sin"
+  },
+
+  {
+    id: 17,
+    title: "ATS HomeKraft Sanctuary",
+    location: "Gurgaon/Gurugram, Haryana",
+    bedrooms: 3,
+    bathrooms: 3,
+    area: 1850,
+    yearBuilt: 2028,
+    type: "residential",
+    status: "new-launch",
+    tag: "Ultra Luxury",
+  image: "https://dhawanproperties.in/wp-content/uploads/2025/04/pzh8n6cdx58t4t82buhy.jpeg",
+    amenities: [
+      "13.1 Acre Land Parcel",
+      "4 Level Ultra Luxurious Club House (50,000 sq. ft.)",
+      "11 Towers, G+34 Floors",
+      "750 Total Units",
+      "1000+ Trees",
+      "Two Apartments Per Floor",
+      "3.5 BHK & 4.5 BHK Units",
+      "Modern Security & Amenities",
+      "Flexible Payment Plan: 30:40:30"
+    ],
+    description: `ATS HomeKraft Sanctuary is an ultra-luxury residential project in Gurgaon, spread over 13.1 acres with 11 towers, G+34 floors, and 750 units. The project features a 4-level, 50,000 sq. ft. clubhouse, 1000+ trees, two apartments per floor, and flexible payment plans.`,
+    projectSpecs: {
+      landParcel: "13.1 Acres",
+      towers: 11,
+      floors: "G+34",
+      totalUnits: "750",
+      clubHouse: "50,000 sq. ft. (4 Level Ultra Luxurious)",
+      openArea: "1000+ Trees, Two Apartments Each Floor",
+      paymentPlan: "30:40:30",
+      possession: "2028"
+    },
+    sizes: [
+      { type: "3 BHK", size: "1,850 sq. ft." },
+      { type: "3 BHK", size: "1,900 sq. ft." },
+      { type: "4 BHK", size: "2,800 sq. ft." },
+      { type: "4 BHK", size: "2,900 sq. ft." }
+    ],
+    images: [
+      "https://dhawanproperties.in/wp-content/uploads/2025/04/pzh8n6cdx58t4t82buhy.jpeg",
+      "https://dhawanproperties.in/wp-content/uploads/2025/04/1.jpg",
+      "https://dhawanproperties.in/wp-content/uploads/2025/04/ats-homekraft-sanctuary-105-1.jpg",
+      "https://dhawanproperties.in/wp-content/uploads/2025/04/dac4bca3a39f9c8c29af94260e3174.jpg"
+    ],
+    floorPlans: {
+      "3 BHK": [
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-160452.png", label: "3 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-160452.png", size: "1,850 sq. ft." },
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-160452.png", label: "3 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-160452.png", size: "1,900 sq. ft." }
+      ],
+      "4 BHK": [
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-160452.png", label: "4 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-160452.png", size: "2,800 sq. ft." },
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-160452.png", label: "4 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-160452.png", size: "2,900 sq. ft." }
+      ]
+    },
+    nearbyPlaces: [
+      { name: "DPS", type: "School", distance: "3 KM" },
+      { name: "Gyannanda School", type: "School", distance: "5 KM" },
+      { name: "S N International School", type: "School", distance: "4 KM" },
+      { name: "Prime Scholars School", type: "School", distance: "2 KM" },
+      { name: "Medanta Hospital", type: "Hospital", distance: "10 KM" },
+      { name: "Forties Hospital", type: "Hospital", distance: "10 KM" },
+      { name: "Manipal Hospital", type: "Hospital", distance: "8 KM" },
+      { name: "Sri Balaji’s Multi Hospital", type: "Hospital", distance: "4 KM" }
+    ],
+    agent: {
+      name: "Kapil Dhawan",
+      phone: "+91 98765 43210",
+      email: "Kapil@dhawanproperties.in",
+      image: "/professional-real-estate-agent.png"
+    },
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.736225413609!2d77.00360107524781!3d28.487489375744246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d170030b9344b%3A0xeff919724c68cd57!2sATS%20HomeKraft%20Sanctuary%20105!5e0!3m2!1sen!2sin!4v1756149699277!5m2!1sen!2sin"
+  },
+
+  {
+    id: 16,
+    title: "MRG Crown",
+    location: "Gurgaon/Gurugram, Haryana",
+    bedrooms: 3,
+    bathrooms: 3,
+    area: 1359,
+    yearBuilt: 2027,
+    type: "residential",
+    status: "new-launch",
+    tag: "Deen Dayal Jan Yojna",
+  image: "https://dhawanproperties.in/wp-content/uploads/2025/04/images-6.jpeg",
+    amenities: [
+      "Gated Community (8.16 Acres)",
+      "Land Parcel: 4.5 Acres",
+      "Club House (22,000 sq. ft.)",
+      "3 Towers, 4 Floors Each",
+      "460 Total Units",
+      "3 BHK Independent Floors",
+      "Excellent Connectivity: Airport, Hospital, School, Mall",
+      "15 Minutes to IGI Airport",
+      "10 Minutes to Dwarka",
+      "Modern Security & Amenities"
+    ],
+    description: `MRG Crown is a Deen Dayal Jan Yojna gated community project in Gurgaon, spread over 8.16 acres (4.5 acres land parcel) with 3 towers, 4 floors each, and 460 units. The project features a 22,000 sq. ft. clubhouse, 3 BHK independent floors, and excellent connectivity to IGI Airport, Dwarka, hospitals, schools, and malls. Possession is expected in November 2027.`,
+    projectSpecs: {
+      landParcel: "4.5 Acres",
+      towers: 3,
+      floors: "4",
+      totalUnits: "460",
+      clubHouse: "22,000 sq. ft.",
+      possession: "Nov 2027",
+      openArea: "Gated Community (8.16 Acres)",
+    },
+    sizes: [
+      { type: "3 BHK", size: "1,500 sq. ft." },
+      { type: "3 BHK", size: "2,000 sq. ft." }
+    ],
+    images: [
+      "https://dhawanproperties.in/wp-content/uploads/2025/04/images-6.jpeg",
+      "https://dhawanproperties.in/wp-content/uploads/2025/04/blogimage12459063541-bhk-interior-design-cost-in-kolkata.jpg",
+      "https://dhawanproperties.in/wp-content/uploads/2025/04/banner1.jpg",
+      "https://dhawanproperties.in/wp-content/uploads/2025/04/images-2-4.jpeg",
+      "https://dhawanproperties.in/wp-content/uploads/2025/04/images-3-2.jpeg"
+    ],
+    floorPlans: {
+      "3 BHK": [
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-155635.png", label: "3 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-155635.png", size: "1,500 sq. ft." },
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-155647.png", label: "3 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-155647.png", size: "2,000 sq. ft." },
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-155501.png", label: "3 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-155501.png", size: "2,000 sq. ft." },
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-155655.png", label: "3 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-155655.png", size: "2,000 sq. ft." }
+      ]
+    },
+    nearbyPlaces: [
+      { name: "DPS", type: "School", distance: "5 KM" },
+      { name: "Gyannanda School", type: "School", distance: "7 KM" },
+      { name: "S N International School", type: "School", distance: "6 KM" },
+      { name: "Prime Scholars School", type: "School", distance: "4 KM" },
+      { name: "Medanta Hospital", type: "Hospital", distance: "8 KM" },
+      { name: "Forties Hospital", type: "Hospital", distance: "8 KM" },
+      { name: "Manipal Hospital", type: "Hospital", distance: "6 KM" },
+      { name: "Sri Balaji’s Multi Hospital", type: "Hospital", distance: "2 KM" }
+    ],
+    agent: {
+      name: "Kapil Dhawan",
+      phone: "+91 98765 43210",
+      email: "Kapil@dhawanproperties.in",
+      image: "/professional-real-estate-agent.png"
+    },
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14024.068977153362!2d76.97070988715821!3d28.5091289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d17e95ebe8409%3A0xf0a24f3b1cc9c92!2sMRG%20Crown%20-%20Official!5e0!3m2!1sen!2sin!4v1756149534349!5m2!1sen!2sin"
+  },
+
+  {
+    id: 15,
+    title: "Elan The Presidential",
+    location: "Sector 106, Dwarka Expressway, Gurgaon, Haryana",
+    bedrooms: 3,
+    bathrooms: 3,
+    area: 2450,
+    yearBuilt: 2028,
+    type: "residential",
+    status: "new-launch",
+    tag: "Luxury Highrise",
+  image: "https://dhawanproperties.in/wp-content/uploads/2025/04/banner.jpg",
+    amenities: [
+      "30 Acre Luxury Development",
+      "3, 4, 5 BHK Apartments & Penthouses",
+      "Premium Clubhouse & Lifestyle Amenities",
+      "Modern Security & Smart Home Features",
+      "Landscaped Gardens & Green Spaces",
+      "Swimming Pool, Gym, Spa, Sports Facilities",
+      "Children’s Play Area, Jogging Track, Yoga Zone",
+      "Multi-level Parking",
+      "High-speed Elevators",
+      "RERA Registered: 101 of 2022"
+    ],
+    description: `Elan The Presidential is a luxury residential project in Sector 106, Gurgaon, spread over 30 acres with 3, 4, and 5 BHK apartments and penthouses. Developed by Elan Limited, the project features premium amenities, landscaped gardens, and a prime location on Dwarka Expressway.`,
+    projectSpecs: {
+      landParcel: "30 Acres",
+      towers: undefined,
+      floors: undefined,
+      totalUnits: undefined,
+      clubHouse: "Premium Clubhouse",
+      openArea: "Landscaped Gardens, Green Spaces",
+      possession: "2028",
+      rera: "101 of 2022"
+    },
+    sizes: [
+      { type: "3 BHK", size: "2,450 sq. ft." },
+      { type: "4 BHK", size: "1,702 sq. ft." },
+      { type: "4 BHK", size: "1,780 sq. ft." },
+      { type: "5 BHK", size: "4,075 sq. ft." }
+    ],
+    images: [
+      "https://dhawanproperties.in/wp-content/uploads/2025/04/banner.jpg",
+      "https://dhawanproperties.in/wp-content/uploads/2025/04/1-1.jpg",
+      "https://dhawanproperties.in/wp-content/uploads/2025/04/elan-106-2_1670215743.jpg",
+      "https://dhawanproperties.in/wp-content/uploads/2025/04/elan-the-presidential-banner.jpg",
+      "https://dhawanproperties.in/wp-content/uploads/2025/04/6.webp"
+    ],
+    floorPlans: {
+      "3 BHK": [
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/elan-map.jpg", label: "3 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/elan-map.jpg", size: "2,450 sq. ft." }
+      ],
+      "4 BHK": [
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/elan-map.jpg", label: "4 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/elan-map.jpg", size: "1,702 sq. ft." },
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/elan-map.jpg", label: "4 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/elan-map.jpg", size: "1,780 sq. ft." }
+      ],
+      "5 BHK": [
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/elan-map.jpg", label: "5 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/elan-map.jpg", size: "4,075 sq. ft." }
+      ]
+    },
+    nearbyPlaces: [
+      { name: "DPS", type: "School", distance: "3 KM" },
+      { name: "Gyannanda School", type: "School", distance: "5 KM" },
+      { name: "S N International School", type: "School", distance: "4 KM" },
+      { name: "Prime Scholars School", type: "School", distance: "2 KM" },
+      { name: "Medanta Hospital", type: "Hospital", distance: "10 KM" },
+      { name: "Forties Hospital", type: "Hospital", distance: "10 KM" },
+      { name: "Manipal Hospital", type: "Hospital", distance: "8 KM" },
+      { name: "Sri Balaji’s Multi Hospital", type: "Hospital", distance: "4 KM" }
+    ],
+    agent: {
+      name: "Kapil Dhawan",
+      phone: "+91 98765 43210",
+      email: "Kapil@dhawanproperties.in",
+      image: "/professional-real-estate-agent.png"
+    },
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.249757761599!2d77.0014893752484!3d28.502132475736207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d175bb01fdfeb%3A0xcf8b0095afd63a3d!2sElan%20The%20Presidential!5e0!3m2!1sen!2sin!4v1756149269772!5m2!1sen!2sin"
+  },
+
+  {
+    id: 14,
+    title: "Emaar Urban Ascent Sector 112",
+    location: "Sector 112, Gurgaon/Gurugram, Haryana",
+    bedrooms: 3,
+    bathrooms: 3,
+    area: 2165,
+    yearBuilt: 2028,
+    type: "residential",
+    status: "new-launch",
+    tag: "Luxury Highrise",
+  image: "https://100acress-media-bucket.s3.ap-south-1.amazonaws.com/uploads/1737626226172-g2.webp",
+    amenities: [
+      "10 Acre Land Parcel",
+      "34 Floors, 6 Towers",
+      "4 Apartments Per Floor",
+      "816 Total Units",
+      "3+ Acre Central Park Area",
+      "1 Basement + Stilt Parking",
+      "Club House (36,000 sq. ft.)",
+      "50% Green Area",
+      "Modern Fittings, Wide Balconies, Servant Quarters",
+      "Thoughtful Floor Plan Design for Comfort & Privacy",
+      "Special Price for First 300 Units",
+      "Payment Plan: 20:10:20:50",
+      "25 Lakh Booking Amount",
+      "Functional, Large Rooms",
+      "Modern Security & Amenities"
+    ],
+    description: `Emaar Urban Ascent in Sector 112, Gurgaon, is a luxury highrise project spread over 10 acres with 6 towers, 34 floors, and 816 units. The project features a 3+ acre central park, 36,000 sq. ft. clubhouse, 50% green area, and modern amenities. Possession is expected in 2028.`,
+    projectSpecs: {
+      landParcel: "10 Acres",
+      towers: 6,
+      floors: "34",
+      totalUnits: "816",
+      clubHouse: "36,000 sq. ft.",
+      openArea: "3+ Acre Central Park, 50% Green Area",
+      unitsPerFloor: "4",
+      carParking: "1 Basement + Stilt",
+      possession: "2028",
+      paymentPlan: "20:10:20:50",
+      bookingAmount: "25 Lakh",
+    },
+    sizes: [
+      { type: "2 BHK", size: "1,295 sq. ft." },
+      { type: "3 BHK", size: "1,525 sq. ft." },
+      { type: "3 BHK", size: "1,735 sq. ft." },
+      { type: "4 BHK", size: "2,003 sq. ft." },
+      { type: "4 BHK", size: "2,255 sq. ft." },
+      { type: "4 BHK", size: "2,207 sq. ft." }
+    ],
+    images: [
+      "https://100acress-media-bucket.s3.ap-south-1.amazonaws.com/uploads/1737626226172-g2.webp",
+      "https://www.doriwalestate.com/uploads/property/emaar-urban-ascent-sector-112-gurugram-ban-1-1735237030.jpg",
+      "https://therealtyinfo.in/wp-content/uploads/2024/12/emaar_urban_ascent_feature_image.jpg"
+    ],
+    floorPlans: {
+      "2 BHK": [
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-154105.png", label: "2 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-154105.png", size: "1,295 sq. ft." }
+      ],
+      "3 BHK": [
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-154105.png", label: "3 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-154105.png", size: "1,525 sq. ft." },
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-154105.png", label: "3 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-154105.png", size: "1,735 sq. ft." }
+      ],
+      "4 BHK": [
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-154105.png", label: "4 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-154105.png", size: "2,003 sq. ft." },
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-154105.png", label: "4 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-154105.png", size: "2,255 sq. ft." },
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-154105.png", label: "4 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-154105.png", size: "2,207 sq. ft." }
+      ]
+    },
+    nearbyPlaces: [
+      { name: "DPS", type: "School", distance: "3 KM" },
+      { name: "Gyannanda School", type: "School", distance: "5 KM" },
+      { name: "S N International School", type: "School", distance: "4 KM" },
+      { name: "Prime Scholars School", type: "School", distance: "2 KM" },
+      { name: "Medanta Hospital", type: "Hospital", distance: "10 KM" },
+      { name: "Forties Hospital", type: "Hospital", distance: "10 KM" },
+      { name: "Manipal Hospital", type: "Hospital", distance: "8 KM" },
+      { name: "Sri Balaji’s Multi Hospital", type: "Hospital", distance: "4 KM" }
+    ],
+    agent: {
+      name: "Kapil Dhawan",
+      phone: "+91 98765 43210",
+      email: "Kapil@dhawanproperties.in",
+      image: "/professional-real-estate-agent.png"
+    },
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.5928837799233!2d77.0189233752492!3d28.521894025725384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b53d050408f%3A0x3b39c1bb26630a21!2sEMAAR%20Urban%20Ascent!5e0!3m2!1sen!2sin!4v1756110255881!5m2!1sen!2sin"
+  },
+
+  {
+    id: 13,
+    title: "M3M Mansion",
+    location: "Sector 113, Dwarka Expressway, Gurugram, Haryana",
+    bedrooms: 4,
+    bathrooms: 4,
+    area: 2077,
+    yearBuilt: 2032,
+    type: "residential",
+    status: "new-launch",
+    tag: "Luxury Highrise",
+  image: "https://dhawanproperties.in/wp-content/uploads/2025/04/17086069619910.jpg",
+    amenities: [
+      "Modern Architecture with Expansive Green Spaces",
+      "Direct Dwarka Expressway Access",
+      "Proximity to IGI Airport, Diplomatic Enclave, Dwarka Golf Course, Bharat Vandana Park",
+      "Clubhouse with Recreational Options",
+      "Olympic-sized Swimming Pool",
+      "Golf Chip & Putt, Cricket Box, Squash, Basketball, Tennis Court",
+      "Well-equipped Gymnasium & Yoga Zone",
+      "Mini Theatre & Gaming Zone",
+      "Spa, Sauna, Pleasure Spa",
+      "Kids’ Play Area, Pet-friendly Parks, Green Spaces",
+      "Business Center, Amphitheatre, Banquet Hall, Cycling Track",
+      "Central Greens with Reserve Views",
+      "Comprehensive Security & Smart Card Access",
+      "Ample Surface Parking",
+      "Double-height Lobbies with Luxurious Seating",
+      "Wrap-around Balconies"
+    ],
+    description: `M3M Mansion, in Sector 113 along the Dwarka Expressway, Gurugram, is a luxury residential project by M3M India Pvt. Ltd. Spread over 11 acres with 8 high-rise towers and over 950 residences, it offers 3.5, 4.5, and 5 BHK apartments and penthouses with world-class amenities, green spaces, and seamless connectivity. Possession is expected by February 2032.`,
+    projectSpecs: {
+      landParcel: "11 Acres",
+      towers: 8,
+      totalUnits: ">950",
+      possession: "Feb 2032",
+      openArea: "Central Greens, Reserve Greens, Landscaped Areas",
+      rera: "RC/REP/HARERA/GGM/802/534/2024/29"
+    },
+    sizes: [
+      { type: "3.5 BHK", size: "2,077 sq. ft." },
+      { type: "3.5 BHK", size: "3,415 sq. ft." },
+      { type: "4.5 BHK", size: "2,705 sq. ft." },
+      { type: "4.5 BHK", size: "3,125 sq. ft." },
+      { type: "5 BHK", size: "2,100 sq. ft." },
+      { type: "5 BHK", size: "7,000 sq. ft." }
+    ],
+    images: [
+      "https://dhawanproperties.in/wp-content/uploads/2025/04/17086069619910.jpg",
+      "https://dhawanproperties.in/wp-content/uploads/2025/04/Puri-Diplomatic-Residencies-1170x720-1.jpg",
+      "https://dhawanproperties.in/wp-content/uploads/2025/04/5xtra.jpg"
+    ],
+    floorPlans: {
+      "3.5 BHK": [
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-153522.png", label: "3.5 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-153522.png", size: "2,077 sq. ft." },
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-153509.png", label: "3.5 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-153509.png", size: "3,415 sq. ft." }
+      ],
+      "4.5 BHK": [
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-153459.png", label: "4.5 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-153459.png", size: "2,705 sq. ft." },
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-153441.png", label: "4.5 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-153441.png", size: "3,125 sq. ft." }
+      ],
+      "5 BHK": [
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-153430.png", label: "5 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-153430.png", size: "2,100 sq. ft." },
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-153416.png", label: "5 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-153416.png", size: "7,000 sq. ft." },
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-153400.png", label: "5 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-153400.png", size: "7,000 sq. ft." },
+        { image: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-153347.png", label: "5 BHK", downloadUrl: "https://dhawanproperties.in/wp-content/uploads/2025/04/Screenshot-2025-04-08-153347.png", size: "7,000 sq. ft." }
+      ]
+    },
+    nearbyPlaces: [
+      { name: "DPS", type: "School", distance: "7 KM" },
+      { name: "Gyannanda School", type: "School", distance: "4 KM" },
+      { name: "S N International School", type: "School", distance: "7 KM" },
+      { name: "Prime Scholars School", type: "School", distance: "5 KM" },
+      { name: "Medanta Hospital", type: "Hospital", distance: "12 KM" },
+      { name: "Forties Hospital", type: "Hospital", distance: "12 KM" },
+      { name: "Manipal Hospital", type: "Hospital", distance: "10 KM" },
+      { name: "Sri Balaji’s Multi Hospital", type: "Hospital", distance: "6 KM" }
+    ],
+    agent: {
+      name: "Kapil Dhawan",
+      phone: "+91 98765 43210",
+      email: "Kapil@dhawanproperties.in",
+      image: "/professional-real-estate-agent.png"
+    },
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28044.822186425114!2d77.0257894!3d28.5215966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b89af3e9f25%3A0x933e8ef98fc61271!2sM3M%20MANSION!5e0!3m2!1sen!2sin!4v1756109169569!5m2!1sen!2sin"
+  },
 
   {
     id: 12,

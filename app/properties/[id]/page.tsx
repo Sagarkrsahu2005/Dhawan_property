@@ -551,18 +551,18 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
 
             {/* Amenities */}
             <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
-              <h3 className="text-2xl font-bold text-navy-900 mb-6">Amenities</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <h3 className="text-2xl font-bold text-navy-900 mb-6 tracking-tight">Amenities</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                 {propertyData.amenities && propertyData.amenities.length > 0 ? (
                   propertyData.amenities.map((amenity, index) => (
                     <div
                       key={index}
-                      className="flex items-center space-x-3 p-3 backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl"
+                      className="flex items-center gap-3 p-2 bg-white border border-gray-100 rounded-lg shadow-sm"
                     >
-                      <div className="w-5 h-5 bg-navy-900 rounded-full flex items-center justify-center">
-                        <span className="text-white text-xs">✓</span>
+                      <div className="w-7 h-7 flex items-center justify-center rounded-md bg-gray-100 text-navy-900">
+                        <svg width="18" height="18" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="#1e293b" strokeWidth="2" fill="#f1f5f9" /><path d="M9.5 12.5l2 2 3-4" stroke="#1e293b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                       </div>
-                      <span className="text-gray-700 font-medium">{amenity}</span>
+                      <span className="text-navy-900 text-sm font-medium">{amenity}</span>
                     </div>
                   ))
                 ) : (

@@ -10,6 +10,9 @@ import { properties } from "@/lib/property-data"
 import { MapPin, Bed, Bath, Square, Phone, Mail, Filter, Grid, List, Search, SlidersHorizontal } from "lucide-react"
 
 export default function PropertiesPage() {
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const propertiesPerPage = 9;
   const [viewMode, setViewMode] = useState("grid")
   const [showFilters, setShowFilters] = useState(false)
   const [propertyType, setPropertyType] = useState("all")
@@ -19,6 +22,7 @@ export default function PropertiesPage() {
   const [yearBuilt, setYearBuilt] = useState("all")
   const [sortBy, setSortBy] = useState("newest")
   const [searchTerm, setSearchTerm] = useState("")
+
 
   // Filtering logic (simplified, you can expand as needed)
   let filteredProperties = properties.filter((property) => {
@@ -40,6 +44,10 @@ export default function PropertiesPage() {
   if (sortBy === "area-small") filteredProperties = [...filteredProperties].sort((a, b) => a.area - b.area)
   if (sortBy === "year-newest") filteredProperties = [...filteredProperties].sort((a, b) => b.yearBuilt - a.yearBuilt)
   if (sortBy === "year-oldest") filteredProperties = [...filteredProperties].sort((a, b) => a.yearBuilt - b.yearBuilt)
+
+  // Pagination logic (must be after filteredProperties is defined)
+  const totalPages = Math.ceil(filteredProperties.length / propertiesPerPage);
+  const paginatedProperties = filteredProperties.slice((currentPage - 1) * propertiesPerPage, currentPage * propertiesPerPage);
 
   const applyFilters = () => {} // No-op, filters are reactive
 
@@ -210,7 +218,7 @@ export default function PropertiesPage() {
             {/* Properties Grid */}
             {viewMode === "grid" ? (
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                {filteredProperties.map((property) => (
+                {paginatedProperties.map((property) => (
                   <Card key={property.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
                     <div className="relative">
                       <img src={property.image || "/placeholder.svg"} alt={property.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
@@ -256,7 +264,7 @@ export default function PropertiesPage() {
               </div>
             ) : (
               <div className="space-y-6">
-                {filteredProperties.map((property) => (
+                {paginatedProperties.map((property) => (
                   <Card key={property.id} className="group hover:shadow-lg transition-all duration-300">
                     <CardContent className="p-6">
                       <div className="flex flex-col lg:flex-row gap-6">
@@ -317,14 +325,21 @@ export default function PropertiesPage() {
               </div>
             )}
             {/* Pagination (static) */}
-            {filteredProperties.length > 0 && (
+            {filteredProperties.length > 0 && totalPages > 1 && (
               <div className="flex justify-center mt-12">
                 <div className="flex items-center space-x-2">
-                  <Button variant="outline" disabled>Previous</Button>
-                  <Button className="bg-navy-900 text-white">1</Button>
-                  <Button variant="outline">2</Button>
-                  <Button variant="outline">3</Button>
-                  <Button variant="outline">Next</Button>
+                  <Button variant="outline" onClick={() => setCurrentPage((p) => Math.max(1, p - 1))} disabled={currentPage === 1}>Previous</Button>
+                  {[...Array(totalPages)].map((_, idx) => (
+                    <Button
+                      key={idx + 1}
+                      className={currentPage === idx + 1 ? "bg-navy-900 text-white" : ""}
+                      variant={currentPage === idx + 1 ? "default" : "outline"}
+                      onClick={() => setCurrentPage(idx + 1)}
+                    >
+                      {idx + 1}
+                    </Button>
+                  ))}
+                  <Button variant="outline" onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))} disabled={currentPage === totalPages}>Next</Button>
                 </div>
               </div>
             )}
