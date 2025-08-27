@@ -102,44 +102,56 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold text-lg mb-4">Contact Info</h4>
+            <h4 className="font-semibold text-lg mb-4">Get In Touch</h4>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-gold-500 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-400">+91 98765 43210</p>
-                  <p className="text-gray-400">+91 98765 43211</p>
+                  <a href="tel:+919999628400" className="text-gray-400 hover:text-white transition-colors block">
+                    +91 99996-28400
+                  </a>
+                  <a href="tel:+918882568981" className="text-gray-400 hover:text-white transition-colors block">
+                    +91 8882-568981
+                  </a>
                 </div>
               </div>
 
               <div className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-gold-500 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-400">info@dhawanproperties.in</p>
-                  <p className="text-gray-400">sales@dhawanproperties.in</p>
+                  <a href="mailto:Dhawanproperties2019@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+                    Dhawanproperties2019@gmail.com
+                  </a>
                 </div>
               </div>
 
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-gold-500 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-400">
-                    Plot No. 123, Sector 14,
-                    <br />
-                    Gurgaon, Haryana 122001
-                    <br />
-                    India
-                  </p>
+                  <div className="mb-3">
+                    <p className="text-gray-300 font-medium mb-1">Head Office</p>
+                    <p className="text-gray-400 text-sm">
+                      203, 2nd Floor, Express Building,<br />
+                      H-BIk Mkt, Ashok Vihar Ph.-1,<br />
+                      New Delhi-110052
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-gray-300 font-medium mb-1">Branch Office</p>
+                    <p className="text-gray-400 text-sm">
+                      B-1602 Oyster Grande, Sector 102,<br />
+                      Near DSP School, Near Dwarka Express
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Business Hours */}
+            {/* Working Hours */}
             <div className="mt-6 p-4 bg-gray-800 rounded-lg">
-              <h5 className="font-semibold mb-2">Business Hours</h5>
+              <h5 className="font-semibold mb-2">Working Hours</h5>
               <div className="text-sm text-gray-400 space-y-1">
-                <p>Mon - Sat: 9:00 AM - 7:00 PM</p>
-                <p>Sunday: 10:00 AM - 5:00 PM</p>
+                <p>Tuesday - Sunday: 9:00 AM - 7:00 PM</p>
               </div>
             </div>
           </div>

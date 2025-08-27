@@ -52,8 +52,12 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-navy-900">
-                Dhawan Properties
+              <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+                <img 
+                  src="/dhawan-properties-logo.png"
+                  alt="Dhawan Properties"
+                  className="h-12 w-auto"
+                />
               </Link>
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -75,7 +79,7 @@ export default function AboutPage() {
             </div>
             <Button className="bg-navy-900 hover:bg-navy-800 text-white">
               <Phone className="w-4 h-4 mr-2" />
-              Call Now
+              <a href="tel:+919999628400" className="text-white">Call Now</a>
             </Button>
           </div>
         </div>

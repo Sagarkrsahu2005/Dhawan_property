@@ -31,8 +31,12 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-navy-900 hover:text-gold-600 transition-colors">
-              Dhawan Properties
+            <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+              <img 
+                src="/dhawan-properties-logo.png"
+                alt="Dhawan Properties"
+                className="h-12 w-auto"
+              />
             </Link>
           </div>
 
@@ -53,11 +57,13 @@ export default function Navigation() {
 
           {/* Call Button & Mobile Menu Toggle */}
           <div className="flex items-center space-x-4">
-            <Button className="bg-navy-900 hover:bg-navy-800 text-white">
-              <Phone className="w-4 h-4 mr-2" />
-              <span className="hidden sm:inline">Call Now</span>
-              <span className="sm:hidden">Call</span>
-            </Button>
+            <a href="tel:+919999628400">
+              <Button className="bg-navy-900 hover:bg-navy-800 text-white">
+                <Phone className="w-4 h-4 mr-2" />
+                <span className="hidden sm:inline">Call Now</span>
+                <span className="sm:hidden">Call</span>
+              </Button>
+            </a>
 
             {/* Mobile Menu Button */}
             <button

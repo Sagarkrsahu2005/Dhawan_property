@@ -112,8 +112,8 @@ export const properties: Property[] = [
     ],
     agent: {
       name: "Kapil Dhawan",
-      phone: "+91 98765 43210",
-      email: "Kapil@dhawanproperties.in",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     },
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14035.758748515758!2d76.9486518871582!3d28.421076700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d178a86b5ae6f%3A0x99f9b67e04618c25!2sEstate%20360%20by%20Max%20Estates!5e0!3m2!1sen!2sin!4v1756150190367!5m2!1sen!2sin"
@@ -187,8 +187,8 @@ export const properties: Property[] = [
     ],
     agent: {
       name: "Kapil Dhawan",
-      phone: "+91 98765 43210",
-      email: "Kapil@dhawanproperties.in",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     },
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.736225413609!2d77.00360107524781!3d28.487489375744246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d170030b9344b%3A0xeff919724c68cd57!2sATS%20HomeKraft%20Sanctuary%20105!5e0!3m2!1sen!2sin!4v1756149699277!5m2!1sen!2sin"
@@ -259,8 +259,8 @@ export const properties: Property[] = [
     ],
     agent: {
       name: "Kapil Dhawan",
-      phone: "+91 98765 43210",
-      email: "Kapil@dhawanproperties.in",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     },
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14024.068977153362!2d76.97070988715821!3d28.5091289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d17e95ebe8409%3A0xf0a24f3b1cc9c92!2sMRG%20Crown%20-%20Official!5e0!3m2!1sen!2sin!4v1756149534349!5m2!1sen!2sin"
@@ -338,8 +338,8 @@ export const properties: Property[] = [
     ],
     agent: {
       name: "Kapil Dhawan",
-      phone: "+91 98765 43210",
-      email: "Kapil@dhawanproperties.in",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     },
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.249757761599!2d77.0014893752484!3d28.502132475736207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d175bb01fdfeb%3A0xcf8b0095afd63a3d!2sElan%20The%20Presidential!5e0!3m2!1sen!2sin!4v1756149269772!5m2!1sen!2sin"
@@ -427,8 +427,8 @@ export const properties: Property[] = [
     ],
     agent: {
       name: "Kapil Dhawan",
-      phone: "+91 98765 43210",
-      email: "Kapil@dhawanproperties.in",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     },
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.5928837799233!2d77.0189233752492!3d28.521894025725384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b53d050408f%3A0x3b39c1bb26630a21!2sEMAAR%20Urban%20Ascent!5e0!3m2!1sen!2sin!4v1756110255881!5m2!1sen!2sin"
@@ -514,8 +514,8 @@ export const properties: Property[] = [
     ],
     agent: {
       name: "Kapil Dhawan",
-      phone: "+91 98765 43210",
-      email: "Kapil@dhawanproperties.in",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     },
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28044.822186425114!2d77.0257894!3d28.5215966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b89af3e9f25%3A0x933e8ef98fc61271!2sM3M%20MANSION!5e0!3m2!1sen!2sin!4v1756109169569!5m2!1sen!2sin"
@@ -596,8 +596,8 @@ export const properties: Property[] = [
     ],
     agent: {
       name: "Kapil Dhawan",
-      phone: "+91 98765 43210",
-      email: "Kapil@dhawanproperties.in",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     },
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.5196543484094!2d77.0321625!3d28.5240963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b4e7adb98f7%3A0x380ad5a84f81b301!2sM3M%20Crown%20At%20Sector%20111!5e0!3m2!1sen!2sin!4v1756062063430!5m2!1sen!2sin"
@@ -676,8 +676,8 @@ export const properties: Property[] = [
     ],
     agent: {
       name: "Kapil Dhawan",
-      phone: "+91 98765 43210",
-      email: "Kapil@dhawanproperties.in",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     },
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7010.757452799676!2d77.02252134119595!3d28.52833407570108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b7ebaf30413%3A0x8ce03ac63bcaa3ad!2sSmartworld%20ONE%20DXP!5e0!3m2!1sen!2sin!4v1756061571390!5m2!1sen!2sin"
@@ -754,8 +754,8 @@ export const properties: Property[] = [
     ],
     agent: {
       name: "Kapil Dhawan",
-      phone: "+91 98765 43210",
-      email: "Kapil@dhawanproperties.in",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     },
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.09769842417!2d76.95919067524498!3d28.414962475784254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3d000efffd0f%3A0x7b2ba3b8a3563684!2sSignature%20Global%20Twin%20Tower%20DXP!5e1!3m2!1sen!2sin!4v1756060760831!5m2!1sen!2sin"
@@ -823,8 +823,8 @@ export const properties: Property[] = [
     ],
     agent: {
       name: "Kapil Dhawan",
-      phone: "+91 98765 43210",
-      email: "Kapil@dhawanproperties.in",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     },
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13228.605591432603!2d76.95599455574106!3d28.445241062277113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d17363a37d519%3A0xe5ccd799fd6aa485!2sSignature%20Global%20Deluxe%20DXP!5e1!3m2!1sen!2sin!4v1756060032544!5m2!1sen!2sin"
@@ -899,7 +899,7 @@ export const properties: Property[] = [
     ],
     agent: {
       name: "Rajesh Dhawan",
-      phone: "+91 98765 43210",
+      phone: "+91 9999628400",
       email: "rajesh@dhawanproperties.in",
       image: "/professional-real-estate-agent.png"
     },
@@ -984,8 +984,8 @@ export const properties: Property[] = [
     ],
     agent: {
       name: "Kapil Dhawan",
-      phone: "+91 98765 43210",
-      email: "Kapil@dhawanproperties.in",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     },
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.934232642906!2d76.99240377524771!3d28.484143075746033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d17c0532d6449%3A0x43032991d94545d6!2sHero%20Homes!5e1!3m2!1sen!2sus!4v1756059312512!5m2!1sen!2sus"
@@ -1055,8 +1055,8 @@ export const properties: Property[] = [
     ],
     agent: {
       name: "Kapil Dhawan",
-      phone: "+91 98765 43210",
-      email: "Kapil@dhawanproperties.in",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     },
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d423210.2008854588!2d76.973205!3d28.471509!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d175834c9de41%3A0x3998a147fb38994f!2sBPTP%20Amstoria%20Verti%20Greens!5e1!3m2!1sen!2sus!4v1756054099634!5m2!1sen!2sus"
@@ -1118,8 +1118,8 @@ export const properties: Property[] = [
     ],
     agent: {
       name: "Kapil Dhawan",
-      phone: "+91 98765 43210",
-      email: "Kapil@dhawanproperties.in",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     },
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d423115.84199576377!2d76.974551!3d28.495056!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d17005bc7e1d3%3A0x39946b316896aa42!2sGodrej%20Vrikshya%2C%20Sector%20103%2C%20Gurgaon!5e1!3m2!1sen!2sus!4v1756040229603!5m2!1sen!2sus"
@@ -1193,8 +1193,8 @@ export const properties: Property[] = [
     ],
     agent: {
       name: "Kapil Dhawan",
-      phone: "+91 98765 43210",
-      email: "Kapil@dhawanproperties.in",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     },
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13219.33122913294!2d77.027306!3d28.519304!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1963e8b8a9e7%3A0x3422ac343cba04fe!2sPuri%20Diplomatic%20Greens!5e1!3m2!1sen!2sus!4v1756038258325!5m2!1sen!2sus"
@@ -1263,8 +1263,8 @@ QUALITY CONSTRUCTION ON 60 METER ROAD AND NEAR TO DELHI.`,
     ],
     agent: {
       name: "Kapil Dhawan",
-      phone: "+91 98765 43210",
-      email: "Kapil@dhawanproperties.in",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     }
   },
@@ -1334,8 +1334,8 @@ QUALITY CONSTRUCTION ON 60 METER ROAD AND NEAR TO DELHI.`,
     ],
     agent: {
       name: "Kapil Dhawan",
-      phone: "+91 98765 43210",
-      email: "Kapil@dhawanproperties.in",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     },
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13232.130445476601!2d76.973437!3d28.417046!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3daba8918f95%3A0x5c81fa76593240e6!2sKrisumi%20Waterfall%20Residences%20Gurgaon!5e1!3m2!1sen!2sus!4v1756039659792!5m2!1sen!2sus"

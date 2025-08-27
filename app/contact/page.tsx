@@ -57,8 +57,12 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-navy-900">
-                Dhawan Properties
+              <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+                <img 
+                  src="/dhawan-properties-logo.png"
+                  alt="Dhawan Properties"
+                  className="h-12 w-auto"
+                />
               </Link>
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -80,7 +84,7 @@ export default function ContactPage() {
             </div>
             <Button className="bg-navy-900 hover:bg-navy-800 text-white">
               <Phone className="w-4 h-4 mr-2" />
-              Call Now
+              <a href="tel:+919999628400" className="text-white">Call Now</a>
             </Button>
           </div>
         </div>
@@ -254,8 +258,12 @@ export default function ContactPage() {
                     <Phone className="w-5 h-5 text-navy-900 mt-1" />
                     <div>
                       <p className="font-semibold text-navy-900">Phone</p>
-                      <p className="text-gray-600">+91 98765 43210</p>
-                      <p className="text-gray-600">+91 98765 43211</p>
+                      <a href="tel:+919999628400" className="text-gray-600 hover:text-navy-900 transition-colors block">
+                        +91 99996-28400
+                      </a>
+                      <a href="tel:+918882568981" className="text-gray-600 hover:text-navy-900 transition-colors block">
+                        +91 8882-568981
+                      </a>
                     </div>
                   </div>
 
@@ -263,22 +271,30 @@ export default function ContactPage() {
                     <Mail className="w-5 h-5 text-navy-900 mt-1" />
                     <div>
                       <p className="font-semibold text-navy-900">Email</p>
-                      <p className="text-gray-600">info@dhawanproperties.in</p>
-                      <p className="text-gray-600">sales@dhawanproperties.in</p>
+                      <a href="mailto:Dhawanproperties2019@gmail.com" className="text-gray-600 hover:text-navy-900 transition-colors">
+                        Dhawanproperties2019@gmail.com
+                      </a>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-3">
                     <MapPin className="w-5 h-5 text-navy-900 mt-1" />
                     <div>
-                      <p className="font-semibold text-navy-900">Office Address</p>
-                      <p className="text-gray-600">
-                        Plot No. 123, Sector 14,
-                        <br />
-                        Gurgaon, Haryana 122001
-                        <br />
-                        India
-                      </p>
+                      <div className="mb-3">
+                        <p className="font-semibold text-navy-900">Head Office</p>
+                        <p className="text-gray-600">
+                          203, 2nd Floor, Express Building,<br />
+                          H-BIk Mkt, Ashok Vihar Ph.-1,<br />
+                          New Delhi-110052
+                        </p>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-navy-900">Branch Office</p>
+                        <p className="text-gray-600">
+                          B-1602 Oyster Grande, Sector 102,<br />
+                          Near DSP School, Near Dwarka Express
+                        </p>
+                      </div>
                     </div>
                   </div>
 
@@ -286,22 +302,25 @@ export default function ContactPage() {
                     <Clock className="w-5 h-5 text-navy-900 mt-1" />
                     <div>
                       <p className="font-semibold text-navy-900">Working Hours</p>
-                      <p className="text-gray-600">Monday - Saturday: 9:00 AM - 7:00 PM</p>
-                      <p className="text-gray-600">Sunday: 10:00 AM - 5:00 PM</p>
+                      <p className="text-gray-600">Tuesday - Sunday: 9:00 AM - 7:00 PM</p>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-6 pt-6 border-t border-gray-200">
                   <div className="flex space-x-3">
-                    <Button className="flex-1 bg-green-500 hover:bg-green-600 text-white">
-                      <MessageCircle className="w-4 h-4 mr-2" />
-                      WhatsApp
-                    </Button>
-                    <Button className="flex-1 bg-navy-900 hover:bg-navy-800 text-white">
-                      <Phone className="w-4 h-4 mr-2" />
-                      Call Now
-                    </Button>
+                    <a href="https://wa.me/919999628400" target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
+                        <MessageCircle className="w-4 h-4 mr-2" />
+                        WhatsApp
+                      </Button>
+                    </a>
+                    <a href="tel:+919999628400" className="flex-1">
+                      <Button className="w-full bg-navy-900 hover:bg-navy-800 text-white">
+                        <Phone className="w-4 h-4 mr-2" />
+                        Call Now
+                      </Button>
+                    </a>
                   </div>
                 </div>
               </CardContent>
@@ -315,7 +334,7 @@ export default function ContactPage() {
                   <div className="text-center text-gray-600">
                     <MapPin className="w-12 h-12 mx-auto mb-2" />
                     <p className="font-medium">Interactive Map</p>
-                    <p className="text-sm">Sector 14, Gurgaon</p>
+                    <p className="text-sm">New Delhi & Sector 102</p>
                   </div>
                 </div>
                 <div className="mt-4">
@@ -432,15 +451,17 @@ export default function ContactPage() {
               <div className="space-y-2 text-gray-400">
                 <div className="flex items-center">
                   <Phone className="w-4 h-4 mr-2" />
-                  <span>+91 98765 43210</span>
+                  <a href="tel:+919999628400" className="hover:text-white transition-colors">+91 99996-28400</a>
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-4 h-4 mr-2" />
-                  <span>info@dhawanproperties.in</span>
+                  <a href="mailto:Dhawanproperties2019@gmail.com" className="hover:text-white transition-colors">Dhawanproperties2019@gmail.com</a>
                 </div>
                 <div className="flex items-start">
-                  <MapPin className="w-4 h-4 mr-2 mt-1" />
-                  <span>Sector 14, Gurgaon, Haryana 122001</span>
+                  <MapPin className="w-9 h-9 mr-2 mt-1" />
+                  <span>203, 2nd Floor, Express Building,
+                        H-BIk Mkt, Ashok Vihar Ph.-1,
+                        New Delhi-110052</span>
                 </div>
               </div>
             </div>

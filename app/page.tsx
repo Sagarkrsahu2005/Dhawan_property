@@ -427,13 +427,13 @@ export default function HomePage() {
                 needs and budget.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel:+919876543210">
+                <a href="tel:+919999628400">
                   <Button className="bg-gold-500 hover:bg-gold-600 text-navy-900">
                     <Phone className="w-4 h-4 mr-2" />
                     Call Now
                   </Button>
                 </a>
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/919999628400" target="_blank" rel="noopener noreferrer">
                   <Button
                     variant="outline"
                     className="border-white text-white hover:bg-white hover:text-navy-900 bg-transparent"

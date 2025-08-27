@@ -548,8 +548,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <Link href="/" className="text-2xl font-bold text-navy-900">
-                Dhawan Properties
+              <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+                <img 
+                  src="/dhawan-properties-logo.png"
+                  alt="Dhawan Properties"
+                  className="h-12 w-auto"
+                />
               </Link>
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -571,7 +575,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </div>
             <Button className="bg-navy-900 hover:bg-navy-800 text-white">
               <Phone className="w-4 h-4 mr-2" />
-              Call Now
+              <a href="tel:+919999628400" className="text-white">Call Now</a>
             </Button>
           </div>
         </div>
@@ -801,15 +805,17 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               <div className="space-y-2 text-gray-400">
                 <div className="flex items-center">
                   <Phone className="w-4 h-4 mr-2" />
-                  <span>+91 98765 43210</span>
+                  <a href="tel:+919999628400" className="hover:text-white transition-colors">+91 99996-28400</a>
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-4 h-4 mr-2" />
-                  <span>info@dhawanproperties.in</span>
+                  <a href="mailto:Dhawanproperties2019@gmail.com" className="hover:text-white transition-colors">Dhawanproperties2019@gmail.com</a>
                 </div>
                 <div className="flex items-start">
-                  <MapPin className="w-4 h-4 mr-2 mt-1" />
-                  <span>Sector 14, Gurgaon, Haryana 122001</span>
+                  <MapPin className="w-9 h-9 mr-2 mt-1" />
+                  <span>203, 2nd Floor, Express Building,
+                        H-BIk Mkt, Ashok Vihar Ph.-1,
+                        New Delhi-110052</span>
                 </div>
               </div>
             </div>
