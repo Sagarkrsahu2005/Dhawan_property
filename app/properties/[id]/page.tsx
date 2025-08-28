@@ -50,6 +50,8 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
 
   const handleEnquirySubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!propertyData) return;
+    
     try {
       const res = await fetch("/api/inquiry", {
         method: "POST",
@@ -1076,6 +1078,95 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
           </div>
         </div>
       </footer>
+
+      {/* Structured Data for Property */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": propertyData.title,
+            "description": propertyData.description,
+            "image": propertyData.image,
+            "url": `https://dhavanproperties.com/properties/${propertyData.id}`,
+            "brand": {
+              "@type": "Organization",
+              "name": "Dhawan Properties"
+            },
+            "offers": {
+              "@type": "Offer",
+              "availability": "https://schema.org/InStock",
+              "priceCurrency": "INR",
+              "price": "Contact for Price",
+              "seller": {
+                "@type": "Organization",
+                "name": "Dhawan Properties"
+              }
+            },
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "Bedrooms",
+                "value": propertyData.bedrooms
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "Bathrooms", 
+                "value": propertyData.bathrooms
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "Area",
+                "value": `${propertyData.area} sq ft`
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "Property Type",
+                "value": propertyData.type
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "Status",
+                "value": propertyData.status
+              }
+            ]
+          })
+        }}
+      />
+
+      {/* Property as Accommodation Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Accommodation",
+            "name": propertyData.title,
+            "description": propertyData.description,
+            "image": propertyData.image,
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": propertyData.location
+            },
+            "numberOfRooms": propertyData.bedrooms,
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": propertyData.area,
+              "unitCode": "SQF"
+            },
+            "amenityFeature": propertyData.amenities.map(amenity => ({
+              "@type": "LocationFeatureSpecification",
+              "name": amenity
+            })),
+            "provider": {
+              "@type": "RealEstateAgent",
+              "name": "Dhawan Properties",
+              "url": "https://dhavanproperties.com"
+            }
+          })
+        }}
+      />
     </div>
   )
 }

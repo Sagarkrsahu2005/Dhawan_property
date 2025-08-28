@@ -484,6 +484,61 @@ export default function HomePage() {
       {/* Footer */}
       <Footer />
 
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Dhawan Properties",
+            "url": "https://dhavanproperties.com",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://dhavanproperties.com/properties?search={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          })
+        }}
+      />
+
+      {/* Property Listings Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Featured Properties",
+            "numberOfItems": properties.slice(0, 6).length,
+            "itemListElement": properties.slice(0, 6).map((property, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "Accommodation",
+                "name": property.title,
+                "description": property.description,
+                "image": property.image,
+                "url": `https://dhavanproperties.com/properties/${property.id}`,
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": property.location
+                },
+                "numberOfRooms": property.bedrooms,
+                "floorSize": {
+                  "@type": "QuantitativeValue",
+                  "value": property.area,
+                  "unitCode": "SQF"
+                }
+              }
+            }))
+          })
+        }}
+      />
+
       {/* Quick Inquiry Modal (auto-opens after 3s) */}
       <Dialog open={showInquiry} onOpenChange={setShowInquiry}>
         <DialogContent className="sm:max-w-md">

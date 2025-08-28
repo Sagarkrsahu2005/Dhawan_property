@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and API routes
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /migration/
+
+# Allow important SEO files
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /favicon.ico
+
+# Sitemap location
+Sitemap: https://dhavanproperties.com/sitemap.xml
+
+# Crawl delay for bots
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
