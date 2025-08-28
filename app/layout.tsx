@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   description:
     "Premium real estate services with verified listings, local expertise, and end-to-end support. Find your dream property with Dhawan Properties.",
   generator: "v0.app",
+    verification: {
+    google: "AZhUgcfdRva2q2lQc6HqJUyTYfg9sbeRM4NaiRwhj7M"
+  }
 }
 
 export default function RootLayout({
