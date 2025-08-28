@@ -14,7 +14,7 @@ const properties = [
 
 // Generate comprehensive sitemap
 function generateSitemap() {
-  const baseUrl = 'https://dhavanproperties.com'
+  const baseUrl = 'https://www.dhawanproperties.com'
   const currentDate = new Date().toISOString().split('T')[0]
   
   const staticPages = [

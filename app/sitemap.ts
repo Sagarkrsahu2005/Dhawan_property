@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { properties } from '@/lib/property-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://dhavanproperties.com'
+  const baseUrl = 'https://www.dhawanproperties.com'
   
   // Static routes
   const routes = [

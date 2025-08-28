@@ -12,7 +12,7 @@ export interface SEOData {
   structuredData?: any
 }
 
-export function generateSEOMetadata(data: SEOData, baseUrl: string = "https://dhavanproperties.com"): Metadata {
+export function generateSEOMetadata(data: SEOData, baseUrl: string = "https://www.dhawanproperties.com"): Metadata {
   const fullUrl = data.canonicalUrl ? `${baseUrl}${data.canonicalUrl}` : baseUrl
   
   return {
@@ -129,7 +129,7 @@ export function generatePropertySEO(property: any): SEOData {
 }
 
 export function generatePropertyStructuredData(property: any) {
-  const baseUrl = "https://dhavanproperties.com"
+  const baseUrl = "https://www.dhawanproperties.com"
   
   return {
     "@context": "https://schema.org",

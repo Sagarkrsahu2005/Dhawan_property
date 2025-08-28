@@ -15,8 +15,8 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
   "name": "Dhawan Properties",
-  "url": "https://dhavanproperties.com",
-  "logo": "https://dhavanproperties.com/dhawan-properties-logo.png",
+  "url": "https://www.dhawanproperties.com",
+  "logo": "https://www.dhawanproperties.com/dhawan-properties-logo.png",
   "description": "Premium real estate services with verified listings, local expertise, and end-to-end support. Find your dream property with Dhawan Properties.",
   "address": {
     "@type": "PostalAddress",

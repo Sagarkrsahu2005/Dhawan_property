@@ -13,7 +13,7 @@ Allow: /robots.txt
 Allow: /favicon.ico
 
 # Sitemap location
-Sitemap: https://dhavanproperties.com/sitemap.xml
+Sitemap: https://www.dhawanproperties.com/sitemap.xml
 
 # Crawl delay for bots
 Crawl-delay: 1
