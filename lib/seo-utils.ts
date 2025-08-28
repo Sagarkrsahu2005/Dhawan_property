@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { priorityKeywords, categoryKeywords } from "./expanded-keywords"
 
 export interface SEOData {
   title: string
@@ -87,6 +88,10 @@ export function generatePropertySEO(property: any): SEOData {
   const title = `${property.title} - ${property.location} | Dhawan Properties`
   const description = `${property.description.substring(0, 150)}... ${property.bedrooms} BHK ${property.type} property in ${property.location}. Area: ${property.area} sq ft. Contact Dhawan Properties for viewing.`
   
+  // Enhanced keyword generation using expanded keyword set
+  const locationKeywords = getLocationKeywords(property.location)
+  const propertyTypeKeywords = getPropertyTypeKeywords(property.type, property.bedrooms)
+  
   const keywords = [
     property.title.toLowerCase(),
     property.location.toLowerCase(),
@@ -98,7 +103,18 @@ export function generatePropertySEO(property: any): SEOData {
     "dhawan properties",
     property.location.split(",")[0]?.toLowerCase(),
     property.location.split(",")[1]?.trim().toLowerCase(),
+    
+    // Enhanced with location-specific keywords
+    ...locationKeywords.slice(0, 30),
+    
+    // Property type specific keywords
+    ...propertyTypeKeywords.slice(0, 20),
+    
+    // Amenity-based keywords
     ...property.amenities.slice(0, 5).map((a: string) => a.toLowerCase()),
+    
+    // Add high-priority keywords
+    ...priorityKeywords.slice(0, 20),
   ]
   
   return {
@@ -181,6 +197,7 @@ export function generateBlogSEO(title: string, excerpt: string, slug: string): S
 }
 
 export const defaultSEOKeywords = [
+  // Core brand and service keywords
   "dhawan properties",
   "real estate",
   "property for sale",
@@ -196,11 +213,11 @@ export const defaultSEOKeywords = [
   "verified listings",
   "premium properties",
   "luxury homes",
-  "apartments",
-  "villas",
-  "flats",
-  "independent houses",
-  "plots",
+  
+  // High-priority expanded keywords (top 100 from generated list)
+  ...priorityKeywords.slice(0, 100),
+  
+  // Location-specific keywords
   "property in gurgaon",
   "property in delhi",
   "property in noida",
@@ -210,5 +227,33 @@ export const defaultSEOKeywords = [
   "property in chennai",
   "property in hyderabad",
   "property in kolkata",
-  "property in ahmedabad"
+  "property in ahmedabad",
+  
+  // Service-specific keywords from generated categories
+  ...categoryKeywords.urgencyKeywords.slice(0, 50),
+  ...categoryKeywords.investmentKeywords.slice(0, 50),
 ]
+
+// Function to get location-specific keywords from our expanded set
+export function getLocationKeywords(location: string): string[] {
+  const city = location.toLowerCase().split(',')[0]?.trim()
+  
+  // Filter relevant keywords for the specific location
+  return priorityKeywords.filter(keyword => 
+    keyword.includes(city) || 
+    keyword.includes('property') || 
+    keyword.includes('real estate')
+  ).slice(0, 100) // Limit to 100 most relevant
+}
+
+// Function to get property-type specific keywords
+export function getPropertyTypeKeywords(propertyType: string, bedrooms?: number): string[] {
+  const type = propertyType.toLowerCase()
+  const bhk = bedrooms ? `${bedrooms} bhk` : ''
+  
+  return priorityKeywords.filter(keyword => {
+    const containsType = keyword.includes(type) || keyword.includes('property') || keyword.includes('apartment')
+    const containsBhk = !bhk || keyword.includes(bhk)
+    return containsType && containsBhk
+  }).slice(0, 50)
+}
