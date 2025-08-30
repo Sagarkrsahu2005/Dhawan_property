@@ -81,7 +81,7 @@ const blogPosts = {
       <p>Document verification is not just a formality—it's your protection against fraud and legal issues. Take the time to thoroughly verify all documents, and don't hesitate to seek professional help when needed. Remember, it's better to be cautious now than to face problems later.</p>
     `,
     image: "/modern-apartment-building.png",
-    author: "Rajesh Dhawan",
+    author: "kapil dhawan",
     publishDate: "2024-01-15",
     readTime: "8 min read",
     category: "Legal Guide",
@@ -188,7 +188,7 @@ const blogPosts = {
       <p>A thorough neighborhood evaluation can save you from future regrets and ensure a better quality of life. Take your time to research and visit multiple times before making your final decision. Remember, you're not just buying a property—you're choosing a lifestyle.</p>
     `,
     image: "/comfortable-family-house.png",
-    author: "Priya Sharma",
+    author: "Kapil Dhawan",
     publishDate: "2024-01-10",
     readTime: "6 min read",
     category: "Buying Guide",

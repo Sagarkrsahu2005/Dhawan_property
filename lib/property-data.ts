@@ -38,11 +38,110 @@ export interface Property {
   nearbyPlaces?: { name: string; distance: string; type: string; }[];
   agent?: { name: string; phone: string; email: string; image: string; };
   mapEmbedUrl?: string;
+  brochures?: { 
+    title: string; 
+    type: string; 
+    fileUrl: string; 
+    thumbnail?: string; 
+    description?: string; 
+  }[];
   locationImage?: string;
   locationLink?: string;
 }
 
 export const properties: Property[] = [
+  // Latest Project - Landmark Skyvue (Featured as Hero Project)
+  {
+    id: 19,
+    title: "Landmark Skyvue",
+    location: "Sector 103, Dwarka Expressway, Gurgaon/Gurugram, Haryana",
+    bedrooms: 3,
+    bathrooms: 3,
+    area: 2920,
+    yearBuilt: 2028,
+    type: "residential",
+    status: "new-launch",
+    tag: "Ultra Luxury Twin Towers",
+    image: "https://projectsgurgaon.in/wp-content/uploads/2025/07/Landmark-Skyvue-Image-1.jpeg",
+    amenities: [
+      "500 Feet Iconic Twin Towers",
+      "Cantilevered Crown Design",
+      "Ultra-Low Density - Only 60 Apartments Per Acre",
+      "Triple Podium Living Concept (50 Ft High)",
+      "Grand Clubhouse with Lush Green Rooftop",
+      "Wraparound Balconies for 360° Views",
+      "Infinity Pool & Temperature-Controlled Swimming Pool",
+      "All Units 3-Side Open for Maximum Sunlight",
+      "Private Lifts for 4.5 BHK Residences",
+      "Sky Lounge & Observation Deck",
+      "Triple-Height Entrance Lobby (35 Ft)",
+      "Vehicular-Free Movement Zone",
+      "Over 50 Amenities Across Clubhouse",
+      "30m-Wide Sector Road Access",
+      "A-Grade Construction Partner",
+      "Extra-Large Living & Family Lounge",
+      "Two Master Bedrooms Per Unit",
+      "Barcode Screening in Balconies",
+      "Eco-Friendly Rooftop Terrace",
+      "Panoramic City Views"
+    ],
+    images: [
+      "https://projectsgurgaon.in/wp-content/uploads/2025/07/Landmark-Skyvue-Image-1.jpeg",
+      "https://projectsgurgaon.in/wp-content/uploads/2025/07/Landmark-Skyvue-image-2.jpeg",
+      "https://projectsgurgaon.in/wp-content/uploads/2025/07/Landmark-Skyvue-image-4.jpg"
+    ],
+    description: `Landmark Skyvue is a revolutionary ultra-luxury residential project in Sector 103, Gurgaon, featuring iconic 500-feet twin towers with a unique cantilevered crown design. This project sets new benchmarks in luxury living with ultra-low density of only 60 apartments per acre across 4 acres, introducing India's first triple podium lifestyle concept rising 50 feet above ground. The development offers panoramic 360° views through wraparound balconies, premium clubhouse with eco-friendly rooftop terrace, and over 50 world-class amenities including infinity pool, sky lounge, and vehicular-free environment for ultimate luxury and safety.`,
+    projectSpecs: {
+      landParcel: "4 Acres",
+      towers: 2,
+      floors: "G+50 (500 Ft Height)",
+      totalUnits: "240 (Ultra-Low Density: 60 Per Acre)",
+      clubHouse: "Premium with Eco-Friendly Rooftop Terrace",
+      carParking: "Multi-Level Parking",
+      possession: "2028",
+      rera: "Coming Soon",
+      threeSideOpen: true,
+      paymentPlan: "30:40:30 with 3-Year Payment Holiday"
+    },
+    floorPlans: {
+      "3 BHK": [
+        { image: "https://assets.nobroker.in/media/building/8a9f8585985429a20198547e544f1413/floorPlan/Q6NzOlGoTq1753766015731/Q6NzOlGoTq1753766015731_floorPlan_TlLf4Fv3ES1753766779214.jpg", label: "3 BHK", downloadUrl: "https://assets.nobroker.in/media/building/8a9f8585985429a20198547e544f1413/floorPlan/Q6NzOlGoTq1753766015731/Q6NzOlGoTq1753766015731_floorPlan_TlLf4Fv3ES1753766779214.jpg", size: "2,920 sq. ft." }
+      ],
+      "4.5 BHK": [
+        { image: "https://assets.nobroker.in/media/building/8a9f8585985429a20198547e544f1413/floorPlan/mlIYG627zt1753766053976/mlIYG627zt1753766053976_floorPlan_1Sp8rdaQSg1753766792911.jpg", label: "4.5 BHK", downloadUrl: "https://assets.nobroker.in/media/building/8a9f8585985429a20198547e544f1413/floorPlan/mlIYG627zt1753766053976/mlIYG627zt1753766053976_floorPlan_1Sp8rdaQSg1753766792911.jpg", size: "3,930 sq. ft." }
+      ]
+    },
+    nearbyPlaces: [
+      { name: "Dwarka Expressway", type: "Expressway", distance: "400 meters" },
+      { name: "IGI Airport", type: "Airport", distance: "25 min" },
+      { name: "Cyber City", type: "Business Hub", distance: "20 min" },
+      { name: "Delhi Border", type: "City Access", distance: "15 min" },
+      { name: "Institutional Area", type: "Educational Hub", distance: "5 min" }
+    ],
+    agent: {
+      name: "Kapil Dhawan",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
+      image: "/professional-real-estate-agent.png"
+    },
+    brochures: [
+      {
+        title: "Landmark Skyvue Price List",
+        type: "Price List & Floor Plans",
+        fileUrl: "/landmark-skyvue-brochure.pdf",
+        thumbnail: "https://projectsgurgaon.in/wp-content/uploads/2025/07/Landmark-Skyvue-Image-1.jpeg",
+        description: "Complete pricing details, floor plans, and specifications for Landmark Skyvue ultra-luxury twin towers."
+      },
+      {
+        title: "Landmark Skyvue Master Brochure",
+        type: "Project Brochure",
+        fileUrl: "/landmark-skyvue-brochure.pdf",
+        thumbnail: "https://projectsgurgaon.in/wp-content/uploads/2025/07/Landmark-Skyvue-image-2.jpeg",
+        description: "Comprehensive project overview including amenities, location benefits, and investment highlights."
+      }
+    ],
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.7411967033036!2d76.9926244!3d28.4873397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d17d3b17a1fa1%3A0x21f42ebd56d1a617!2sLandmark%20Skyvue%20Experience%20Center!5e0!3m2!1sen!2sin!4v1756542842092!5m2!1sen!2sin"
+  },
 
   {
     id: 18,
@@ -898,9 +997,9 @@ export const properties: Property[] = [
       { name: "Sri Balaji’s Multi Hospital", type: "Hospital", distance: "4 KM" }
     ],
     agent: {
-      name: "Rajesh Dhawan",
+      name: "kapil dhawan",
       phone: "+91 9999628400",
-      email: "rajesh@dhawanproperties.in",
+      email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     },
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.0728199387304!2d76.96204607524632!3d28.447753975766148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d17f4df92b62f%3A0xdcd397ed9699b44c!2sNavraj%20-%20The%20Kingstown%20Heights!5e1!3m2!1sen!2sin!4v1756041913505!5m2!1sen!2sin"
@@ -1339,6 +1438,126 @@ QUALITY CONSTRUCTION ON 60 METER ROAD AND NEAR TO DELHI.`,
       image: "/professional-real-estate-agent.png"
     },
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13232.130445476601!2d76.973437!3d28.417046!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3daba8918f95%3A0x5c81fa76593240e6!2sKrisumi%20Waterfall%20Residences%20Gurgaon!5e1!3m2!1sen!2sus!4v1756039659792!5m2!1sen!2sus"
+  },
+
+  // Westin Residences Gurugram - Sector 103
+  {
+    id: 20,
+    title: "Whiteland Westin Residences",
+    location: "Sector 103, Dwarka Expressway, Gurgaon",
+    bedrooms: 3,
+    bathrooms: 3,
+    area: 2773,
+    yearBuilt: 2026,
+    type: "residential",
+    status: "new-launch",
+    tag: "Managed by Marriott International",
+    image: "https://images.squarespace-cdn.com/content/v1/682d1a4ec0632f5aa1897927/d88439de-21cb-497e-9115-420b7a0fca2c/Westin+Residences+Gurugram+Render_Club+Drop+Off.jpg",
+    amenities: [
+      "Managed by Marriott International - The Westin",
+      "7-Star Clubhouse (1.75-2 Lakh Sq. Ft.)",
+      "Finger-Touched Automated Homes",
+      "Breathtaking Views of Aravalli & Clubhouse",
+      "Vastu Compliant Architecture",
+      "Wellness Amenities (Spa, Yoga Studio, Meditation Zones)",
+      "On-site Private Guest Suites",
+      "Multi-dome Luxe Clubhouse",
+      "In-house Theatre",
+      "Pickle-ball Courts",
+      "Restaurants & Cafes",
+      "Turkish Baths",
+      "Heated Olympic Sized Swimming Pool",
+      "Naturally Lit Green Basement Concept",
+      "Welcoming Water Bodies",
+      "24x7 Hotel Inspired Concierge Services",
+      "Butler Services",
+      "Spectacular City Views from 43rd Floor",
+      "Scientifically Designed Layouts",
+      "VR Golf Zone",
+      "Celestial Waters",
+      "Gastronomic Haven",
+      "Gym & Yoga",
+      "Healing Pavilion",
+      "6 Dimensions of Well-being"
+    ],
+    images: [
+      "https://images.squarespace-cdn.com/content/v1/682d1a4ec0632f5aa1897927/d88439de-21cb-497e-9115-420b7a0fca2c/Westin+Residences+Gurugram+Render_Club+Drop+Off.jpg",
+      "https://www.larisarealtech.com/wp-content/uploads/2024/11/Whiteland-Westin-Residences-103.jpg",
+      "https://www.larisarealtech.com/wp-content/uploads/2024/11/Westin-Residences-Dwarka-Expressway.jpg",
+      "https://www.realtynmore.com/wp-content/uploads/2025/06/Whiteland-103-Landscape-Cam01-scaled.jpg"
+    ],
+    description: `Whiteland Westin Residences in Sector 103, Dwarka Expressway, Gurgaon, offers spacious and luxurious 3.5 and 4.5 BHK apartments. Managed by Marriott International - The Westin, this project promises a refined living experience with sophisticated design, modern conveniences, and a prime location. Live the Westin-way with premium residences, 7-star amenities, and unmatched comfort. Experience 5-star hospitality with hotel-inspired concierge services, butler services, and a magnificent multi-dome clubhouse featuring in-house theatre, cafes, restaurants & multi-podium amenities.`,
+    floorPlans: {
+      "3.5 BHK": [
+        {
+          image: "https://westinresidences103.com/wp-content/uploads/2025/07/New-Project-7.png",
+          label: "3.5 BHK - 2773 & 2939 Sq.Ft.",
+          downloadUrl: "https://westinresidences103.com/wp-content/uploads/2025/07/New-Project-7.png",
+          size: "2773 - 2939 Sq.Ft."
+        }
+      ],
+      "4.5 BHK": [
+        {
+          image: "https://westinresidences103.com/wp-content/uploads/2025/07/4bhk-floor-plan.webp",
+          label: "4.5 BHK - 3750 & 4328 Sq.Ft.",
+          downloadUrl: "https://westinresidences103.com/wp-content/uploads/2025/07/4bhk-floor-plan.webp",
+          size: "3750 - 4328 Sq.Ft."
+        }
+      ]
+    },
+    sizes: [
+      { type: "3.5 BHK", size: "2773 - 2939 Sq.Ft." },
+      { type: "4.5 BHK", size: "3750 - 4328 Sq.Ft." }
+    ],
+    projectSpecs: {
+      landParcel: "21 Acres",
+      towers: 1,
+      floors: "42 Floors per tower",
+      totalUnits: "Around 1,302 units",
+      clubHouse: "Exclusive 7-Star Clubhouse (1.75-2 Lakh Sq. Ft.)",
+      carParking: "Dedicated parking spaces for each unit",
+      possession: "2026",
+      rera: "HARERA license 65, 66, 67 of 2024",
+      paymentPlan: "Starting From ₹6.75 Cr"
+    },
+    nearbyPlaces: [
+      { name: "IGI Airport", distance: "15 Minutes Drive", type: "transport" },
+      { name: "DPS - Delhi Public School, Gurugram", distance: "Adjacent", type: "education" },
+      { name: "Golf Course Extension Road", distance: "15 Minutes", type: "connectivity" },
+      { name: "Diplomatic Enclave", distance: "20 Minutes", type: "commercial" },
+      { name: "NH8", distance: "Direct Access", type: "connectivity" },
+      { name: "Dwarka Expressway", distance: "Direct Access", type: "connectivity" }
+    ],
+    agent: {
+      name: "Kapil Dhawan",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
+      image: "/professional-real-estate-agent.png"
+    },
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112221.42895447361!2d76.9869676!3d28.4819662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1757227a24a3%3A0x958454db86d3888c!2sWestin%20Residences%20Gurugram%20-%20Sector%20103%20Gurgaon!5e0!3m2!1sen!2sin!4v1756546742266!5m2!1sen!2sin",
+    brochures: [
+      {
+        title: "Official Info Docket",
+        type: "Info Docket",
+        fileUrl: "/westin-residences-info-docket.pdf",
+        thumbnail: "https://images.squarespace-cdn.com/content/v1/682d1a4ec0632f5aa1897927/d88439de-21cb-497e-9115-420b7a0fca2c/Westin+Residences+Gurugram+Render_Club+Drop+Off.jpg",
+        description: "Official WhatsApp Info Docket with comprehensive project details, pricing, and specifications"
+      },
+      {
+        title: "Westin Residences Brochure",
+        type: "Project Brochure",
+        fileUrl: "/westin-residences-brochure.pdf",
+        thumbnail: "https://images.squarespace-cdn.com/content/v1/682d1a4ec0632f5aa1897927/d88439de-21cb-497e-9115-420b7a0fca2c/Westin+Residences+Gurugram+Render_Club+Drop+Off.jpg",
+        description: "Complete project details including floor plans, amenities, and pricing"
+      },
+      {
+        title: "Floor Plans & Specifications",
+        type: "Floor Plans",
+        fileUrl: "/westin-residences-floor-plans.pdf",
+        thumbnail: "https://westinresidences103.com/wp-content/uploads/2025/07/New-Project-7.png",
+        description: "Detailed floor plans for 3.5 BHK and 4.5 BHK apartments"
+      }
+    ]
   }
 ];
 
@@ -1359,4 +1578,84 @@ export const getPropertiesByLocation = (location: string): Property[] => {
   return properties.filter(property => 
     property.location.toLowerCase().includes(location.toLowerCase())
   )
+}
+
+// Helper function to get properties sorted by newest first (highest ID first)
+export const getPropertiesSortedByNewest = (): Property[] => {
+  return [...properties].sort((a, b) => b.id - a.id)
+}
+
+// Helper function to get latest property (newest by ID)
+export const getLatestProperty = (): Property => {
+  return getPropertiesSortedByNewest()[0]
+}
+
+// Helper function to get similar properties based on current property
+export const getSimilarProperties = (currentPropertyId: number, limit: number = 3): Property[] => {
+  const currentProperty = getPropertyById(currentPropertyId.toString())
+  if (!currentProperty) return []
+
+  // Filter properties similar to current one
+  const similarProperties = properties.filter(property => {
+    // Exclude the current property
+    if (property.id === currentPropertyId) return false
+    
+    // Priority matching criteria
+    const sameLocation = property.location.toLowerCase().includes(currentProperty.location.toLowerCase().split(',')[0].toLowerCase())
+    const sameBedrooms = property.bedrooms === currentProperty.bedrooms
+    const sameType = property.type === currentProperty.type
+    const similarStatus = property.status === currentProperty.status
+    
+    // Score-based matching (higher score = more similar)
+    let similarity = 0
+    if (sameLocation) similarity += 4 // Location is most important
+    if (sameBedrooms) similarity += 3 // Bedroom count is important
+    if (sameType) similarity += 2 // Property type matters
+    if (similarStatus) similarity += 1 // Status is least important
+    
+    // Return properties with at least some similarity
+    return similarity >= 2
+  })
+
+  // Sort by similarity score and take the limit
+  const sortedSimilar = similarProperties
+    .map(property => {
+      let similarity = 0
+      const sameLocation = property.location.toLowerCase().includes(currentProperty.location.toLowerCase().split(',')[0].toLowerCase())
+      const sameBedrooms = property.bedrooms === currentProperty.bedrooms
+      const sameType = property.type === currentProperty.type
+      const similarStatus = property.status === currentProperty.status
+      
+      if (sameLocation) similarity += 4
+      if (sameBedrooms) similarity += 3
+      if (sameType) similarity += 2
+      if (similarStatus) similarity += 1
+      
+      return { property, similarity }
+    })
+    .sort((a, b) => b.similarity - a.similarity)
+    .map(item => item.property)
+    .slice(0, limit)
+
+  // If we don't have enough similar properties, fill with newest properties
+  if (sortedSimilar.length < limit) {
+    const newestProperties = getPropertiesSortedByNewest()
+      .filter(property => property.id !== currentPropertyId)
+      .filter(property => !sortedSimilar.some(similar => similar.id === property.id))
+      .slice(0, limit - sortedSimilar.length)
+    
+    return [...sortedSimilar, ...newestProperties]
+  }
+
+  return sortedSimilar
+}
+
+// Debug helper to verify property ordering (can be removed in production)
+export const debugPropertyOrder = () => {
+  const sorted = getPropertiesSortedByNewest()
+  console.log("Properties sorted by newest first (ID order):")
+  sorted.slice(0, 5).forEach((prop, index) => {
+    console.log(`${index + 1}. ID: ${prop.id} - ${prop.title}`)
+  })
+  console.log("Latest property:", getLatestProperty().title, `(ID: ${getLatestProperty().id})`)
 }

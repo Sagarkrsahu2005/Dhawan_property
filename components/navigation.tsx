@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Phone, Menu, X } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import PropertySearch from "@/components/property-search"
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -55,8 +56,18 @@ export default function Navigation() {
             ))}
           </div>
 
+          {/* Desktop Search */}
+          <div className="hidden lg:flex items-center">
+            <PropertySearch />
+          </div>
+
           {/* Call Button & Mobile Menu Toggle */}
           <div className="flex items-center space-x-4">
+            {/* Mobile Search */}
+            <div className="lg:hidden">
+              <PropertySearch isMobile />
+            </div>
+
             <a href="tel:+919999628400">
               <Button className="bg-navy-900 hover:bg-navy-800 text-white">
                 <Phone className="w-4 h-4 mr-2" />

@@ -38,7 +38,9 @@ import {
   ArrowRight,
 } from "lucide-react"
 import Link from "next/link"
-import { getPropertyById } from "@/lib/property-data"
+import { getPropertyById, properties, getSimilarProperties } from "@/lib/property-data"
+import BrochureDownload from "@/components/brochure-download"
+import Navigation from "@/components/navigation"
 
 export default function PropertyDetailPage({ params }: { params: { id: string } }) {
   // Quick Enquiry form state
@@ -97,6 +99,16 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
   // Handle params - could be a Promise or already resolved
   const resolvedParams = params instanceof Promise ? React.use(params) : params
   const propertyData = getPropertyById(resolvedParams.id)
+
+  // Get similar properties for this property
+  const similarProperties = propertyData ? getSimilarProperties(propertyData.id, 3) : []
+
+  // Debug log for similar properties (can be removed in production)
+  useEffect(() => {
+    if (propertyData && similarProperties.length > 0) {
+      console.log(`Similar properties for "${propertyData.title}":`, similarProperties.map(p => ({ id: p.id, title: p.title })))
+    }
+  }, [propertyData, similarProperties])
 
   // If property not found, show error
   if (!propertyData) {
@@ -204,44 +216,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-white/20 shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
-                <img 
-                  src="/dhawan-properties-logo.png"
-                  alt="Dhawan Properties"
-                  className="h-12 w-auto"
-                />
-              </Link>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-gray-700 hover:text-navy-900 transition-colors">
-                Home
-              </Link>
-              <Link href="/properties" className="text-gray-700 hover:text-navy-900 transition-colors">
-                Properties
-              </Link>
-              <Link href="/about" className="text-gray-700 hover:text-navy-900 transition-colors">
-                About
-              </Link>
-              <Link href="/blog" className="text-gray-700 hover:text-navy-900 transition-colors">
-                Blog
-              </Link>
-              <Link href="/contact" className="text-gray-700 hover:text-navy-900 transition-colors">
-                Contact
-              </Link>
-            </div>
-            <a href="tel:+919999628400">
-              <Button className="bg-navy-900 hover:bg-navy-800 text-white">
-                <Phone className="w-4 h-4 mr-2" />
-                Call Now
-              </Button>
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Breadcrumbs */}
       <div className="bg-white/60 backdrop-blur-sm py-4">
@@ -434,13 +409,13 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                   Call Now
                 </Button>
               </a>
-              <Button
+              {/* <Button
                 variant="outline"
                 className="w-full border-gold-500 text-gold-600 hover:bg-gold-500 hover:text-white bg-transparent"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Download Brochure
-              </Button>
+              </Button> */}
             </div>
           </div>
         </div>
@@ -578,6 +553,16 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                 )}
               </div>
             </div>
+
+            {/* Brochure Downloads */}
+            {propertyData.brochures && propertyData.brochures.length > 0 && (
+              <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
+                <BrochureDownload 
+                  propertyTitle={propertyData.title}
+                  brochures={propertyData.brochures}
+                />
+              </div>
+            )}
 
             {propertyData.floorPlans && Object.keys(propertyData.floorPlans).length > 0 && (
               <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
@@ -924,33 +909,40 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
             <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-6 shadow-2xl">
               <h3 className="text-xl font-bold text-navy-900 mb-4">Similar Properties</h3>
               <div className="space-y-4">
-                {[
-                  { id: 1, title: "3 BHK Apartment", location: "Sector 45, Gurgaon", price: "₹2.1 Cr" },
-                  { id: 2, title: "4 BHK Villa", location: "Sector 50, Gurgaon", price: "₹3.8 Cr" },
-                  { id: 3, title: "2 BHK Flat", location: "Sector 43, Gurgaon", price: "₹1.5 Cr" },
-                ].map((item) => (
-                  <Link key={item.id} href={`/properties/${item.id}`}>
-                    <div className="flex space-x-3 p-3 backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl hover:bg-white/40 transition-all cursor-pointer">
-                      <img
-                        src="/comfortable-family-house.png"
-                        alt="Similar property"
-                        className="w-16 h-16 rounded-lg object-cover"
-                      />
-                      <div className="flex-1">
-                        <div className="font-semibold text-navy-900 text-sm">{item.title}</div>
-                        <div className="text-xs text-gray-600">{item.location}</div>
-                        <div className="text-gold-600 font-semibold text-sm">{item.price}</div>
+                {similarProperties.length > 0 ? (
+                  similarProperties.map((property) => (
+                    <Link key={property.id} href={`/properties/${property.id}`}>
+                      <div className="flex space-x-3 p-3 backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl hover:bg-white/40 transition-all cursor-pointer">
+                        <img
+                          src={property.image || "/comfortable-family-house.png"}
+                          alt={property.title}
+                          className="w-16 h-16 rounded-lg object-cover"
+                        />
+                        <div className="flex-1">
+                          <div className="font-semibold text-navy-900 text-sm">{property.title}</div>
+                          <div className="text-xs text-gray-600">{property.location}</div>
+                          <div className="flex items-center gap-2 mt-1">
+                            <Badge className="text-xs bg-blue-100 text-blue-800">{property.status}</Badge>
+                            <span className="text-xs text-gray-400">{property.bedrooms} BHK</span>
+                            <span className="text-xs text-gray-400">•</span>
+                            <span className="text-xs text-gray-400">{property.area} sq.ft</span>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
-                ))}
+                    </Link>
+                  ))
+                ) : (
+                  <div className="text-center text-gray-500 py-4">
+                    <p>No similar properties found.</p>
+                  </div>
+                )}
               </div>
               <Link href="/properties">
                 <Button
                   variant="outline"
                   className="w-full mt-4 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white bg-transparent"
                 >
-                  View All Similar
+                  View All Properties
                 </Button>
               </Link>
             </div>

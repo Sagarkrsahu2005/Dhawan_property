@@ -6,8 +6,9 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-import { properties } from "@/lib/property-data"
+import { properties, getPropertiesSortedByNewest, getLatestProperty } from "@/lib/property-data"
 import { MapPin, Bed, Bath, Square, Phone, Mail, Filter, Grid, List, Search, SlidersHorizontal } from "lucide-react"
+import Navigation from "@/components/navigation"
 
 export default function PropertiesPage() {
   // Pagination state
@@ -23,9 +24,14 @@ export default function PropertiesPage() {
   const [sortBy, setSortBy] = useState("newest")
   const [searchTerm, setSearchTerm] = useState("")
 
+  // Get properties sorted by newest first as the base
+  const sortedPropertiesBase = getPropertiesSortedByNewest()
+  
+  // Get the latest property for special badge
+  const latestProperty = getLatestProperty()
 
-  // Filtering logic (simplified, you can expand as needed)
-  let filteredProperties = properties.filter((property) => {
+  // Filtering logic (using sorted properties as base)
+  let filteredProperties = sortedPropertiesBase.filter((property) => {
     let matchesType = propertyType === "all" || property.type === propertyType
     let matchesLocation = location === "all" || property.location.toLowerCase().includes(location.toLowerCase())
     let matchesStatus = status === "all" || property.status === status
@@ -54,34 +60,7 @@ export default function PropertiesPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 backdrop-blur-md bg-white/80 border-b border-white/20 shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <a href="/" className="flex items-center hover:opacity-80 transition-opacity">
-                <img 
-                  src="/dhawan-properties-logo.png"
-                  alt="Dhawan Properties"
-                  className="h-12 w-auto"
-                />
-              </a>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="/" className="text-gray-700 hover:text-navy-900 transition-colors">Home</a>
-              <a href="/properties" className="text-gray-700 hover:text-navy-900 transition-colors">Properties</a>
-              <a href="/about" className="text-gray-700 hover:text-navy-900 transition-colors">About</a>
-              <a href="/blog" className="text-gray-700 hover:text-navy-900 transition-colors">Blog</a>
-              <a href="/contact" className="text-gray-700 hover:text-navy-900 transition-colors">Contact</a>
-            </div>
-            <a href="tel:+919999628400">
-              <Button className="bg-navy-900 hover:bg-navy-800 text-white">
-                <Phone className="w-4 h-4 mr-2" />
-                Call Now
-              </Button>
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Breadcrumbs */}
       <div className="bg-white/60 backdrop-blur-sm py-4">
@@ -226,7 +205,11 @@ export default function PropertiesPage() {
                   <Card key={property.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
                     <div className="relative">
                       <img src={property.image || "/placeholder.svg"} alt={property.title} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
-                      <Badge className="absolute top-4 left-4 bg-gold-500 text-navy-900">{property.tag}</Badge>
+                      {property.id === latestProperty.id ? (
+                        <Badge className="absolute top-4 left-4 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 font-semibold shadow-lg">Latest Project</Badge>
+                      ) : (
+                        <Badge className="absolute top-4 left-4 bg-gold-500 text-navy-900">{property.tag}</Badge>
+                      )}
                     </div>
                     <CardContent className="p-6">
                       <div className="mb-2">
@@ -274,7 +257,11 @@ export default function PropertiesPage() {
                       <div className="flex flex-col lg:flex-row gap-6">
                         <div className="lg:w-80 relative">
                           <img src={property.image || "/placeholder.svg"} alt={property.title} className="w-full h-48 lg:h-32 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300" />
-                          <Badge className="absolute top-2 left-2 bg-gold-500 text-navy-900 text-xs">{property.tag}</Badge>
+                          {property.id === latestProperty.id ? (
+                            <Badge className="absolute top-2 left-2 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 font-semibold shadow-lg text-xs">Latest Project</Badge>
+                          ) : (
+                            <Badge className="absolute top-2 left-2 bg-gold-500 text-navy-900 text-xs">{property.tag}</Badge>
+                          )}
                         </div>
                         <div className="flex-1">
                           <div className="mb-2">

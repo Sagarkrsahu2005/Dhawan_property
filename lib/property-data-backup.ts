@@ -167,9 +167,9 @@ export const properties: Property[] = [
       }
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -196,9 +196,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -248,9 +248,9 @@ export const properties: Property[] = [
       "clubHouse": "65000 SQ FT"
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -342,9 +342,9 @@ export const properties: Property[] = [
       }
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -428,9 +428,9 @@ export const properties: Property[] = [
       }
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -528,9 +528,9 @@ export const properties: Property[] = [
       }
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -625,9 +625,9 @@ export const properties: Property[] = [
       }
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -732,9 +732,9 @@ export const properties: Property[] = [
       }
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -816,9 +816,9 @@ export const properties: Property[] = [
       }
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -906,9 +906,9 @@ export const properties: Property[] = [
       }
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -999,9 +999,9 @@ export const properties: Property[] = [
       }
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1036,9 +1036,9 @@ export const properties: Property[] = [
       ]
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1064,9 +1064,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1092,9 +1092,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1136,9 +1136,9 @@ export const properties: Property[] = [
       ]
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1164,9 +1164,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1249,9 +1249,9 @@ export const properties: Property[] = [
       }
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1286,9 +1286,9 @@ export const properties: Property[] = [
       ]
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1314,9 +1314,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1406,9 +1406,9 @@ export const properties: Property[] = [
       }
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1434,9 +1434,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1471,9 +1471,9 @@ export const properties: Property[] = [
       ]
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1499,9 +1499,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1527,9 +1527,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1571,9 +1571,9 @@ export const properties: Property[] = [
       ]
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1599,9 +1599,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1691,9 +1691,9 @@ export const properties: Property[] = [
       }
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1719,9 +1719,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1763,9 +1763,9 @@ export const properties: Property[] = [
       ]
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1791,9 +1791,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1877,9 +1877,9 @@ export const properties: Property[] = [
       }
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1906,9 +1906,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1943,9 +1943,9 @@ export const properties: Property[] = [
       ]
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -1971,9 +1971,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2015,9 +2015,9 @@ export const properties: Property[] = [
       ]
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2044,9 +2044,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2072,9 +2072,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2116,9 +2116,9 @@ export const properties: Property[] = [
       ]
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2146,9 +2146,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2174,9 +2174,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2211,9 +2211,9 @@ export const properties: Property[] = [
       ]
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2239,9 +2239,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2267,9 +2267,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2296,9 +2296,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2347,9 +2347,9 @@ export const properties: Property[] = [
       ]
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2375,9 +2375,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2404,9 +2404,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2455,9 +2455,9 @@ export const properties: Property[] = [
       ]
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2483,9 +2483,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2511,9 +2511,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2555,9 +2555,9 @@ export const properties: Property[] = [
       ]
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2583,9 +2583,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2620,9 +2620,9 @@ export const properties: Property[] = [
       ]
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2648,9 +2648,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2747,9 +2747,9 @@ export const properties: Property[] = [
       }
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2813,9 +2813,9 @@ export const properties: Property[] = [
       "possession": "2031"
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2857,9 +2857,9 @@ export const properties: Property[] = [
       ]
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2886,9 +2886,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -2914,9 +2914,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3005,9 +3005,9 @@ export const properties: Property[] = [
       }
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3033,9 +3033,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3061,9 +3061,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3090,9 +3090,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3123,9 +3123,9 @@ export const properties: Property[] = [
       "landParcel": "8 Acres"
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3156,9 +3156,9 @@ export const properties: Property[] = [
       "clubHouse": "r3ivyom729y5vent3oo4x7x1l4q0rwljh4l1nyoefk.jpg\" title=\"clubhouse\" alt=\"Krisumi Waterfall Residence club house\" loading=\"lazy\" />"
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3185,9 +3185,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3218,9 +3218,9 @@ export const properties: Property[] = [
       "clubHouse": "r3ivyom729y5vent3oo4x7x1l4q0rwljh4l1nyoefk.jpg\" title=\"clubhouse\" alt=\"Krisumi Waterfall Residence club house\" loading=\"lazy\" />"
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3262,9 +3262,9 @@ export const properties: Property[] = [
       ]
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3290,9 +3290,9 @@ export const properties: Property[] = [
       "/placeholder.svg"
     ],
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3337,9 +3337,9 @@ export const properties: Property[] = [
       "towers": 5
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3387,9 +3387,9 @@ export const properties: Property[] = [
       "floors": "G+37"
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3444,9 +3444,9 @@ export const properties: Property[] = [
       "landParcel": "65 Acres"
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3498,9 +3498,9 @@ export const properties: Property[] = [
       "landParcel": "12 Acres"
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3549,9 +3549,9 @@ export const properties: Property[] = [
       "possession": "2024"
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3597,9 +3597,9 @@ export const properties: Property[] = [
       "landParcel": "5 Acres"
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3638,9 +3638,9 @@ export const properties: Property[] = [
       "landParcel": "5 Acres"
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3682,9 +3682,9 @@ export const properties: Property[] = [
       "possession": "2026"
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3726,9 +3726,9 @@ export const properties: Property[] = [
       "possession": "2032"
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3782,9 +3782,9 @@ export const properties: Property[] = [
       "possession": "4227"
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3815,9 +3815,9 @@ export const properties: Property[] = [
       "landParcel": "5 Acres"
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },
@@ -3877,9 +3877,9 @@ export const properties: Property[] = [
       "possession": "2028"
     },
     "agent": {
-      "name": "Rajesh Dhawan",
-      "phone": "+91 98765 43210",
-      "email": "rajesh@dhawanproperties.in",
+      "name": "kapil dhawan",
+      "phone": "+91 99996 28400",
+      "email": "Dhawanproperties2019@gmail.com",
       "image": "/professional-real-estate-agent.png"
     }
   },

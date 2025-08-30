@@ -3,37 +3,38 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { MapPin, Phone, Mail, Award, Building, Shield, CheckCircle, Star, Target, Eye, Heart } from "lucide-react"
 import Link from "next/link"
+import Navigation from "@/components/navigation"
 
-const teamMembers = [
-  {
-    name: "Rajesh Dhawan",
-    role: "Founder & CEO",
-    experience: "15+ Years",
-    image: "/professional-real-estate-agent.png",
-    specialization: "Luxury Properties & Investment",
-  },
-  {
-    name: "Priya Sharma",
-    role: "Senior Property Consultant",
-    experience: "8+ Years",
-    image: "/professional-real-estate-agent.png",
-    specialization: "Residential Sales & Leasing",
-  },
-  {
-    name: "Amit Kumar",
-    role: "Commercial Property Expert",
-    experience: "10+ Years",
-    image: "/professional-real-estate-agent.png",
-    specialization: "Commercial & Industrial",
-  },
-  {
-    name: "Neha Gupta",
-    role: "Legal & Documentation Head",
-    experience: "12+ Years",
-    image: "/professional-real-estate-agent.png",
-    specialization: "Property Law & RERA Compliance",
-  },
-]
+// const teamMembers = [
+//   {
+//     name: "kapil dhawan",
+//     role: "Founder & CEO",
+//     experience: "15+ Years",
+//     image: "/professional-real-estate-agent.png",
+//     specialization: "Luxury Properties & Investment",
+//   },
+//   {
+//     name: "Kapil Dhawan",
+//     role: "Senior Property Consultant",
+//     experience: "8+ Years",
+//     image: "/professional-real-estate-agent.png",
+//     specialization: "Residential Sales & Leasing",
+//   },
+//   {
+//     name: "Amit Kumar",
+//     role: "Commercial Property Expert",
+//     experience: "10+ Years",
+//     image: "/professional-real-estate-agent.png",
+//     specialization: "Commercial & Industrial",
+//   },
+//   {
+//     name: "Neha Gupta",
+//     role: "Legal & Documentation Head",
+//     experience: "12+ Years",
+//     image: "/professional-real-estate-agent.png",
+//     specialization: "Property Law & RERA Compliance",
+//   },
+// ]
 
 const certifications = [
   { name: "RERA Registered", id: "RERA/GGM/2023/001234" },
@@ -42,48 +43,13 @@ const certifications = [
   { name: "Member - CREDAI", id: "CREDAI/NCR/2023" },
 ]
 
-const serviceLocations = ["Gurgaon", "Delhi", "Noida", "Faridabad", "Greater Noida", "Manesar"]
+const serviceLocations = ["Gurgaon", "Delhi", "Vrindavan", "Pune", "Greater Noida", "Navi Mumbai"]
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
-                <img 
-                  src="/dhawan-properties-logo.png"
-                  alt="Dhawan Properties"
-                  className="h-12 w-auto"
-                />
-              </Link>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-gray-700 hover:text-navy-900 transition-colors">
-                Home
-              </Link>
-              <Link href="/properties" className="text-gray-700 hover:text-navy-900 transition-colors">
-                Properties
-              </Link>
-              <Link href="/about" className="text-navy-900 font-semibold">
-                About
-              </Link>
-              <Link href="/blog" className="text-gray-700 hover:text-navy-900 transition-colors">
-                Blog
-              </Link>
-              <Link href="/contact" className="text-gray-700 hover:text-navy-900 transition-colors">
-                Contact
-              </Link>
-            </div>
-            <Button className="bg-navy-900 hover:bg-navy-800 text-white">
-              <Phone className="w-4 h-4 mr-2" />
-              <a href="tel:+919999628400" className="text-white">Call Now</a>
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Breadcrumbs */}
       <div className="bg-gray-50 py-4">
@@ -116,7 +82,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-gold-600 mb-2">500+</div>
+              <div className="text-4xl font-bold text-gold-600 mb-2">1000+</div>
               <div className="text-gray-600">Properties Sold</div>
             </div>
             <div className="text-center">
@@ -124,7 +90,7 @@ export default function AboutPage() {
               <div className="text-gray-600">Years Experience</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-gold-600 mb-2">1000+</div>
+              <div className="text-4xl font-bold text-gold-600 mb-2">500+</div>
               <div className="text-gray-600">Happy Clients</div>
             </div>
             <div className="text-center">
@@ -142,7 +108,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-4xl font-bold text-navy-900 mb-6">Our Story</h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Founded in 2009 by Rajesh Dhawan, Dhawan Properties began with a simple vision: to make real estate
+                Founded in 2009 by kapil dhawan, Dhawan Properties began with a simple vision: to make real estate
                 transactions transparent, trustworthy, and stress-free for every client. What started as a small family
                 business has grown into one of the most respected real estate consultancies in the NCR region.
               </p>
@@ -204,7 +170,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="py-16">
+      {/* <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-navy-900 mb-4">Meet Our Team</h2>
@@ -237,7 +203,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Trust & Certifications */}
       <section className="py-16 bg-gray-50">
@@ -414,15 +380,17 @@ export default function AboutPage() {
               <div className="space-y-2 text-gray-400">
                 <div className="flex items-center">
                   <Phone className="w-4 h-4 mr-2" />
-                  <span>+91 98765 43210</span>
+                  <a href="tel:+919999628400" className="hover:text-white transition-colors">+91 99996-28400</a>
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-4 h-4 mr-2" />
-                  <span>info@dhawanproperties.in</span>
+                  <a href="mailto:Dhawanproperties2019@gmail.com" className="hover:text-white transition-colors">Dhawanproperties2019@gmail.com</a>
                 </div>
                 <div className="flex items-start">
-                  <MapPin className="w-4 h-4 mr-2 mt-1" />
-                  <span>Sector 14, Gurgaon, Haryana 122001</span>
+                  <MapPin className="w-9 h-9 mr-2 mt-1" />
+                  <span>203, 2nd Floor, Express Building,
+                        H-BIk Mkt, Ashok Vihar Ph.-1,
+                        New Delhi-110052</span>
                 </div>
               </div>
             </div>

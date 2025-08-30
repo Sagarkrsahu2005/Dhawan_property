@@ -142,9 +142,9 @@ try {
       projectSpecs: Object.keys(projectSpecs).length > 0 ? projectSpecs : undefined,
       nearbyPlaces: nearbyPlaces.length > 0 ? nearbyPlaces : undefined,
       agent: {
-        name: "Rajesh Dhawan",
-        phone: "+91 98765 43210",
-        email: "rajesh@dhawanproperties.in",
+        name: "kapil dhawan",
+        phone: "+91 99996 28400",
+        email: "Dhawanproperties2019@gmail.com",
         image: "/professional-real-estate-agent.png",
       }
     };
@@ -242,9 +242,9 @@ try {
         { name: "Sri Balaji's Multi Hospital", distance: "4 km", type: "Healthcare" },
       ],
       agent: {
-        name: "Rajesh Dhawan",
-        phone: "+91 98765 43210",
-        email: "rajesh@dhawanproperties.in",
+        name: "kapil dhawan",
+        phone: "+91 99996 28400",
+        email: "Dhawanproperties2019@gmail.com",
         image: "/professional-real-estate-agent.png",
       },
     }

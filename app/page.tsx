@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { properties } from "@/lib/property-data"
+import { properties, type Property, getPropertiesSortedByNewest, getLatestProperty } from "@/lib/property-data"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -32,6 +32,11 @@ export default function HomePage() {
   const [qMessage, setQMessage] = useState("")
   const [qSubmitting, setQSubmitting] = useState(false)
   const [qSubmitted, setQSubmitted] = useState(false)
+
+  // Property display state
+  const [showAllProperties, setShowAllProperties] = useState(false)
+  const [selectedProperty, setSelectedProperty] = useState<Property | null>(null)
+  const [showPropertyModal, setShowPropertyModal] = useState(false)
 
   useEffect(() => {
     const alreadyShown = typeof window !== "undefined" && window.localStorage.getItem("inq_shown")
@@ -87,8 +92,25 @@ export default function HomePage() {
     }
   }
 
-  // Use the first property as the latest project (hero section)
-  const latestProject = properties[0]
+  // Get properties sorted by newest first (latest properties on top)
+  const sortedProperties = getPropertiesSortedByNewest()
+  
+  // Use the latest property as the hero project
+  const latestProject = getLatestProperty()
+
+  // Handle property card click
+  const handlePropertyClick = (property: Property) => {
+    setSelectedProperty(property)
+    setShowPropertyModal(true)
+  }
+
+  // Handle View More toggle
+  const handleViewMore = () => {
+    setShowAllProperties(!showAllProperties)
+  }
+
+  // Determine which properties to show (using sorted properties)
+  const displayedProperties = showAllProperties ? sortedProperties : sortedProperties.slice(0, 6)
 
   return (
     <div className="min-h-screen bg-white">
@@ -262,16 +284,24 @@ export default function HomePage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-navy-900 mb-4">Featured Properties</h2>
+            <h2 className="text-4xl font-bold text-navy-900 mb-4">
+              {showAllProperties ? 'All Properties' : 'Featured Properties'}
+            </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Discover our handpicked selection of premium properties with verified documentation and transparent
-              pricing.
+              {showAllProperties 
+                ? 'Browse our complete collection of premium properties with verified documentation and transparent pricing.'
+                : 'Discover our handpicked selection of premium properties with verified documentation and transparent pricing.'
+              }
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {properties.slice(0, 6).map((property) => (
-              <Card key={property.id} className="group hover:shadow-xl transition-all duration-300 overflow-hidden">
+            {displayedProperties.map((property) => (
+              <Card 
+                key={property.id} 
+                className="group hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer"
+                onClick={() => handlePropertyClick(property)}
+              >
                 <div className="relative">
                   <img
                     src={property.image || "/placeholder.svg"}
@@ -279,12 +309,18 @@ export default function HomePage() {
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   {property.id === latestProject.id ? (
-                    <Badge className="absolute top-4 left-4 bg-gold-500 text-navy-900">New Launch</Badge>
+                    <Badge className="absolute top-4 left-4 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 font-semibold shadow-lg">Latest Project</Badge>
                   ) : (
                     property.tag && (
                       <Badge className="absolute top-4 left-4 bg-gray-200 text-navy-900">{property.tag}</Badge>
                     )
                   )}
+                  {/* Click overlay indicator */}
+                  <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-all duration-300 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm rounded-full p-3">
+                      <span className="text-navy-900 font-semibold text-sm">View Details</span>
+                    </div>
+                  </div>
                 </div>
                 <CardContent className="p-6">
                   <div className="mb-2">
@@ -310,12 +346,34 @@ export default function HomePage() {
                       <span>{property.area} sq.ft</span>
                     </div>
                   </div>
-                  <Button asChild className="w-full bg-navy-900 hover:bg-navy-800 text-white">
-                    <Link href={`/properties/${property.id}`}>View Details</Link>
+                  <Button 
+                    asChild 
+                    className="w-full bg-navy-900 hover:bg-navy-800 text-white"
+                  >
+                    <Link 
+                      href={`/properties/${property.id}`}
+                      onClick={(e) => {
+                        e.stopPropagation() // Prevent card click when button is clicked
+                      }}
+                    >
+                      View Full Details
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
             ))}
+          </div>
+
+          {/* View More / View Less Button */}
+          <div className="text-center mt-12">
+            <Button
+              onClick={handleViewMore}
+              variant="outline"
+              size="lg"
+              className="border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white bg-transparent px-8 py-3"
+            >
+              {showAllProperties ? `View Less (Showing ${displayedProperties.length} of ${properties.length})` : `View All Properties (${properties.length} Available)`}
+            </Button>
           </div>
         </div>
       </section>
@@ -341,7 +399,7 @@ export default function HomePage() {
             </div>
             <div className="grid grid-cols-2 gap-6">
               <Card className="text-center p-6">
-                <div className="text-3xl font-bold text-gold-600 mb-2">500+</div>
+                <div className="text-3xl font-bold text-gold-600 mb-2">1000+</div>
                 <div className="text-gray-600">Properties Sold</div>
               </Card>
               <Card className="text-center p-6">
@@ -349,7 +407,7 @@ export default function HomePage() {
                 <div className="text-gray-600">Years Experience</div>
               </Card>
               <Card className="text-center p-6">
-                <div className="text-3xl font-bold text-gold-600 mb-2">1000+</div>
+                <div className="text-3xl font-bold text-gold-600 mb-2">500+</div>
                 <div className="text-gray-600">Happy Clients</div>
               </Card>
               <Card className="text-center p-6">
@@ -380,7 +438,7 @@ export default function HomePage() {
                 rating: 5,
               },
               {
-                name: "Priya Sharma",
+                name: "Kapil Dhawan",
                 location: "Delhi",
                 quote:
                   "I saved lakhs thanks to their negotiation skills and market knowledge. Highly recommend for first-time buyers.",
@@ -513,8 +571,8 @@ export default function HomePage() {
             "@context": "https://schema.org",
             "@type": "ItemList",
             "name": "Featured Properties",
-            "numberOfItems": properties.slice(0, 6).length,
-            "itemListElement": properties.slice(0, 6).map((property, index) => ({
+            "numberOfItems": sortedProperties.slice(0, 6).length,
+            "itemListElement": sortedProperties.slice(0, 6).map((property, index) => ({
               "@type": "ListItem",
               "position": index + 1,
               "item": {
@@ -619,6 +677,161 @@ export default function HomePage() {
                 </Button>
               </DialogFooter>
             </form>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      {/* Property Details Modal */}
+      <Dialog open={showPropertyModal} onOpenChange={setShowPropertyModal}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          {selectedProperty && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold text-navy-900">
+                  {selectedProperty.title}
+                </DialogTitle>
+                <DialogDescription className="flex items-center text-gray-600">
+                  <MapPin className="w-4 h-4 mr-1" />
+                  {selectedProperty.location}
+                </DialogDescription>
+              </DialogHeader>
+              
+              <div className="space-y-6">
+                {/* Property Image */}
+                <div className="relative rounded-lg overflow-hidden">
+                  <img
+                    src={selectedProperty.image || "/placeholder.svg"}
+                    alt={selectedProperty.title}
+                    className="w-full h-64 object-cover"
+                  />
+                  {selectedProperty.tag && (
+                    <Badge className="absolute top-4 left-4 bg-gold-500 text-navy-900">
+                      {selectedProperty.tag}
+                    </Badge>
+                  )}
+                </div>
+
+                {/* Property Details Grid */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {selectedProperty.bedrooms > 0 && (
+                    <div className="text-center p-4 bg-gray-50 rounded-lg">
+                      <Bed className="w-6 h-6 mx-auto mb-2 text-navy-900" />
+                      <div className="font-semibold">{selectedProperty.bedrooms} BHK</div>
+                      <div className="text-sm text-gray-600">Bedrooms</div>
+                    </div>
+                  )}
+                  <div className="text-center p-4 bg-gray-50 rounded-lg">
+                    <Bath className="w-6 h-6 mx-auto mb-2 text-navy-900" />
+                    <div className="font-semibold">{selectedProperty.bathrooms}</div>
+                    <div className="text-sm text-gray-600">Bathrooms</div>
+                  </div>
+                  <div className="text-center p-4 bg-gray-50 rounded-lg">
+                    <Square className="w-6 h-6 mx-auto mb-2 text-navy-900" />
+                    <div className="font-semibold">{selectedProperty.area}</div>
+                    <div className="text-sm text-gray-600">Sq. Ft</div>
+                  </div>
+                  <div className="text-center p-4 bg-gray-50 rounded-lg">
+                    <div className="w-6 h-6 mx-auto mb-2 text-navy-900 font-bold text-lg">📅</div>
+                    <div className="font-semibold">{selectedProperty.yearBuilt}</div>
+                    <div className="text-sm text-gray-600">Year Built</div>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <div>
+                  <h3 className="text-lg font-semibold text-navy-900 mb-3">Description</h3>
+                  <p className="text-gray-600 leading-relaxed">{selectedProperty.description}</p>
+                </div>
+
+                {/* Amenities */}
+                {selectedProperty.amenities && selectedProperty.amenities.length > 0 && (
+                  <div>
+                    <h3 className="text-lg font-semibold text-navy-900 mb-3">Amenities</h3>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                      {selectedProperty.amenities.map((amenity: string, index: number) => (
+                        <div key={index} className="flex items-center text-sm text-gray-600">
+                          <div className="w-2 h-2 bg-gold-500 rounded-full mr-2"></div>
+                          {amenity}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Project Specifications */}
+                {selectedProperty.projectSpecs && (
+                  <div>
+                    <h3 className="text-lg font-semibold text-navy-900 mb-3">Project Specifications</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {selectedProperty.projectSpecs.landParcel && (
+                        <div className="flex justify-between border-b pb-2">
+                          <span className="text-gray-600">Land Parcel:</span>
+                          <span className="font-medium">{selectedProperty.projectSpecs.landParcel}</span>
+                        </div>
+                      )}
+                      {selectedProperty.projectSpecs.towers && (
+                        <div className="flex justify-between border-b pb-2">
+                          <span className="text-gray-600">Towers:</span>
+                          <span className="font-medium">{selectedProperty.projectSpecs.towers}</span>
+                        </div>
+                      )}
+                      {selectedProperty.projectSpecs.possession && (
+                        <div className="flex justify-between border-b pb-2">
+                          <span className="text-gray-600">Possession:</span>
+                          <span className="font-medium">{selectedProperty.projectSpecs.possession}</span>
+                        </div>
+                      )}
+                      {selectedProperty.projectSpecs.rera && (
+                        <div className="flex justify-between border-b pb-2">
+                          <span className="text-gray-600">RERA:</span>
+                          <span className="font-medium">{selectedProperty.projectSpecs.rera}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* Nearby Places */}
+                {selectedProperty.nearbyPlaces && selectedProperty.nearbyPlaces.length > 0 && (
+                  <div>
+                    <h3 className="text-lg font-semibold text-navy-900 mb-3">Nearby Places</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {selectedProperty.nearbyPlaces.map((place: any, index: number) => (
+                        <div key={index} className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                          <div>
+                            <div className="font-medium">{place.name}</div>
+                            <div className="text-sm text-gray-600">{place.type}</div>
+                          </div>
+                          <div className="text-sm font-medium text-navy-900">{place.distance}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Action Buttons */}
+                <div className="flex gap-4 pt-4">
+                  <Button 
+                    asChild 
+                    className="flex-1 bg-navy-900 hover:bg-navy-800 text-white"
+                  >
+                    <Link href={`/properties/${selectedProperty.id}`}>
+                      View Full Property Page
+                    </Link>
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    className="flex-1 border-gold-500 text-gold-600 hover:bg-gold-50"
+                    onClick={() => {
+                      setShowPropertyModal(false)
+                      setShowInquiry(true)
+                    }}
+                  >
+                    Inquire Now
+                  </Button>
+                </div>
+              </div>
+            </>
           )}
         </DialogContent>
       </Dialog>

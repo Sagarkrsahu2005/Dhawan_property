@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button"
+import { properties } from "@/lib/property-data"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Clock, User, Search, Calendar, ArrowRight, Phone, Mail, MapPin } from "lucide-react"
 import Link from "next/link"
+import Navigation from "@/components/navigation"
 
 const blogPosts = [
   {
@@ -12,8 +14,8 @@ const blogPosts = [
     title: "How to Verify Property Documents",
     excerpt:
       "A comprehensive guide to checking all essential documents before purchasing a property. Learn about title deeds, NOCs, approvals, and more to ensure a safe transaction.",
-    image: "/modern-apartment-building.png",
-    author: "Rajesh Dhawan",
+  image: "/luxury-modern-residence.png",
+    author: "kapil dhawan",
     publishDate: "2024-01-15",
     readTime: "8 min read",
     category: "Legal Guide",
@@ -26,7 +28,7 @@ const blogPosts = [
     excerpt:
       "Essential factors to evaluate when choosing a neighborhood - from connectivity and amenities to future development plans and safety considerations.",
     image: "/comfortable-family-house.png",
-    author: "Priya Sharma",
+    author: "Kapil Dhawan",
     publishDate: "2024-01-10",
     readTime: "6 min read",
     category: "Buying Guide",
@@ -58,6 +60,231 @@ const blogPosts = [
     category: "Investment",
     featured: false,
   },
+  {
+    id: 5,
+    slug: "puri-diplomatic-residences-sector-111-luxurious-apartments",
+    title: "Puri Diplomatic Residences Sector 111 Luxurious Apartments",
+    excerpt:
+      "Discover the epitome of luxury living at Puri Diplomatic Residences, Sector 111, Gurgaon. Explore world-class amenities, prime connectivity, and unmatched elegance in this flagship project by Puri Constructions.",
+    image: properties.find((p) =>
+      p.title.toLowerCase().includes("puri diplomatic residences")
+    )?.image || "/placeholder.jpg",
+    author: "Admin",
+    publishDate: "2025-08-29",
+    readTime: "12 min read",
+    category: "Uncategorized",
+    featured: true,
+  },
+  {
+    id: 6,
+    slug: "sobha-altus-sector-106-luxurious-apartments-in-dwarka-express",
+    title: "Sobha Altus Sector 106 Luxurious Apartments in Dwarka Express",
+    excerpt:
+      "Sobha Altus by Sobha Limited offers ultra-luxury residences in Sector 106, Dwarka Expressway, Gurgaon. Explore project overview, amenities, pricing, configurations, and more.",
+    image: properties.find((p) =>
+      p.title.toLowerCase().includes("sobha altus")
+    )?.image || "/placeholder.jpg",
+    author: "Admin",
+    publishDate: "2025-08-29",
+    readTime: "14 min read",
+    category: "Uncategorized",
+    featured: true,
+  },
+  {
+    id: 7,
+    slug: "max-estate-360-top-20-luxurious-apartments",
+    title: "Max Estate 360-Top 20 Luxurious Apartments",
+    excerpt:
+      "Max Estate 360 by Max Estates is a luxury highrise in Sector 36A, Gurugram, offering 3 & 4 BHK apartments, 60+ amenities, and IGBC Platinum Pre-certification. See project overview, amenities, gallery, and more.",
+    image: properties.find((p) =>
+      p.title.toLowerCase().includes("max estate 360")
+    )?.image || "/placeholder.jpg",
+    author: "Admin",
+    publishDate: "2025-08-29",
+    readTime: "13 min read",
+    category: "Uncategorized",
+    featured: true,
+  },
+  {
+    id: 8,
+    slug: "elan-the-presidential-sector-106-top-20-luxurious-apartments",
+    title: "Elan The Presidential Sector 106-Top 20 Luxurious Apartments",
+    excerpt:
+      "Elan The Presidential by Elan Limited offers a pinnacle of luxury living in Sector 106, Gurgaon. Explore 3, 4 & 5 BHK units, world-class amenities, architectural excellence, and prime location advantages.",
+    image: properties.find((p) =>
+      p.title.toLowerCase().includes("elan") && p.title.toLowerCase().includes("presidential")
+    )?.image || "/luxury-villa-garden-pool.png",
+    author: "Admin",
+    publishDate: "2025-08-29",
+    readTime: "15 min read",
+    category: "Uncategorized",
+    featured: true,
+  },
+  {
+    id: 9,
+    slug: "m3m-mansion-sector-113-luxurious",
+    title: "M3M Mansion Sector 113 luxurious",
+    excerpt:
+      "M3M Mansion by M3M India in Sector 113, Dwarka Expressway, Gurugram offers luxurious 3.5, 4.5 & 5 BHK apartments. Explore 11 acres of luxury, world-class amenities, strategic location, and modern architecture.",
+    image: properties.find((p) =>
+      p.title.toLowerCase().includes("m3m") && p.title.toLowerCase().includes("mansion")
+    )?.image || "/modern-apartment-building.png",
+    author: "Admin",
+    publishDate: "2025-08-29",
+    readTime: "16 min read",
+    category: "Uncategorized",
+    featured: true,
+  },
+  {
+    id: 10,
+    slug: "krisumi-waterfall-residences-sector-36a-luxurious",
+    title: "Krisumi Waterfall Residences Sector 36A Luxurious",
+    excerpt:
+      "Krisumi Waterfall Residences offers Indo-Japanese luxury living in Sector 36A, Gurgaon. Experience unique architectural fusion, 3 towers with 433-450 apartments, Japanese design philosophy, and premium amenities.",
+    image: properties.find((p) =>
+      p.title.toLowerCase().includes("krisumi") && p.title.toLowerCase().includes("waterfall")
+    )?.image || "/luxury-villa-garden-pool.png",
+    author: "Admin",
+    publishDate: "2025-08-29",
+    readTime: "18 min read",
+    category: "Uncategorized",
+    featured: true,
+  },
+  {
+    id: 11,
+    slug: "bptp-amstoria-verti-greens-sector-102-luxurious-apartments",
+    title: "BPTP Amstoria Verti Greens Sector 102-Luxurious Apartments Bang on Dwarka Express",
+    excerpt:
+      "BPTP Amstoria Verti Greens Sector 102 by BPTP Limited offers luxury living with vertical gardens. 5 towers, 885 apartments, sustainable design, and world-class amenities on 12.05 acres.",
+    image: properties.find((p) =>
+      p.title.toLowerCase().includes("bptp") && p.title.toLowerCase().includes("verti")
+    )?.image || "/modern-apartment-building.png",
+    author: "Admin",
+    publishDate: "2025-08-29",
+    readTime: "14 min read",
+    category: "Uncategorized",
+    featured: true,
+  },
+  {
+    id: 12,
+    slug: "signature-global-deluxe-dxp-sector-37d-luxury-apartments",
+    title: "Signature Global Deluxe DXP Sector 37D Ultra-Luxury Apartments",
+    excerpt:
+      "Signature Global Deluxe DXP in Sector 37D offers ultra-luxury living with 10 towers, 900 apartments, 80,000 sq ft clubhouse, 7 swimming pools, and premium amenities on 16.65 acres.",
+    image: properties.find((p) =>
+      p.title.toLowerCase().includes("signature") && p.title.toLowerCase().includes("global")
+    )?.image || "/luxury-modern-residence.png",
+    author: "Admin",
+    publishDate: "2025-08-29",
+    readTime: "15 min read",
+    category: "Uncategorized",
+    featured: true,
+  },
+  {
+    id: 13,
+    slug: "navraj-the-kingstown-heights-sector-37d-luxury-residences",
+    title: "Navraj The KingsTown Heights Sector 37D Ultra-Luxury Residences",
+    excerpt:
+      "Navraj The KingsTown Heights offers ultra-luxury 3 & 4 BHK apartments in Sector 37D. 5 towers on 25 acres with 1 lakh sq ft club space, multiple swimming pools, and premium amenities.",
+    image: properties.find((p) =>
+      p.title.toLowerCase().includes("navraj") && p.title.toLowerCase().includes("kingstown")
+    )?.image || "/comfortable-family-house.png",
+    author: "Admin",
+    publishDate: "2025-08-29",
+    readTime: "16 min read",
+    category: "Uncategorized",
+    featured: true,
+  },
+  {
+    id: 14,
+    slug: "godrej-vrikshya-sector-103-eco-luxury-residences",
+    title: "Godrej Vrikshya Sector 103 Eco-Luxury Residences",
+    excerpt:
+      "Godrej Vrikshya offers nature-inspired luxury living in Sector 103. 6-7 towers on 14.86 acres with 75% green spaces, sustainable design, IGBC certification, and premium eco-friendly amenities.",
+    image: properties.find((p) =>
+      p.title.toLowerCase().includes("godrej") && p.title.toLowerCase().includes("vrikshya")
+    )?.image || "/luxury-villa-garden-pool.png",
+    author: "Admin",
+    publishDate: "2025-08-29",
+    readTime: "17 min read",
+    category: "Uncategorized",
+    featured: true,
+  },
+  {
+    id: 15,
+    slug: "m3m-crown-sector-111-dwarka-express",
+    title: "M3M Crown Sector 111 Dwarka Express Luxury Residences",
+    excerpt:
+      "M3M Crown in Sector 111 epitomizes luxury with 11 towers, 726 exclusive apartments, 75,000 sq ft clubhouse, themed gardens, and premium amenities on 16 acres.",
+    image: properties.find((p) =>
+      p.title.toLowerCase().includes("m3m") && p.title.toLowerCase().includes("crown")
+    )?.image || "/luxury-modern-residence.png",
+    author: "Admin",
+    publishDate: "2025-08-29",
+    readTime: "15 min read",
+    category: "Uncategorized",
+    featured: true,
+  },
+  {
+    id: 16,
+    slug: "ats-homekraft-sanctuary-105-luxurious-apartments",
+    title: "ATS HomeKraft Sanctuary 105 Luxurious Apartments in Dwarka Express",
+    excerpt:
+      "ATS HomeKraft Sanctuary 105 offers Art Deco inspired living with 11 towers, 734 apartments, extensive sports facilities, and innovative amenities on 13.07 acres.",
+    image: properties.find((p) =>
+      p.title.toLowerCase().includes("ats") && p.title.toLowerCase().includes("sanctuary")
+    )?.image || "/comfortable-family-house.png",
+    author: "Admin",
+    publishDate: "2025-08-29",
+    readTime: "16 min read",
+    category: "Uncategorized",
+    featured: true,
+  },
+  {
+    id: 17,
+    slug: "smartworld-one-dxp-sector-113",
+    title: "Smartworld One DXP Sector 113 Premium Residential Complex",
+    excerpt:
+      "Smartworld One DXP offers modern luxury living with 500+ units, 100,000 sq ft clubhouse, co-working spaces, and smart home automation on 5 acres in Sector 113.",
+    image: properties.find((p) =>
+      p.title.toLowerCase().includes("smartworld") && p.title.toLowerCase().includes("one")
+    )?.image || "/modern-apartment-building.png",
+    author: "Admin",
+    publishDate: "2025-08-29",
+    readTime: "18 min read",
+    category: "Uncategorized",
+    featured: true,
+  },
+  {
+    id: 18,
+    slug: "signature-global-twin-tower-dxp",
+    title: "Signature Global Twin Tower DXP Iconic Luxury Residences",
+    excerpt:
+      "Signature Global Twin Tower DXP features 2 iconic towers with 45 floors each, 600+ luxury apartments, The Gem Clubhouse, and biophilic design on 5 acres.",
+    image: properties.find((p) =>
+      p.title.toLowerCase().includes("signature") && p.title.toLowerCase().includes("twin")
+    )?.image || "/luxury-modern-residence.png",
+    author: "Admin",
+    publishDate: "2025-08-29",
+    readTime: "17 min read",
+    category: "Uncategorized",
+    featured: true,
+  },
+  {
+    id: 19,
+    slug: "hero-homes-the-palatial-sector-104",
+    title: "Hero Homes The Palatial Sector 104 Ultra-Luxury European Residences",
+    excerpt:
+      "Hero Homes The Palatial offers European-themed architecture with 5 towers, 650 exclusive residences, 60,000 sq ft clubhouse, and luxury amenities on 11 acres.",
+    image: properties.find((p) =>
+      p.title.toLowerCase().includes("hero") && p.title.toLowerCase().includes("palatial")
+    )?.image || "/luxury-villa-garden-pool.png",
+    author: "Admin",
+    publishDate: "2025-08-29",
+    readTime: "16 min read",
+    category: "Uncategorized",
+    featured: true,
+  },
 ]
 
 export default function BlogPage() {
@@ -67,42 +294,7 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
-                <img 
-                  src="/dhawan-properties-logo.png"
-                  alt="Dhawan Properties"
-                  className="h-12 w-auto"
-                />
-              </Link>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-gray-700 hover:text-navy-900 transition-colors">
-                Home
-              </Link>
-              <Link href="/properties" className="text-gray-700 hover:text-navy-900 transition-colors">
-                Properties
-              </Link>
-              <Link href="/about" className="text-gray-700 hover:text-navy-900 transition-colors">
-                About
-              </Link>
-              <Link href="/blog" className="text-navy-900 font-semibold">
-                Blog
-              </Link>
-              <Link href="/contact" className="text-gray-700 hover:text-navy-900 transition-colors">
-                Contact
-              </Link>
-            </div>
-            <Button className="bg-navy-900 hover:bg-navy-800 text-white">
-              <Phone className="w-4 h-4 mr-2" />
-              <a href="tel:+919999628400" className="text-white">Call Now</a>
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Breadcrumbs */}
       <div className="bg-gray-50 py-4">

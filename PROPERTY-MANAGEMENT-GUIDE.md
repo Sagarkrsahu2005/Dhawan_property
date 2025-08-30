@@ -75,7 +75,7 @@ Use the quick template for basic properties or the full template for detailed on
   // Agent details
   agent: {
     name: "Agent Name",
-    phone: "+91 98765 43210",
+    phone: "+91 99996 28400",
     email: "agent@email.com",
     image: "/agent.png"
   }

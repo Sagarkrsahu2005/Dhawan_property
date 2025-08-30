@@ -292,11 +292,11 @@ Our migration tool automatically extracts these common property fields:
           }
         ],
         "agent": {
-          "name": "Rajesh Dhawan",
-          "phone": "+91 98765 43210",
-          "email": "rajesh@dhawanproperties.in",
+          "name": "kapil dhawan",
+          "phone": "+91 99996 28400",
+          "email": "Dhawanproperties2019@gmail.com",
           "image": "/agent-rajesh.jpg",
-          "whatsapp": "+91 98765 43210",
+          "whatsapp": "+91 99996 28400",
           "designation": "Senior Property Consultant"
         },
         "furnishing": "Semi-furnished",

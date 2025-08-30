@@ -10,6 +10,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send, CheckCircle } from "lucide-react"
 import Link from "next/link"
+import Navigation from "@/components/navigation"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -53,42 +54,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
-                <img 
-                  src="/dhawan-properties-logo.png"
-                  alt="Dhawan Properties"
-                  className="h-12 w-auto"
-                />
-              </Link>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-gray-700 hover:text-navy-900 transition-colors">
-                Home
-              </Link>
-              <Link href="/properties" className="text-gray-700 hover:text-navy-900 transition-colors">
-                Properties
-              </Link>
-              <Link href="/about" className="text-gray-700 hover:text-navy-900 transition-colors">
-                About
-              </Link>
-              <Link href="/blog" className="text-gray-700 hover:text-navy-900 transition-colors">
-                Blog
-              </Link>
-              <Link href="/contact" className="text-navy-900 font-semibold">
-                Contact
-              </Link>
-            </div>
-            <Button className="bg-navy-900 hover:bg-navy-800 text-white">
-              <Phone className="w-4 h-4 mr-2" />
-              <a href="tel:+919999628400" className="text-white">Call Now</a>
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Breadcrumbs */}
       <div className="bg-gray-50 py-4">
@@ -151,7 +117,7 @@ export default function ContactPage() {
                         <label className="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
                         <Input
                           required
-                          placeholder="+91 98765 43210"
+                          placeholder="+91 99996 28400"
                           value={formData.phone}
                           onChange={(e) => handleInputChange("phone", e.target.value)}
                         />

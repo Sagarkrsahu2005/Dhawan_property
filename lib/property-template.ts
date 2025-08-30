@@ -60,7 +60,7 @@ export const propertyTemplate = {
   ],
   agent: {
     name: "Agent Name",
-    phone: "+91 98765 43210",
+    phone: "+91 99996 28400",
     email: "agent@dhawanproperties.in",
     image: "/agent-image.png",
   },
