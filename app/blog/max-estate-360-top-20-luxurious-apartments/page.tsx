@@ -3,13 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import Link from "          </div>
-        </div>
-        </div>
-      </div>
-    </>
-  );
-}ink";
+import Link from "next/link";
 import { properties } from "../../../lib/property-data";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Navigation from "@/components/navigation";
@@ -199,5 +193,6 @@ export default function BlogPost() {
         </div>
       </div>
     </div>
+    </>
   )
 }
