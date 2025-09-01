@@ -16,6 +16,7 @@ export function generateSEOMetadata(data: SEOData, baseUrl: string = "https://ww
   const fullUrl = data.canonicalUrl ? `${baseUrl}${data.canonicalUrl}` : baseUrl
   
   return {
+    metadataBase: new URL(baseUrl),
     title: data.title,
     description: data.description,
     keywords: data.keywords?.join(", "),

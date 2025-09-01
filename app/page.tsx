@@ -13,6 +13,9 @@ import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Textarea } from "@/components/ui/textarea"
+import { HeroAnimations, PropertyCardAnimations, SectionAnimations, StatCounterAnimation, TextRevealAnimation } from "@/components/animations"
+import FloatingParticles, { AnimatedBackground } from "@/components/floating-particles"
+import MagneticHover, { TiltHover } from "@/components/magnetic-hover"
 
 export default function HomePage() {
   const [showInquiry, setShowInquiry] = useState(false)
@@ -112,12 +115,18 @@ export default function HomePage() {
   // Determine which properties to show (using sorted properties)
   const displayedProperties = showAllProperties ? sortedProperties : sortedProperties.slice(0, 6)
 
+  // Initialize animations
+  const { heroRef, titleRef, subtitleRef, buttonsRef, cardRef, floatingElementsRef } = HeroAnimations()
+  const propertyCardsRef = PropertyCardAnimations()
+  const quickSearchRef = SectionAnimations()
+  const statsRef = SectionAnimations()
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <Navigation />
 
-      <section className="relative h-[700px] bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 overflow-hidden">
+      <section ref={heroRef} className="relative h-[700px] bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
@@ -130,7 +139,11 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-br from-navy-900/70 via-blue-900/60 to-indigo-900/70" />
 
         {/* Animated Background Elements */}
-        <div className="absolute inset-0">
+        <AnimatedBackground />
+        <FloatingParticles />
+
+        {/* Floating Elements */}
+        <div ref={floatingElementsRef} className="absolute inset-0">
           <div className="absolute top-20 left-20 w-32 h-32 bg-white/5 rounded-full blur-xl animate-pulse" />
           <div className="absolute bottom-32 right-32 w-48 h-48 bg-gold-500/10 rounded-full blur-2xl animate-pulse delay-1000" />
           <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-blue-400/10 rounded-full blur-lg animate-pulse delay-500" />
@@ -139,82 +152,90 @@ export default function HomePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
             {/* Left Content */}
-            <div className="text-white space-y-6 animate-fade-in">
+            <div className="text-white space-y-6">
               <div className="inline-block">
                 <span className="px-4 py-2 bg-gold-500/20 backdrop-blur-sm border border-gold-500/30 rounded-full text-gold-300 text-sm font-medium">
                   ✨ Latest Project
                 </span>
               </div>
 
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 ref={titleRef} className="text-5xl lg:text-6xl font-bold leading-tight">
                 Discover Your
                 <span className="block text-transparent bg-gradient-to-r from-gold-400 to-gold-600 bg-clip-text">
                   Dream Home
                 </span>
               </h1>
 
-              <p className="text-xl text-gray-200 leading-relaxed max-w-lg">
+              <p ref={subtitleRef} className="text-xl text-gray-200 leading-relaxed max-w-lg">
                 Experience luxury living with our newest premium property featuring world-class amenities and prime
                 location.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-gold-500 hover:bg-gold-600 text-navy-900 font-semibold shadow-2xl hover:shadow-gold-500/25 transition-all duration-300"
-                >
-                  <Link href={`/properties/${latestProject.id}`}>View Details</Link>
-                </Button>
-                <Button
-                  asChild
-                  size="lg"
-                  variant="outline"
-                  className="border-white/30 text-white hover:bg-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300"
-                >
-                  <Link href="/contact">Schedule Visit</Link>
-                </Button>
+              <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4">
+                <MagneticHover strength={0.2}>
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-gold-500 hover:bg-gold-600 text-navy-900 font-semibold shadow-2xl hover:shadow-gold-500/25 transition-all duration-300"
+                  >
+                    <Link href={`/properties/${latestProject.id}`}>View Details</Link>
+                  </Button>
+                </MagneticHover>
+                <MagneticHover strength={0.2}>
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="outline"
+                    className="border-white/30 text-white hover:bg-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300"
+                  >
+                    <Link href="/contact">Schedule Visit</Link>
+                  </Button>
+                </MagneticHover>
               </div>
             </div>
 
             {/* Right Content - Latest Project Card */}
             <div className="lg:flex justify-end hidden">
-              <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl max-w-md w-full hover:bg-white/15 transition-all duration-500 group">
-                {/* Property Image */}
-                <div className="relative mb-6 rounded-2xl overflow-hidden">
-                  <img
-                    src={latestProject.image || "/placeholder.svg"}
-                    alt={latestProject.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-gold-500/90 backdrop-blur-sm text-navy-900 text-sm font-semibold rounded-full">
-                      {latestProject.status}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Property Details */}
-                <div className="space-y-4">
-                  <div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{latestProject.title}</h3>
-                    <div className="flex items-center text-gray-300">
-                      <MapPin className="w-4 h-4 mr-2" />
-                      <span className="text-sm">{latestProject.location}</span>
+              <TiltHover className="w-full max-w-md">
+                <div ref={cardRef} className="backdrop-blur-md bg-white/10 border border-white/20 rounded-3xl p-8 shadow-2xl hover:bg-white/15 transition-all duration-500 group">
+                  {/* Property Image */}
+                  <div className="relative mb-6 rounded-2xl overflow-hidden">
+                    <img
+                      src={latestProject.image || "/placeholder.svg"}
+                      alt={latestProject.title}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <span className="px-3 py-1 bg-gold-500/90 backdrop-blur-sm text-navy-900 text-sm font-semibold rounded-full">
+                        {latestProject.status}
+                      </span>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-4 mt-2">
+                  {/* Property Details */}
+                  <div className="space-y-4">
                     <div>
-                      <span className="text-gray-400 text-sm">Contact for Pricing</span>
-                      <div className="text-3xl font-bold text-gold-400">Price on Request</div>
+                      <h3 className="text-2xl font-bold text-white mb-2">{latestProject.title}</h3>
+                      <div className="flex items-center text-gray-300">
+                        <MapPin className="w-4 h-4 mr-2" />
+                        <span className="text-sm">{latestProject.location}</span>
+                      </div>
                     </div>
-                    <Button asChild className="bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm border border-white/30 whitespace-nowrap">
-                      <Link href="/contact">Schedule Visit</Link>
-                    </Button>
+
+                    <div className="flex items-center gap-4 mt-2">
+                      <div>
+                        <span className="text-gray-400 text-sm">Contact for Pricing</span>
+                        <div className="text-3xl font-bold text-gold-400">Price on Request</div>
+                      </div>
+                      <MagneticHover strength={0.1}>
+                        <Button asChild className="bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm border border-white/30 whitespace-nowrap">
+                          <Link href="/contact">Schedule Visit</Link>
+                        </Button>
+                      </MagneticHover>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </TiltHover>
             </div>
           </div>
         </div>
@@ -227,56 +248,51 @@ export default function HomePage() {
         </div>
       </section>
 
-      <style jsx>{`
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .animate-fade-in {
-          animation: fade-in 1s ease-out;
-        }
-      `}</style>
-
       {/* Quick Search */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Card className="shadow-lg">
-            <CardContent className="p-6">
-              <h2 className="text-2xl font-bold text-navy-900 mb-6 text-center">Find Your Perfect Property</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <Select>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Property Type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="residential">Residential</SelectItem>
-                    <SelectItem value="commercial">Commercial</SelectItem>
-                  </SelectContent>
-                </Select>
-                <Select>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Location" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="gurgaon">Gurgaon</SelectItem>
-                    <SelectItem value="delhi">Delhi</SelectItem>
-                    <SelectItem value="noida">Noida</SelectItem>
-                  </SelectContent>
-                </Select>
+          <div ref={quickSearchRef}>
+            <TextRevealAnimation className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-navy-900 mb-4">Find Your Perfect Property</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Search through our curated collection of premium properties using our advanced filters
+              </p>
+            </TextRevealAnimation>
 
-                <Button asChild className="w-full bg-navy-900 hover:bg-navy-800 text-white">
-                  <Link href="/properties">Search Properties</Link>
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+            <TiltHover>
+              <Card className="shadow-lg backdrop-blur-sm bg-white/95">
+                <CardContent className="p-6">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <Select>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Property Type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="residential">Residential</SelectItem>
+                        <SelectItem value="commercial">Commercial</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <Select>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Location" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="gurgaon">Gurgaon</SelectItem>
+                        <SelectItem value="delhi">Delhi</SelectItem>
+                        <SelectItem value="noida">Noida</SelectItem>
+                      </SelectContent>
+                    </Select>
+
+                    <MagneticHover strength={0.1}>
+                      <Button asChild className="w-full bg-navy-900 hover:bg-navy-800 text-white">
+                        <Link href="/properties">Search Properties</Link>
+                      </Button>
+                    </MagneticHover>
+                  </div>
+                </CardContent>
+              </Card>
+            </TiltHover>
+          </div>
         </div>
       </section>
 
@@ -284,96 +300,103 @@ export default function HomePage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-navy-900 mb-4">
-              {showAllProperties ? 'All Properties' : 'Featured Properties'}
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              {showAllProperties 
-                ? 'Browse our complete collection of premium properties with verified documentation and transparent pricing.'
-                : 'Discover our handpicked selection of premium properties with verified documentation and transparent pricing.'
-              }
-            </p>
+            <TextRevealAnimation>
+              <h2 className="text-4xl font-bold text-navy-900 mb-4">
+                {showAllProperties ? 'All Properties' : 'Featured Properties'}
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                {showAllProperties 
+                  ? 'Browse our complete collection of premium properties with verified documentation and transparent pricing.'
+                  : 'Discover our handpicked selection of premium properties with verified documentation and transparent pricing.'
+                }
+              </p>
+            </TextRevealAnimation>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div ref={propertyCardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {displayedProperties.map((property) => (
-              <Card 
-                key={property.id} 
-                className="group hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer"
-                onClick={() => handlePropertyClick(property)}
-              >
-                <div className="relative">
-                  <img
-                    src={property.image || "/placeholder.svg"}
-                    alt={property.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  {property.id === latestProject.id ? (
-                    <Badge className="absolute top-4 left-4 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 font-semibold shadow-lg">Latest Project</Badge>
-                  ) : (
-                    property.tag && (
-                      <Badge className="absolute top-4 left-4 bg-gray-200 text-navy-900">{property.tag}</Badge>
-                    )
-                  )}
-                  {/* Click overlay indicator */}
-                  <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-all duration-300 flex items-center justify-center">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm rounded-full p-3">
-                      <span className="text-navy-900 font-semibold text-sm">View Details</span>
-                    </div>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <div className="mb-2">
-                    <h3 className="text-xl font-semibold text-navy-900">{property.title}</h3>
-                  </div>
-                  <div className="flex items-center text-gray-600 mb-4">
-                    <MapPin className="w-4 h-4 mr-1" />
-                    <span className="text-sm">{property.location}</span>
-                  </div>
-                  <div className="flex justify-between items-center text-sm text-gray-600 mb-4">
-                    {property.bedrooms > 0 && (
-                      <div className="flex items-center">
-                        <Bed className="w-4 h-4 mr-1" />
-                        <span>{property.bedrooms} BHK</span>
-                      </div>
+              <TiltHover key={property.id}>
+                <Card 
+                  className="group hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer bg-white/80 backdrop-blur-sm border border-gray-100/50"
+                  onClick={() => handlePropertyClick(property)}
+                >
+                  <div className="relative">
+                    <img
+                      src={property.image || "/placeholder.svg"}
+                      alt={property.title}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    {property.id === latestProject.id ? (
+                      <Badge className="absolute top-4 left-4 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 font-semibold shadow-lg">Latest Project</Badge>
+                    ) : (
+                      property.tag && (
+                        <Badge className="absolute top-4 left-4 bg-gray-200 text-navy-900">{property.tag}</Badge>
+                      )
                     )}
-                    <div className="flex items-center">
-                      <Bath className="w-4 h-4 mr-1" />
-                      <span>{property.bathrooms} Bath</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Square className="w-4 h-4 mr-1" />
-                      <span>{property.area} sq.ft</span>
+                    {/* Click overlay indicator */}
+                    <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-all duration-300 flex items-center justify-center">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm rounded-full p-3">
+                        <span className="text-navy-900 font-semibold text-sm">View Details</span>
+                      </div>
                     </div>
                   </div>
-                  <Button 
-                    asChild 
-                    className="w-full bg-navy-900 hover:bg-navy-800 text-white"
-                  >
-                    <Link 
-                      href={`/properties/${property.id}`}
-                      onClick={(e) => {
-                        e.stopPropagation() // Prevent card click when button is clicked
-                      }}
-                    >
-                      View Full Details
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
+                  <CardContent className="p-6">
+                    <div className="mb-2">
+                      <h3 className="text-xl font-semibold text-navy-900">{property.title}</h3>
+                    </div>
+                    <div className="flex items-center text-gray-600 mb-4">
+                      <MapPin className="w-4 h-4 mr-1" />
+                      <span className="text-sm">{property.location}</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm text-gray-600 mb-4">
+                      {property.bedrooms > 0 && (
+                        <div className="flex items-center">
+                          <Bed className="w-4 h-4 mr-1" />
+                          <span>{property.bedrooms} BHK</span>
+                        </div>
+                      )}
+                      <div className="flex items-center">
+                        <Bath className="w-4 h-4 mr-1" />
+                        <span>{property.bathrooms} Bath</span>
+                      </div>
+                      <div className="flex items-center">
+                        <Square className="w-4 h-4 mr-1" />
+                        <span>{property.area} sq.ft</span>
+                      </div>
+                    </div>
+                    <MagneticHover strength={0.1}>
+                      <Button 
+                        asChild 
+                        className="w-full bg-navy-900 hover:bg-navy-800 text-white"
+                      >
+                        <Link 
+                          href={`/properties/${property.id}`}
+                          onClick={(e) => {
+                            e.stopPropagation() // Prevent card click when button is clicked
+                          }}
+                        >
+                          View Full Details
+                        </Link>
+                      </Button>
+                    </MagneticHover>
+                  </CardContent>
+                </Card>
+              </TiltHover>
             ))}
           </div>
 
           {/* View More / View Less Button */}
           <div className="text-center mt-12">
-            <Button
-              onClick={handleViewMore}
-              variant="outline"
-              size="lg"
-              className="border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white bg-transparent px-8 py-3"
-            >
-              {showAllProperties ? `View Less (Showing ${displayedProperties.length} of ${properties.length})` : `View All Properties (${properties.length} Available)`}
-            </Button>
+            <MagneticHover strength={0.2}>
+              <Button
+                onClick={handleViewMore}
+                variant="outline"
+                size="lg"
+                className="border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white bg-transparent px-8 py-3"
+              >
+                {showAllProperties ? `View Less (Showing ${displayedProperties.length} of ${properties.length})` : `View All Properties (${properties.length} Available)`}
+              </Button>
+            </MagneticHover>
           </div>
         </div>
       </section>
@@ -382,38 +405,57 @@ export default function HomePage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-navy-900 mb-6">Why Choose Dhawan Properties?</h2>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                With over a decade of experience in the real estate market, we've built our reputation on trust,
-                transparency, and delivering exceptional results for our clients. Every property in our portfolio is
-                thoroughly verified and comes with complete documentation support.
-              </p>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                From first-time homebuyers to seasoned investors, we provide personalized guidance and end-to-end
-                support throughout your property journey.
-              </p>
-              <Button asChild variant="outline" className="border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white bg-transparent">
-                <Link href="/about">Learn More About Us</Link>
-              </Button>
+            <div ref={statsRef}>
+              <TextRevealAnimation>
+                <h2 className="text-4xl font-bold text-navy-900 mb-6">Why Choose Dhawan Properties?</h2>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  With over 15 years of experience in the real estate industry, we have built a reputation for trust,
+                  transparency, and exceptional service. Every property in our portfolio is thoroughly verified and comes with complete documentation support.
+                </p>
+                <p className="text-gray-600 mb-8 leading-relaxed">
+                  From first-time homebuyers to seasoned investors, we provide personalized guidance and end-to-end
+                  support throughout your property journey.
+                </p>
+              </TextRevealAnimation>
+              <MagneticHover strength={0.1}>
+                <Button asChild variant="outline" className="border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white bg-transparent">
+                  <Link href="/about">Learn More About Us</Link>
+                </Button>
+              </MagneticHover>
             </div>
             <div className="grid grid-cols-2 gap-6">
-              <Card className="text-center p-6">
-                <div className="text-3xl font-bold text-gold-600 mb-2">1000+</div>
-                <div className="text-gray-600">Properties Sold</div>
-              </Card>
-              <Card className="text-center p-6">
-                <div className="text-3xl font-bold text-gold-600 mb-2">15+</div>
-                <div className="text-gray-600">Years Experience</div>
-              </Card>
-              <Card className="text-center p-6">
-                <div className="text-3xl font-bold text-gold-600 mb-2">500+</div>
-                <div className="text-gray-600">Happy Clients</div>
-              </Card>
-              <Card className="text-center p-6">
-                <div className="text-3xl font-bold text-gold-600 mb-2">100%</div>
-                <div className="text-gray-600">RERA Compliant</div>
-              </Card>
+              <TiltHover>
+                <Card className="text-center p-6 bg-white/80 backdrop-blur-sm">
+                  <div className="text-3xl font-bold text-gold-600 mb-2">
+                    <StatCounterAnimation endValue={1000} />+
+                  </div>
+                  <div className="text-gray-600">Properties Sold</div>
+                </Card>
+              </TiltHover>
+              <TiltHover>
+                <Card className="text-center p-6 bg-white/80 backdrop-blur-sm">
+                  <div className="text-3xl font-bold text-gold-600 mb-2">
+                    <StatCounterAnimation endValue={15} />+
+                  </div>
+                  <div className="text-gray-600">Years Experience</div>
+                </Card>
+              </TiltHover>
+              <TiltHover>
+                <Card className="text-center p-6 bg-white/80 backdrop-blur-sm">
+                  <div className="text-3xl font-bold text-gold-600 mb-2">
+                    <StatCounterAnimation endValue={500} />+
+                  </div>
+                  <div className="text-gray-600">Happy Clients</div>
+                </Card>
+              </TiltHover>
+              <TiltHover>
+                <Card className="text-center p-6 bg-white/80 backdrop-blur-sm">
+                  <div className="text-3xl font-bold text-gold-600 mb-2">
+                    <StatCounterAnimation endValue={100} />%
+                  </div>
+                  <div className="text-gray-600">RERA Compliant</div>
+                </Card>
+              </TiltHover>
             </div>
           </div>
         </div>
@@ -422,10 +464,10 @@ export default function HomePage() {
       {/* Testimonials */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <TextRevealAnimation className="text-center mb-12">
             <h2 className="text-4xl font-bold text-navy-900 mb-4">What Our Clients Say</h2>
             <p className="text-gray-600">Real experiences from real customers</p>
-          </div>
+          </TextRevealAnimation>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -454,55 +496,65 @@ export default function HomePage() {
                 rating: 5,
               },
             ].map((testimonial, index) => (
-              <Card key={index} className="p-6">
-                <div className="flex items-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-gold-500 text-gold-500" />
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-4 italic">"{testimonial.quote}"</p>
-                <div className="border-t pt-4">
-                  <div className="font-semibold text-navy-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-500">{testimonial.location}</div>
-                  <Badge variant="secondary" className="mt-2 bg-gold-100 text-gold-800">
-                    {testimonial.result}
-                  </Badge>
-                </div>
-              </Card>
+              <TiltHover key={index}>
+                <Card className="p-6 bg-white/80 backdrop-blur-sm border border-gray-100/50 hover:shadow-lg transition-all duration-300">
+                  <div className="flex items-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-gold-500 text-gold-500" />
+                    ))}
+                  </div>
+                  <p className="text-gray-600 mb-4 italic">"{testimonial.quote}"</p>
+                  <div className="border-t pt-4">
+                    <div className="font-semibold text-navy-900">{testimonial.name}</div>
+                    <div className="text-sm text-gray-500">{testimonial.location}</div>
+                    <Badge variant="secondary" className="mt-2 bg-gold-100 text-gold-800">
+                      {testimonial.result}
+                    </Badge>
+                  </div>
+                </Card>
+              </TiltHover>
             ))}
           </div>
         </div>
       </section>
 
       {/* Contact Teaser */}
-      <section className="py-16 bg-navy-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-navy-900 text-white relative overflow-hidden">
+        <AnimatedBackground />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-6">Ready to Find Your Dream Property?</h2>
-              <p className="text-gray-300 mb-8">
-                Get in touch with our expert team today. We'll help you find the perfect property that matches your
-                needs and budget.
-              </p>
+              <TextRevealAnimation>
+                <h2 className="text-4xl font-bold mb-6">Ready to Find Your Dream Property?</h2>
+                <p className="text-gray-300 mb-8">
+                  Get in touch with our expert team today. We'll help you find the perfect property that matches your
+                  needs and budget.
+                </p>
+              </TextRevealAnimation>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel:+919999628400">
-                  <Button className="bg-gold-500 hover:bg-gold-600 text-navy-900">
-                    <Phone className="w-4 h-4 mr-2" />
-                    Call Now
-                  </Button>
-                </a>
-                <a href="https://wa.me/919999628400" target="_blank" rel="noopener noreferrer">
-                  <Button
-                    variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-navy-900 bg-transparent"
-                  >
-                    WhatsApp Us
-                  </Button>
-                </a>
+                <MagneticHover strength={0.2}>
+                  <a href="tel:+919999628400">
+                    <Button className="bg-gold-500 hover:bg-gold-600 text-navy-900">
+                      <Phone className="w-4 h-4 mr-2" />
+                      Call Now
+                    </Button>
+                  </a>
+                </MagneticHover>
+                <MagneticHover strength={0.2}>
+                  <a href="https://wa.me/919999628400" target="_blank" rel="noopener noreferrer">
+                    <Button
+                      variant="outline"
+                      className="border-white text-white hover:bg-white hover:text-navy-900 bg-transparent"
+                    >
+                      WhatsApp Us
+                    </Button>
+                  </a>
+                </MagneticHover>
               </div>
             </div>
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold text-navy-900 mb-4">Quick Inquiry</h3>
+            <TiltHover>
+              <Card className="p-6 bg-white/95 backdrop-blur-sm">
+                <h3 className="text-xl font-semibold text-navy-900 mb-4">Quick Inquiry</h3>
               {qSubmitted ? (
                 <div className="space-y-3">
                   <p className="text-green-700 bg-green-50 border border-green-200 rounded-md p-3">
@@ -529,12 +581,15 @@ export default function HomePage() {
                     </SelectContent>
                   </Select>
                   <Textarea placeholder="Message (optional)" value={qMessage} onChange={(e) => setQMessage(e.target.value)} rows={3} />
-                  <Button type="submit" disabled={qSubmitting} className="w-full bg-navy-900 hover:bg-navy-800 text-white">
-                    {qSubmitting ? "Sending..." : "Submit Inquiry"}
-                  </Button>
+                  <MagneticHover strength={0.1}>
+                    <Button type="submit" disabled={qSubmitting} className="w-full bg-navy-900 hover:bg-navy-800 text-white">
+                      {qSubmitting ? "Sending..." : "Submit Inquiry"}
+                    </Button>
+                  </MagneticHover>
                 </form>
               )}
             </Card>
+          </TiltHover>
           </div>
         </div>
       </section>
