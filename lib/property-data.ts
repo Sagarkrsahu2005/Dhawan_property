@@ -50,7 +50,125 @@ export interface Property {
 }
 
 export const properties: Property[] = [
-  // Latest Project - Landmark Skyvue (Featured as Hero Project)
+  // Latest Project - Godrej Verdania Estate (Featured as Hero Project)
+  {
+    id: 21,
+    title: "Godrej Verdania Estate",
+    location: "Manglia, Indore, Madhya Pradesh",
+    bedrooms: 0, // Residential plots
+    bathrooms: 0, // Residential plots
+    area: 1800, // Average plot size
+    yearBuilt: 2026,
+    type: "residential",
+    status: "new-launch",
+    tag: "Premium Plotted Development",
+    image: "https://www.godrejgroupsindia.com/project_pics/godrej-verdania-banner-81889.jpg",
+    amenities: [
+      "24 Acres of Resort-Style Living",
+      "Grand Boulevard Roads",
+      "Lush Green Open Spaces",
+      "Premium Clubhouse (~11,000 sq. ft.) - The Verdania Enclave",
+      "Dedicated Kids' Play Area (~5,000 sq. ft.)",
+      "Gated Community with Controlled Access",
+      "Well-Equipped Gymnasium",
+      "Swimming Pool",
+      "Jogging Tracks",
+      "Children's Play Area",
+      "Multi-Layered Security System",
+      "Rainwater Harvesting Systems",
+      "Solar Lighting",
+      "Eco-Friendly Development",
+      "Flexible Plot Sizes (1200-2500 sq. ft.)",
+      "Freehold Property",
+      "Custom Home Construction Freedom",
+      "Well-Laid Roads & Drainage Systems",
+      "Utility Connections Ready",
+      "RERA Approved (P-SWR-25–589)"
+    ],
+    images: [
+      "https://www.godrejgroupsindia.com/project_pics/godrej-verdania-banner-81889.jpg"
+    ],
+    description: `Godrej Verdania Estate is Indore's most awaited plotted development by Godrej Properties, spanning across 24 acres of resort-style living in Manglia, Indore. Following the record-breaking success of Greenview Estate, this premium residential plotted development offers the ultimate plotted address in India's cleanest city. The project provides a serene and green living environment with a perfect blend of modern comforts and strong connectivity. With flexible plot sizes ranging from 1200-2500 sq. ft., residents can build their dream homes with complete customization freedom. The development features world-class amenities including The Verdania Enclave clubhouse, swimming pool, gymnasium, and eco-friendly features like rainwater harvesting and solar lighting.`,
+    floorPlans: {
+      "Plot Layouts": [
+        {
+          image: "https://images.squarespace-cdn.com/content/v1/626c0b5e8e35d4063c28c445/1681369762142-TJBZN7RLKCMZR5NPNVFP/Godrej+Verdania+Estate+Mangalia+Indore+%282%29.jpg",
+          label: "1500 sq. ft. Plot - ₹1.50 Cr*",
+          downloadUrl: "https://images.squarespace-cdn.com/content/v1/626c0b5e8e35d4063c28c445/1681369762142-TJBZN7RLKCMZR5NPNVFP/Godrej+Verdania+Estate+Mangalia+Indore+%282%29.jpg",
+          size: "1500 Sq.Ft."
+        },
+        {
+          image: "https://images.squarespace-cdn.com/content/v1/626c0b5e8e35d4063c28c445/1681369680246-S7WBMHGX9JX3OUNLMBNK/Godrej+Verdania+Estate+Mangalia+Indore+%285%29.jpg",
+          label: "1800 sq. ft. Plot - ₹1.80 Cr*",
+          downloadUrl: "https://images.squarespace-cdn.com/content/v1/626c0b5e8e35d4063c28c445/1681369680246-S7WBMHGX9JX3OUNLMBNK/Godrej+Verdania+Estate+Mangalia+Indore+%285%29.jpg",
+          size: "1800 Sq.Ft."
+        },
+        {
+          image: "https://images.squarespace-cdn.com/content/v1/626c0b5e8e35d4063c28c445/1681369681031-YLWYJHGCVP4XZQG4YP8C/Godrej+Verdania+Estate+Mangalia+Indore+%286%29.jpg",
+          label: "2000-2500 sq. ft. Plot - ₹2.00-2.50 Cr*",
+          downloadUrl: "https://images.squarespace-cdn.com/content/v1/626c0b5e8e35d4063c28c445/1681369681031-YLWYJHGCVP4XZQG4YP8C/Godrej+Verdania+Estate+Mangalia+Indore+%286%29.jpg",
+          size: "2000-2500 Sq.Ft."
+        }
+      ]
+    },
+    sizes: [
+      { type: "1500 sq. ft. Plot", size: "1500 Sq.Ft." },
+      { type: "1800 sq. ft. Plot", size: "1800 Sq.Ft." },
+      { type: "2000 sq. ft. Plot", size: "2000 Sq.Ft." },
+      { type: "2500 sq. ft. Plot", size: "2500 Sq.Ft." }
+    ],
+    projectSpecs: {
+      landParcel: "24 Acres",
+      totalUnits: "Multiple Phases",
+      clubHouse: "The Verdania Enclave (~11,000 sq. ft.)",
+      carParking: "Individual Plot Parking",
+      possession: "2026-2027",
+      rera: "P-SWR-25–589",
+      paymentPlan: "Starting From ₹1.50 Cr",
+      bookingAmount: "EOI Amount: ₹75,000/-"
+    },
+    nearbyPlaces: [
+      { name: "Devi Ahilya Bai Holkar International Airport", distance: "20 km", type: "transport" },
+      { name: "NH-52 Highway", distance: "5 km", type: "connectivity" },
+      { name: "Ujjain City", distance: "30 km", type: "connectivity" },
+      { name: "Indore City Center", distance: "25 km", type: "commercial" },
+      { name: "Super Corridor", distance: "15 km", type: "commercial" },
+      { name: "Industrial Areas", distance: "10-15 km", type: "commercial" }
+    ],
+    agent: {
+      name: "Kapil Dhawan",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
+      image: "/professional-real-estate-agent.png"
+    },
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.5556844556845!2d75.6952!3d22.6667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962f0f5e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2sManglia%2C%20Indore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1694600000000!5m2!1sen!2sin",
+    locationImage: "https://images.squarespace-cdn.com/content/v1/626c0b5e8e35d4063c28c445/1681369762142-TJBZN7RLKCMZR5NPNVFP/Godrej+Verdania+Estate+Mangalia+Indore+%282%29.jpg",
+    locationLink: "https://maps.app.goo.gl/tkhEDdES575xQa716",
+    brochures: [
+      {
+        title: "Godrej Verdania Estate Info Docket",
+        type: "Info Docket",
+        fileUrl: "/godrej-verdania-estate-info-docket.pdf",
+        thumbnail: "https://images.squarespace-cdn.com/content/v1/626c0b5e8e35d4063c28c445/1681369547593-PDBGFRZWTDAVFVNQBGZM/Godrej+Verdania+Estate+Mangalia+Indore+%281%29.jpg",
+        description: "Complete project information including plot sizes, pricing, and amenities"
+      },
+      {
+        title: "Plot Layout Plans",
+        type: "Layout Plans",
+        fileUrl: "/godrej-verdania-plot-layouts.pdf",
+        thumbnail: "https://images.squarespace-cdn.com/content/v1/626c0b5e8e35d4063c28c445/1681369762142-TJBZN7RLKCMZR5NPNVFP/Godrej+Verdania+Estate+Mangalia+Indore+%282%29.jpg",
+        description: "Detailed plot layout plans for different plot sizes"
+      },
+      {
+        title: "Investment Guide",
+        type: "Investment Guide",
+        fileUrl: "/godrej-verdania-investment-guide.pdf",
+        thumbnail: "https://images.squarespace-cdn.com/content/v1/626c0b5e8e35d4063c28c445/1681369681031-YLWYJHGCVP4XZQG4YP8C/Godrej+Verdania+Estate+Mangalia+Indore+%286%29.jpg",
+        description: "Investment potential and ROI analysis for Indore real estate"
+      }
+    ]
+  },
+  // Previous Latest Project - Landmark Skyvue
   {
     id: 19,
     title: "Landmark Skyvue",

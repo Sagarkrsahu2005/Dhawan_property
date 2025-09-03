@@ -10,6 +10,19 @@ import Navigation from "@/components/navigation"
 const blogPosts = [
   {
     id: 1,
+    slug: "godrej-verdania-estate-indore-plotted-development",
+    title: "Godrej Verdania Estate - Indore's Most Awaited Plotted Development",
+    excerpt:
+      "Discover the premium 24-acre plotted development by Godrej Properties in Manglia, Indore. RERA approved with plots starting from ₹1.50 Cr and EOI at just ₹75,000.",
+    image: "/luxury-villa-garden-pool.png",
+    author: "Dhawan Properties",
+    publishDate: "2024-12-19",
+    readTime: "7 min read",
+    category: "New Launch",
+    featured: true,
+  },
+  {
+    id: 2,
     slug: "how-to-verify-property-documents",
     title: "How to Verify Property Documents",
     excerpt:
@@ -22,7 +35,7 @@ const blogPosts = [
     featured: true,
   },
   {
-    id: 2,
+    id: 3,
     slug: "neighborhood-checklist-before-you-buy",
     title: "Neighborhood Checklist Before You Buy",
     excerpt:
@@ -35,7 +48,7 @@ const blogPosts = [
     featured: true,
   },
   {
-    id: 3,
+    id: 4,
     slug: "home-loan-basics-for-first-time-buyers",
     title: "Home Loan Basics for First-Time Buyers",
     excerpt:
