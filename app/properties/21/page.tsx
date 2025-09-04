@@ -67,13 +67,13 @@ export default function GodrejVerdaniaPage() {
 
   // Pricing data
   const pricingPlans = [
-    {
-      size: "1200 sq. ft.",
-      price: "₹1.20 Cr*",
-      eoiAmount: "₹75,000",
-      description: "Compact family plot",
-      features: ["Corner Plot Available", "East/North Facing", "24x50 ft dimensions"]
-    },
+    // {
+    //   size: "1200 sq. ft.",
+    //   price: "₹1.20 Cr*",
+    //   eoiAmount: "₹75,000",
+    //   description: "Compact family plot",
+    //   features: ["Corner Plot Available", "East/North Facing", "24x50 ft dimensions"]
+    // },
     {
       size: "1500 sq. ft.",
       price: "₹1.50 Cr*",
@@ -117,7 +117,7 @@ export default function GodrejVerdaniaPage() {
     },
     {
       question: "Is the project RERA approved?",
-      answer: "Yes, Godrej Verdania Estate is fully RERA approved with registration number P-SWR-25–589, ensuring complete transparency and legal compliance."
+      answer: "Yes, Godrej Verdania Estate is fully RERA approved with registration number P-SWR-25-5891, ensuring complete transparency and legal compliance."
     },
     {
       question: "What are the key amenities offered?",
@@ -267,7 +267,7 @@ export default function GodrejVerdaniaPage() {
                   </div>
                   <div className="text-left lg:text-right">
                     <div className="text-2xl lg:text-3xl font-bold text-white mb-2">
-                      Starting ₹1.20 Cr*
+                      Starting ₹1.50 Cr*
                     </div>
                     <Button
                       className="bg-gold-500/90 hover:bg-gold-600 text-navy-900 backdrop-blur-sm"
@@ -377,7 +377,7 @@ export default function GodrejVerdaniaPage() {
               </div>
               <div className="flex justify-between items-center py-3 border-b border-white/20">
                 <span className="text-gray-700">Plot Sizes</span>
-                <span className="font-semibold text-navy-900">1200-2500 sq.ft</span>
+                <span className="font-semibold text-navy-900">1500-2500 sq.ft</span>
               </div>
               <div className="flex justify-between items-center py-3 border-b border-white/20">
                 <span className="text-gray-700">Total Area</span>
@@ -389,7 +389,7 @@ export default function GodrejVerdaniaPage() {
               </div>
               <div className="flex justify-between items-center py-3 border-b border-white/20">
                 <span className="text-gray-700">RERA</span>
-                <span className="font-semibold text-navy-900">P-SWR-25–589</span>
+                <span className="font-semibold text-navy-900">P-SWR-25-5891</span>
               </div>
               <div className="flex justify-between items-center py-3">
                 <span className="text-gray-700">Status</span>
@@ -432,7 +432,7 @@ export default function GodrejVerdaniaPage() {
                 <div className="p-4 backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl">
                   <Building className="w-6 h-6 text-gold-600 mb-2" />
                   <h4 className="font-semibold text-navy-900 mb-1">Premium Clubhouse</h4>
-                  <p className="text-sm text-gray-600">The Verdania Enclave - 11,000 sq. ft.</p>
+                  <p className="text-sm text-gray-600">The Verdania Clubhouse - 11,000 sq. ft.</p>
                 </div>
                 <div className="p-4 backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl">
                   <Trees className="w-6 h-6 text-green-600 mb-2" />
@@ -483,10 +483,24 @@ export default function GodrejVerdaniaPage() {
                   </Card>
                 ))}
               </div>
-              <div className="mt-4 p-3 bg-gold-50 border border-gold-200 rounded-xl">
-                <p className="text-xs text-gold-800 text-center">
-                  <strong>Special Offer:</strong> Priority Allotment with just ₹75,000 EOI • Limited Time Offer
-                </p>
+              <div className="mt-4 p-4 bg-gradient-to-r from-gold-50 to-orange-50 border-2 border-gold-300 rounded-xl shadow-lg">
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <span className="text-2xl">🎯</span>
+                    <h4 className="text-lg font-bold text-gold-800">EXCLUSIVE LAUNCH OFFER!</h4>
+                    <span className="text-2xl">🎯</span>
+                  </div>
+                  <div className="mb-3">
+                    <span className="text-2xl font-black text-red-600">₹17-20 Lakhs Discount*</span>
+                    <p className="text-sm font-semibold text-gold-700">+ 10% Priority Benefits on EOI Booking</p>
+                  </div>
+                  <div className="bg-navy-900 text-white px-4 py-2 rounded-lg inline-block mb-2">
+                    <p className="text-sm font-bold">💰 "Book Smart, Save Big - Your Dream Plot Awaits!" 💰</p>
+                  </div>
+                  <p className="text-xs text-gold-800">
+                    <strong>⚡ Limited Time Offer:</strong> Priority Allotment with just ₹75,000 EOI • First 50 Bookings Only!
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -544,12 +558,77 @@ export default function GodrejVerdaniaPage() {
               </div>
             </div>
 
+            {/* Brochure Downloads */}
+            {propertyData.brochures && propertyData.brochures.length > 0 && (
+              <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-8 bg-navy-900 rounded-lg flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-navy-900">Download Brochures</h3>
+                </div>
+                
+                <div className="space-y-4">
+                  {propertyData.brochures.map((brochure, index) => (
+                    <div key={index} className="flex items-center justify-between p-4 bg-white/60 border border-white/40 rounded-xl hover:bg-white/80 transition-all group">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-navy-900 to-navy-700 rounded-lg flex items-center justify-center shadow-lg">
+                          {brochure.type === "Info Docket" && (
+                            <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                          )}
+                          {brochure.type === "Layout Plans" && (
+                            <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2H9a2 2 0 00-2 2v10z" />
+                            </svg>
+                          )}
+                          {brochure.type === "Investment Guide" && (
+                            <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                          )}
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-navy-900 text-lg">{brochure.title}</h4>
+                          <p className="text-sm text-gray-600 max-w-md">{brochure.description}</p>
+                        </div>
+                      </div>
+                      <Button 
+                        className="bg-navy-900 hover:bg-navy-800 text-white px-6 py-2 rounded-lg group-hover:bg-gold-600 transition-all"
+                        onClick={() => {
+                          // Direct download using window.open with the file URL
+                          window.open(brochure.fileUrl, '_blank');
+                        }}
+                      >
+                        <Download className="w-4 h-4 mr-2" />
+                        Download
+                      </Button>
+                    </div>
+                  ))}
+                </div>
+                
+                <div className="mt-6 p-4 bg-gradient-to-r from-navy-50 to-blue-50 border border-navy-200 rounded-xl">
+                  <div className="flex items-center gap-2">
+                    <svg className="w-5 h-5 text-navy-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p className="text-sm text-navy-800">
+                      <strong>All brochures are updated with latest project information and pricing.</strong>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Location */}
             <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
               <h3 className="text-2xl font-bold text-navy-900 mb-6">Location</h3>
               <div className="backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.1!2d75.8577!3d22.7196!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDQzJzEwLjYiTiA3NcKwNTEnMjcuNyJF!5e0!3m2!1sen!2sin!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.0074596218606!2d75.92223757504753!3d22.802187479328886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631df5e6dfc8f3%3A0xfd8abbe13d8df486!2sVerdania%20Estate%20%7C%20Godrej%20Plots%20Indore!5e0!3m2!1sen!2sus!4v1757015017807!5m2!1sen!2sus"
                   width="100%"
                   height="300"
                   style={{ border: 0 }}
@@ -658,9 +737,10 @@ export default function GodrejVerdaniaPage() {
                     Email Us
                   </a>
                 </Button>
-                <Button className="w-full bg-gold-600 hover:bg-gold-700 text-white">
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Brochure
+                <Button className="w-full bg-gold-600 hover:bg-gold-700 text-white" asChild>
+                  <a href="https://wa.me/919999628400" target="_blank" rel="noopener noreferrer">
+                    WhatsApp Inquiry
+                  </a>
                 </Button>
               </div>
             </div>

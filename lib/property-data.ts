@@ -67,7 +67,7 @@ export const properties: Property[] = [
       "24 Acres of Resort-Style Living",
       "Grand Boulevard Roads",
       "Lush Green Open Spaces",
-      "Premium Clubhouse (~11,000 sq. ft.) - The Verdania Enclave",
+      "Premium Clubhouse (~11,000 sq. ft.) - The Verdania Clubhouse",
       "Dedicated Kids' Play Area (~5,000 sq. ft.)",
       "Gated Community with Controlled Access",
       "Well-Equipped Gymnasium",
@@ -83,12 +83,12 @@ export const properties: Property[] = [
       "Custom Home Construction Freedom",
       "Well-Laid Roads & Drainage Systems",
       "Utility Connections Ready",
-      "RERA Approved (P-SWR-25–589)"
+      "RERA Approved (P-SWR-25-5891)"
     ],
     images: [
       "https://www.godrejgroupsindia.com/project_pics/godrej-verdania-banner-81889.jpg"
     ],
-    description: `Godrej Verdania Estate is Indore's most awaited plotted development by Godrej Properties, spanning across 24 acres of resort-style living in Manglia, Indore. Following the record-breaking success of Greenview Estate, this premium residential plotted development offers the ultimate plotted address in India's cleanest city. The project provides a serene and green living environment with a perfect blend of modern comforts and strong connectivity. With flexible plot sizes ranging from 1200-2500 sq. ft., residents can build their dream homes with complete customization freedom. The development features world-class amenities including The Verdania Enclave clubhouse, swimming pool, gymnasium, and eco-friendly features like rainwater harvesting and solar lighting.`,
+    description: `Godrej Verdania Estate is Indore's most awaited plotted development by Godrej Properties, spanning across 24 acres of resort-style living in Manglia, Indore. Following the record-breaking success of Greenview Estate, this premium residential plotted development offers the ultimate plotted address in India's cleanest city. The project provides a serene and green living environment with a perfect blend of modern comforts and strong connectivity. With flexible plot sizes ranging from 1200-2500 sq. ft., residents can build their dream homes with complete customization freedom. The development features world-class amenities including The Verdania Clubhouse clubhouse, swimming pool, gymnasium, and eco-friendly features like rainwater harvesting and solar lighting.`,
     floorPlans: {
       "Plot Layouts": [
         {
@@ -120,10 +120,10 @@ export const properties: Property[] = [
     projectSpecs: {
       landParcel: "24 Acres",
       totalUnits: "Multiple Phases",
-      clubHouse: "The Verdania Enclave (~11,000 sq. ft.)",
+      clubHouse: "The Verdania Clubhouse (~11,000 sq. ft.)",
       carParking: "Individual Plot Parking",
       possession: "2026-2027",
-      rera: "P-SWR-25–589",
+      rera: "P-SWR-25-5891",
       paymentPlan: "Starting From ₹1.50 Cr",
       bookingAmount: "EOI Amount: ₹75,000/-"
     },
@@ -141,30 +141,23 @@ export const properties: Property[] = [
       email: "Dhawanproperties2019@gmail.com",
       image: "/professional-real-estate-agent.png"
     },
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.5556844556845!2d75.6952!3d22.6667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962f0f5e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2sManglia%2C%20Indore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1694600000000!5m2!1sen!2sin",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.0074596218606!2d75.92223757504753!3d22.802187479328886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631df5e6dfc8f3%3A0xfd8abbe13d8df486!2sVerdania%20Estate%20%7C%20Godrej%20Plots%20Indore!5e0!3m2!1sen!2sus!4v1757015017807!5m2!1sen!2sus",
     locationImage: "https://images.squarespace-cdn.com/content/v1/626c0b5e8e35d4063c28c445/1681369762142-TJBZN7RLKCMZR5NPNVFP/Godrej+Verdania+Estate+Mangalia+Indore+%282%29.jpg",
     locationLink: "https://maps.app.goo.gl/tkhEDdES575xQa716",
     brochures: [
       {
-        title: "Godrej Verdania Estate Info Docket",
+        title: "Godrej Verdania Estate Details",
         type: "Info Docket",
-        fileUrl: "/godrej-verdania-estate-info-docket.pdf",
+        fileUrl: "/GODREJ VERDANIA ESTATE DETAILS .pdf",
         thumbnail: "https://images.squarespace-cdn.com/content/v1/626c0b5e8e35d4063c28c445/1681369547593-PDBGFRZWTDAVFVNQBGZM/Godrej+Verdania+Estate+Mangalia+Indore+%281%29.jpg",
         description: "Complete project information including plot sizes, pricing, and amenities"
       },
       {
-        title: "Plot Layout Plans",
+        title: "Verdania Estate Brochure",
         type: "Layout Plans",
-        fileUrl: "/godrej-verdania-plot-layouts.pdf",
+        fileUrl: "/VERDANIA ESTATE-BROCHURE.pdf",
         thumbnail: "https://images.squarespace-cdn.com/content/v1/626c0b5e8e35d4063c28c445/1681369762142-TJBZN7RLKCMZR5NPNVFP/Godrej+Verdania+Estate+Mangalia+Indore+%282%29.jpg",
-        description: "Detailed plot layout plans for different plot sizes"
-      },
-      {
-        title: "Investment Guide",
-        type: "Investment Guide",
-        fileUrl: "/godrej-verdania-investment-guide.pdf",
-        thumbnail: "https://images.squarespace-cdn.com/content/v1/626c0b5e8e35d4063c28c445/1681369681031-YLWYJHGCVP4XZQG4YP8C/Godrej+Verdania+Estate+Mangalia+Indore+%286%29.jpg",
-        description: "Investment potential and ROI analysis for Indore real estate"
+        description: "Official project brochure with detailed plot layout plans and amenities"
       }
     ]
   },
@@ -666,7 +659,7 @@ export const properties: Property[] = [
     amenities: [
       "Modern Architecture with Expansive Green Spaces",
       "Direct Dwarka Expressway Access",
-      "Proximity to IGI Airport, Diplomatic Enclave, Dwarka Golf Course, Bharat Vandana Park",
+      "Proximity to IGI Airport, Diplomatic Clubhouse, Dwarka Golf Course, Bharat Vandana Park",
       "Clubhouse with Recreational Options",
       "Olympic-sized Swimming Pool",
       "Golf Chip & Putt, Cricket Box, Squash, Basketball, Tennis Court",
@@ -755,7 +748,7 @@ export const properties: Property[] = [
       "Panoramic Views of Central Greens & Water Bodies",
       "Energy-Efficient & Sustainable Design",
       "Direct Dwarka Expressway Access",
-      "Proximity to IGI Airport, Diplomatic Enclave II, India International Convention Centre, Bharat Vandana Park, Delhi Golf Course, International Sports Complex",
+      "Proximity to IGI Airport, Diplomatic Clubhouse II, India International Convention Centre, Bharat Vandana Park, Delhi Golf Course, International Sports Complex",
       "Clubhouse (75,000 sq. ft.) with Fitness Center, Spa, Lounge",
       "Rooftop Swimming Pool",
       "Golf Putting, Bowling Alley, Squash & Tennis Court",
@@ -1642,7 +1635,7 @@ QUALITY CONSTRUCTION ON 60 METER ROAD AND NEAR TO DELHI.`,
       { name: "IGI Airport", distance: "15 Minutes Drive", type: "transport" },
       { name: "DPS - Delhi Public School, Gurugram", distance: "Adjacent", type: "education" },
       { name: "Golf Course Extension Road", distance: "15 Minutes", type: "connectivity" },
-      { name: "Diplomatic Enclave", distance: "20 Minutes", type: "commercial" },
+      { name: "Diplomatic Clubhouse", distance: "20 Minutes", type: "commercial" },
       { name: "NH8", distance: "Direct Access", type: "connectivity" },
       { name: "Dwarka Expressway", distance: "Direct Access", type: "connectivity" }
     ],

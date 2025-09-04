@@ -87,7 +87,7 @@ export default function GodrejVerdaniaBlogPost() {
   const keyFeatures = [
     { icon: TreePine, title: "24 Acres Resort Living", description: "Sprawling green spaces and resort-style amenities" },
     { icon: Building, title: "Premium Clubhouse", description: "11,000 sq. ft. The Verdania Enclave with world-class facilities" },
-    { icon: Shield, title: "RERA Approved", description: "P-SWR-25–589 ensuring transparency and compliance" },
+    { icon: Shield, title: "RERA Approved", description: "P-SWR-25-5891 ensuring transparency and compliance" },
     { icon: Car, title: "Strategic Location", description: "Prime location in Manglia with excellent connectivity" }
   ]
 
@@ -276,7 +276,7 @@ export default function GodrejVerdaniaBlogPost() {
             {/* Disclaimer */}
             <div className="text-center text-xs text-gray-500 border-t border-gray-200 pt-4">
               <p>*Prices are subject to change. *T&C Apply. All images are for representational purposes only.</p>
-              <p className="mt-1">RERA Registration: P-SWR-25–589</p>
+              <p className="mt-1">RERA Registration: P-SWR-25-5891</p>
             </div>
           </div>
         </div>
