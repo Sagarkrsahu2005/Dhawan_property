@@ -346,8 +346,12 @@ export default function PropertiesPage() {
               <h3 className="text-2xl font-bold mb-4">Dhawan Properties</h3>
               <p className="text-gray-400 mb-4">Your trusted partner in real estate with verified listings and transparent dealings.</p>
               <div className="flex space-x-4">
-                <Button size="sm" variant="outline" className="border-gray-600 text-gray-400 hover:text-white bg-transparent">Facebook</Button>
-                <Button size="sm" variant="outline" className="border-gray-600 text-gray-400 hover:text-white bg-transparent">Instagram</Button>
+                <Button size="sm" variant="outline" className="border-gray-600 text-gray-400 hover:text-white bg-transparent" asChild>
+                  <a href="https://www.facebook.com/dhawanpropertis" target="_blank" rel="noopener noreferrer">Facebook</a>
+                </Button>
+                <Button size="sm" variant="outline" className="border-gray-600 text-gray-400 hover:text-white bg-transparent" asChild>
+                  <a href="https://www.instagram.com/dhawanproperties2019?igsh=MWs5emJ5aWdoNWxjZg==" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </Button>
               </div>
             </div>
             <div>

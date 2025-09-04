@@ -999,15 +999,21 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                   size="sm"
                   variant="outline"
                   className="border-gray-600 text-gray-400 hover:text-white bg-transparent"
+                  asChild
                 >
-                  Facebook
+                  <a href="https://www.facebook.com/dhawanpropertis" target="_blank" rel="noopener noreferrer">
+                    Facebook
+                  </a>
                 </Button>
                 <Button
                   size="sm"
                   variant="outline"
                   className="border-gray-600 text-gray-400 hover:text-white bg-transparent"
+                  asChild
                 >
-                  Instagram
+                  <a href="https://www.instagram.com/dhawanproperties2019?igsh=MWs5emJ5aWdoNWxjZg==" target="_blank" rel="noopener noreferrer">
+                    Instagram
+                  </a>
                 </Button>
               </div>
             </div>

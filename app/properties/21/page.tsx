@@ -40,6 +40,7 @@ import Link from "next/link"
 import { getPropertyById, properties, getSimilarProperties } from "@/lib/property-data"
 import BrochureDownload from "@/components/brochure-download"
 import Navigation from "@/components/navigation"
+import Footer from "@/components/footer"
 
 export default function GodrejVerdaniaPage() {
   const propertyData = getPropertyById(21)
@@ -125,7 +126,7 @@ export default function GodrejVerdaniaPage() {
     },
     {
       question: "What is the possession timeline?",
-      answer: "The project is scheduled for possession by 2026. Infrastructure development and amenity construction are progressing as per the planned timeline."
+      answer: "The project is scheduled for possession by 2027. Infrastructure development and amenity construction are progressing as per the planned timeline."
     },
     {
       question: "Are there any restrictions on home construction?",
@@ -385,7 +386,7 @@ export default function GodrejVerdaniaPage() {
               </div>
               <div className="flex justify-between items-center py-3 border-b border-white/20">
                 <span className="text-gray-700">Possession</span>
-                <span className="font-semibold text-navy-900">2026</span>
+                <span className="font-semibold text-navy-900">2027</span>
               </div>
               <div className="flex justify-between items-center py-3 border-b border-white/20">
                 <span className="text-gray-700">RERA</span>
@@ -405,9 +406,11 @@ export default function GodrejVerdaniaPage() {
                 <Calendar className="w-4 h-4 mr-2" />
                 Schedule Site Visit
               </Button>
-              <Button variant="outline" className="w-full border-navy-900 text-navy-900">
-                <Phone className="w-4 h-4 mr-2" />
-                Call Now
+              <Button variant="outline" className="w-full border-navy-900 text-navy-900" asChild>
+                <a href="tel:+919999628400">
+                  <Phone className="w-4 h-4 mr-2" />
+                  Call Now
+                </a>
               </Button>
               <Button className="w-full bg-green-600 hover:bg-green-700 text-white" asChild>
                 <a href="https://wa.me/919999628400" target="_blank" rel="noopener noreferrer">
@@ -803,6 +806,9 @@ export default function GodrejVerdaniaPage() {
           </div>
         )}
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }

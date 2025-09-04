@@ -30,10 +30,8 @@ const structuredData = {
     "availableLanguage": ["English", "Hindi"]
   },
   "sameAs": [
-    "https://facebook.com/dhavanproperties",
-    "https://twitter.com/dhavanproperties",
-    "https://instagram.com/dhavanproperties",
-    "https://linkedin.com/company/dhavanproperties"
+    "https://www.facebook.com/dhawanpropertis",
+    "https://www.instagram.com/dhawanproperties2019?igsh=MWs5emJ5aWdoNWxjZg=="
   ],
   "serviceArea": {
     "@type": "Place",

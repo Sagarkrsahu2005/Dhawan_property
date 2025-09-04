@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin } from "lucide-react"
+import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react"
 import Link from "next/link"
 
 export default function Footer() {
@@ -47,29 +47,21 @@ export default function Footer() {
                 size="sm"
                 variant="outline"
                 className="border-gray-600 text-gray-400 hover:text-white hover:border-white bg-transparent p-2"
+                asChild
               >
-                <Facebook className="w-4 h-4" />
+                <a href="https://www.facebook.com/dhawanpropertis" target="_blank" rel="noopener noreferrer">
+                  <Facebook className="w-4 h-4" />
+                </a>
               </Button>
               <Button
                 size="sm"
                 variant="outline"
                 className="border-gray-600 text-gray-400 hover:text-white hover:border-white bg-transparent p-2"
+                asChild
               >
-                <Instagram className="w-4 h-4" />
-              </Button>
-              <Button
-                size="sm"
-                variant="outline"
-                className="border-gray-600 text-gray-400 hover:text-white hover:border-white bg-transparent p-2"
-              >
-                <Twitter className="w-4 h-4" />
-              </Button>
-              <Button
-                size="sm"
-                variant="outline"
-                className="border-gray-600 text-gray-400 hover:text-white hover:border-white bg-transparent p-2"
-              >
-                <Linkedin className="w-4 h-4" />
+                <a href="https://www.instagram.com/dhawanproperties2019?igsh=MWs5emJ5aWdoNWxjZg==" target="_blank" rel="noopener noreferrer">
+                  <Instagram className="w-4 h-4" />
+                </a>
               </Button>
             </div>
           </div>

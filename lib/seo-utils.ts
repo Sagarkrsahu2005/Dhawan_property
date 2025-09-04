@@ -150,9 +150,8 @@ export function generatePropertyStructuredData(property: any) {
       "contactType": "customer service"
     },
     "sameAs": [
-      "https://facebook.com/dhavanproperties",
-      "https://twitter.com/dhavanproperties",
-      "https://instagram.com/dhavanproperties"
+      "https://www.facebook.com/dhawanpropertis",
+      "https://www.instagram.com/dhawanproperties2019?igsh=MWs5emJ5aWdoNWxjZg=="
     ],
     "makesOffer": {
       "@type": "Offer",
