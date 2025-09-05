@@ -243,6 +243,7 @@ Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate
   // Previous Latest Project - Landmark Skyvue
   {
     id: 19,
+    slug: "landmark-skyvue",
     title: "Landmark Skyvue",
     location: "Sector 103, Dwarka Expressway, Gurgaon/Gurugram, Haryana",
     bedrooms: 3,
@@ -335,6 +336,7 @@ Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate
 
   {
     id: 18,
+    slug: "max-estate-360",
     title: "Max Estate 360",
     location: "Gurgaon/Gurugram, Haryana",
     bedrooms: 3,
@@ -410,6 +412,7 @@ Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate
 
   {
     id: 17,
+    slug: "ats-homekraft-sanctuary",
     title: "ATS HomeKraft Sanctuary",
     location: "Gurgaon/Gurugram, Haryana",
     bedrooms: 3,
@@ -485,6 +488,7 @@ Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate
 
   {
     id: 16,
+    slug: "mrg-crown",
     title: "MRG Crown",
     location: "Gurgaon/Gurugram, Haryana",
     bedrooms: 3,
@@ -557,6 +561,7 @@ Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate
 
   {
     id: 15,
+    slug: "elan-the-presidential",
     title: "Elan The Presidential",
     location: "Sector 106, Dwarka Expressway, Gurgaon, Haryana",
     bedrooms: 3,
@@ -636,6 +641,7 @@ Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate
 
   {
     id: 14,
+    slug: "emaar-urban-ascent-sector-112",
     title: "Emaar Urban Ascent Sector 112",
     location: "Sector 112, Gurgaon/Gurugram, Haryana",
     bedrooms: 3,
@@ -725,6 +731,7 @@ Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate
 
   {
     id: 13,
+    slug: "m3m-mansion",
     title: "M3M Mansion",
     location: "Sector 113, Dwarka Expressway, Gurugram, Haryana",
     bedrooms: 4,
@@ -812,6 +819,7 @@ Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate
 
   {
     id: 12,
+    slug: "m3m-crown",
     title: "M3M Crown",
     location: "Sector 111, Dwarka Expressway, Gurugram, Haryana",
     bedrooms: 3,
@@ -894,6 +902,7 @@ Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate
 
   {
   id: 11,
+  slug: "smartworld-one-dxp",
   title: "Smartworld One DXP",
   location: "Sector 113, Gurgaon/Gurugram, Haryana",
   bedrooms: 2,
@@ -975,6 +984,7 @@ Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate
 
   {
     id: 10,
+    slug: "signature-global-twin-tower-dxp",
     title: "Signature Global Twin Tower DXP",
     location: "Sector 37D, Gurgaon/Gurugram, Haryana",
     bedrooms: 3,
@@ -1051,6 +1061,7 @@ Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate
   },
   {
     id: 9,
+    slug: "signature-global-dxp-sec-37d",
     title: "Signature Global DXP Sec 37D",
     location: "Sector 37D, Gurgaon/Gurugram, Haryana",
     bedrooms: 3,
@@ -1120,6 +1131,7 @@ Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate
   },
   {
     id: 6,
+    slug: "navraj-the-kingstown-heights",
     title: "Navraj The KingsTown Heights",
     location: "Gurgaon/Gurugram, Haryana",
     bedrooms: 3,
@@ -1197,6 +1209,7 @@ Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate
 
   {
     id: 8,
+    slug: "hero-home-the-palatial",
     title: "Hero Home The Palatial",
     location: "Sector 104, Gurgaon/Gurugram, Haryana",
     bedrooms: 3,
@@ -1281,6 +1294,7 @@ Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate
   },
   {
     id: 7,
+    slug: "bptp-amstoria-verti-greens",
     title: "BPTP Amstoria Verti Greens",
     location: "Gurgaon/Gurugram, Haryana",
     bedrooms: 2,
@@ -1352,6 +1366,7 @@ Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate
   },
   {
     id: 5,
+    slug: "godrej-vrikshya",
     title: "Godrej Vrikshya",
     location: "Sector 103, Gurgaon/Gurugram, Haryana",
     bedrooms: 3,
@@ -1415,6 +1430,7 @@ Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate
   },
   {
     id: 3,
+    slug: "puri-diplomatic-residences",
     title: "Puri Diplomatic Residences",
     location: "Sector 111, Gurgaon/Gurugram, Haryana",
     bedrooms: 3,
@@ -1490,6 +1506,7 @@ Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate
   },
   {
     id: 2,
+    slug: "sobha-altus-sector-106",
     title: "Sobha Altus Sector 106",
     location: "Dwarka Expressway, Sector 106, Gurugram, Haryana",
     bedrooms: 1,
@@ -1559,6 +1576,7 @@ QUALITY CONSTRUCTION ON 60 METER ROAD AND NEAR TO DELHI.`,
   },
   {
     id: 4,
+    slug: "krisumi-waterfall-residence",
     title: "Krisumi Waterfall Residence",
     location: "Sector 36A, Gurgaon/Gurugram, Haryana",
     bedrooms: 3,
@@ -1633,6 +1651,7 @@ QUALITY CONSTRUCTION ON 60 METER ROAD AND NEAR TO DELHI.`,
   // Westin Residences Gurugram - Sector 103
   {
     id: 20,
+    slug: "whiteland-westin-residences",
     title: "Whiteland Westin Residences",
     location: "Sector 103, Dwarka Expressway, Gurgaon",
     bedrooms: 3,

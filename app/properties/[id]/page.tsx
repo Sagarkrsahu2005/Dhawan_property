@@ -38,7 +38,7 @@ import {
   ArrowRight,
 } from "lucide-react"
 import Link from "next/link"
-import { getPropertyById, properties, getSimilarProperties } from "@/lib/property-data"
+import { getPropertyById, getPropertyBySlug, properties, getSimilarProperties } from "@/lib/property-data"
 import BrochureDownload from "@/components/brochure-download"
 import Navigation from "@/components/navigation"
 
@@ -98,7 +98,12 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
 
   // Handle params - could be a Promise or already resolved
   const resolvedParams = params instanceof Promise ? React.use(params) : params
-  const propertyData = getPropertyById(resolvedParams.id)
+  
+  // Try to get property by slug first, then by ID
+  let propertyData = getPropertyBySlug(resolvedParams.id)
+  if (!propertyData) {
+    propertyData = getPropertyById(resolvedParams.id)
+  }
 
   // Get similar properties for this property
   const similarProperties = propertyData ? getSimilarProperties(propertyData.id, 3) : []

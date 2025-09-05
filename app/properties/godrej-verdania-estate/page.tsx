@@ -626,48 +626,9 @@ export default function GodrejVerdaniaPage() {
               </div>
             </div>
 
-            {/* Pricing Section */}
+            {/* EXCLUSIVE LAUNCH OFFER */}
             <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
-              <h3 className="text-2xl font-bold text-navy-900 mb-6 flex items-center">
-                <IndianRupee className="w-6 h-6 mr-2 text-gold-600" />
-                Plot Sizes & Pricing
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                {pricingPlans.map((plan, index) => (
-                  <Card key={index} className={`relative ${plan.popular ? 'ring-2 ring-gold-500' : ''}`}>
-                    {plan.popular && (
-                      <div className="absolute -top-2 left-1/2 transform -translate-x-1/2">
-                        <Badge className="bg-gold-500 text-navy-900 text-xs">Popular</Badge>
-                      </div>
-                    )}
-                    <CardContent className="p-4">
-                      <div className="text-center mb-3">
-                        <h4 className="text-lg font-bold text-navy-900">{plan.size}</h4>
-                        <p className="text-xs text-gray-600">{plan.description}</p>
-                      </div>
-                      <div className="text-center mb-3">
-                        <div className="text-xl font-bold text-gold-600">{plan.price}</div>
-                        <div className="text-xs text-gray-600">EOI: {plan.eoiAmount}</div>
-                      </div>
-                      <ul className="space-y-1 mb-3">
-                        {plan.features.map((feature, idx) => (
-                          <li key={idx} className="text-xs text-gray-600 flex items-center">
-                            <span className="w-1.5 h-1.5 bg-gold-500 rounded-full mr-2 flex-shrink-0"></span>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                      <Button 
-                        className="w-full bg-navy-900 hover:bg-navy-800 text-white text-sm py-2"
-                        onClick={() => setIsEnquiryOpen(true)}
-                      >
-                        Book Now
-                      </Button>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-              <div className="mt-4 p-4 bg-gradient-to-r from-gold-50 to-orange-50 border-2 border-gold-300 rounded-xl shadow-lg">
+              <div className="p-4 bg-gradient-to-r from-gold-50 to-orange-50 border-2 border-gold-300 rounded-xl shadow-lg">
                 <div className="text-center">
                   <div className="flex items-center justify-center gap-2 mb-2">
                     <span className="text-2xl">🎯</span>
@@ -676,13 +637,12 @@ export default function GodrejVerdaniaPage() {
                   </div>
                   <div className="mb-3">
                     <span className="text-2xl font-black text-red-600">₹17-20 Lakhs Discount*</span>
-                    {/* <p className="text-sm font-semibold text-gold-700">+ 10% Priority Benefits on EOI Booking</p> */}
                   </div>
                   <div className="bg-navy-900 text-white px-4 py-2 rounded-lg inline-block mb-2">
                     <p className="text-sm font-bold">💰 "Book Smart, Save Big - Your Dream Plot Awaits!" 💰</p>
                   </div>
                   <p className="text-xs text-gold-800">
-                    <strong>⚡ Limited Time Offer:</strong> Priority Allotment with just ₹75,000 EOI • First 50 Bookings Only!
+                    <strong>⚡ Limited Time Offer:</strong> Priority Allotment with just ₹75,000 EOI • First Come, First Serve!
                   </p>
                 </div>
               </div>
