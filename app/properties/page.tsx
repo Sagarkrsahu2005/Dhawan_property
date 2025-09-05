@@ -244,7 +244,7 @@ export default function PropertiesPage() {
                           <Badge variant="secondary" className="text-xs">+{property.amenities.length - 3} more</Badge>
                         )}
                       </div>
-                      <a href={`/properties/${property.id}`}><Button className="w-full bg-navy-900 hover:bg-navy-800 text-white">View Details</Button></a>
+                      <a href={`/properties/${property.slug || property.id}`}><Button className="w-full bg-navy-900 hover:bg-navy-800 text-white">View Details</Button></a>
                     </CardContent>
                   </Card>
                 ))}
@@ -296,7 +296,7 @@ export default function PropertiesPage() {
                             ))}
                           </div>
                           <div className="flex space-x-3">
-                            <a href={`/properties/${property.id}`}><Button className="bg-navy-900 hover:bg-navy-800 text-white">View Details</Button></a>
+                            <a href={`/properties/${property.slug || property.id}`}><Button className="bg-navy-900 hover:bg-navy-800 text-white">View Details</Button></a>
                             <Button variant="outline" className="border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white bg-transparent"><Phone className="w-4 h-4 mr-2" />Call</Button>
                           </div>
                         </div>

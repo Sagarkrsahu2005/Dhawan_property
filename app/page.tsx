@@ -178,7 +178,7 @@ export default function HomePage() {
                     size="lg"
                     className="bg-gold-500 hover:bg-gold-600 text-navy-900 font-semibold shadow-2xl hover:shadow-gold-500/25 transition-all duration-300"
                   >
-                    <Link href={`/properties/${latestProject.id}`}>View Details</Link>
+                    <Link href={`/properties/${latestProject.slug || latestProject.id}`}>View Details</Link>
                   </Button>
                 </MagneticHover>
                 <MagneticHover strength={0.2}>
@@ -370,7 +370,7 @@ export default function HomePage() {
                         className="w-full bg-navy-900 hover:bg-navy-800 text-white"
                       >
                         <Link 
-                          href={`/properties/${property.id}`}
+                          href={`/properties/${property.slug || property.id}`}
                           onClick={(e) => {
                             e.stopPropagation() // Prevent card click when button is clicked
                           }}
@@ -480,7 +480,7 @@ export default function HomePage() {
                 rating: 5,
               },
               {
-                name: "Kapil Dhawan",
+                name: "Gatik Sharma",
                 location: "Delhi",
                 quote:
                   "I saved lakhs thanks to their negotiation skills and market knowledge. Highly recommend for first-time buyers.",
@@ -635,7 +635,7 @@ export default function HomePage() {
                 "name": property.title,
                 "description": property.description,
                 "image": property.image,
-                "url": `https://dhavanproperties.com/properties/${property.id}`,
+                "url": `https://dhavanproperties.com/properties/${property.slug || property.id}`,
                 "address": {
                   "@type": "PostalAddress",
                   "addressLocality": property.location
@@ -870,7 +870,7 @@ export default function HomePage() {
                     asChild 
                     className="flex-1 bg-navy-900 hover:bg-navy-800 text-white"
                   >
-                    <Link href={`/properties/${selectedProperty.id}`}>
+                    <Link href={`/properties/${selectedProperty.slug || selectedProperty.id}`}>
                       View Full Property Page
                     </Link>
                   </Button>

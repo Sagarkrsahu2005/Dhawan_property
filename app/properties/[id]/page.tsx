@@ -911,7 +911,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
               <div className="space-y-4">
                 {similarProperties.length > 0 ? (
                   similarProperties.map((property) => (
-                    <Link key={property.id} href={`/properties/${property.id}`}>
+                    <Link key={property.id} href={`/properties/${property.slug || property.id}`}>
                       <div className="flex space-x-3 p-3 backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl hover:bg-white/40 transition-all cursor-pointer">
                         <img
                           src={property.image || "/comfortable-family-house.png"}
@@ -1087,7 +1087,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
             "name": propertyData.title,
             "description": propertyData.description,
             "image": propertyData.image,
-            "url": `https://dhavanproperties.com/properties/${propertyData.id}`,
+            "url": `https://dhavanproperties.com/properties/${propertyData.slug || propertyData.id}`,
             "brand": {
               "@type": "Organization",
               "name": "Dhawan Properties"

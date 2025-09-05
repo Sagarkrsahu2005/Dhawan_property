@@ -4,6 +4,9 @@ export interface ProjectSpecs {
   towers?: number;
   floors?: string;
   openArea?: string;
+  openSpace?: string;
+  roadWidth?: string;
+  kidsArea?: string;
   clubHouse?: string;
   carParking?: string;
   possession?: string;
@@ -20,6 +23,7 @@ export interface ProjectSpecs {
 export interface Property {
   sizes?: { type: string; size: string }[];
   id: number;
+  slug?: string; // URL-friendly version of the property name
   title: string;
   location: string;
   bedrooms: number;
@@ -53,6 +57,7 @@ export const properties: Property[] = [
   // Latest Project - Godrej Verdania Estate (Featured as Hero Project)
   {
     id: 21,
+    slug: "godrej-verdania-estate",
     title: "Godrej Verdania Estate",
     location: "Manglia, Indore, Madhya Pradesh",
     bedrooms: 0, // Residential plots
@@ -64,20 +69,25 @@ export const properties: Property[] = [
     tag: "Premium Plotted Development",
     image: "https://www.godrejgroupsindia.com/project_pics/godrej-verdania-banner-81889.jpg",
     amenities: [
-      "24 Acres of Resort-Style Living",
-      "Grand Boulevard Roads",
-      "Lush Green Open Spaces",
-      "Premium Clubhouse (~11,000 sq. ft.) - The Verdania Clubhouse",
-      "Dedicated Kids' Play Area (~5,000 sq. ft.)",
-      "Gated Community with Controlled Access",
-      "Well-Equipped Gymnasium",
-      "Swimming Pool",
-      "Jogging Tracks",
-      "Children's Play Area",
+      "24 Acres of Resort-Style Township Living",
+      "The Verdania Enclave - 11,000 sq. ft. Premium Clubhouse",
+      "40 ft Wide Boulevard Roads for Premium Access",
+      "2.4 Acres Open Community Space",
+      "5,000 sq. ft. Dedicated Kids Play Area",
+      "Strategic Location - 800m from A.B. Road",
+      "1.3 km from Bypass Road (Hotel Exotica)",
+      "Quick Access to Indore-Ujjain Road",
+      "Swimming Pool with Modern Facilities",
+      "Fully-Equipped Gymnasium",
+      "Jogging & Walking Tracks",
       "Multi-Layered Security System",
+      "Gated Community with Controlled Access",
       "Rainwater Harvesting Systems",
-      "Solar Lighting",
-      "Eco-Friendly Development",
+      "Solar Lighting for Eco-Friendly Living",
+      "Well-Laid Roads & Drainage Systems",
+      "Ready Utility Connections",
+      "Complete Construction Freedom",
+      "Freehold Property Ownership",
       "Flexible Plot Sizes (1200-2500 sq. ft.)",
       "Freehold Property",
       "Custom Home Construction Freedom",
@@ -88,7 +98,48 @@ export const properties: Property[] = [
     images: [
       "https://www.godrejgroupsindia.com/project_pics/godrej-verdania-banner-81889.jpg"
     ],
-    description: `Godrej Verdania Estate is Indore's most awaited plotted development by Godrej Properties, spanning across 24 acres of resort-style living in Manglia, Indore. Following the record-breaking success of Greenview Estate, this premium residential plotted development offers the ultimate plotted address in India's cleanest city. The project provides a serene and green living environment with a perfect blend of modern comforts and strong connectivity. With flexible plot sizes ranging from 1200-2500 sq. ft., residents can build their dream homes with complete customization freedom. The development features world-class amenities including The Verdania Clubhouse clubhouse, swimming pool, gymnasium, and eco-friendly features like rainwater harvesting and solar lighting.`,
+    description: `Godrej Verdania Estate - Indore's Premier Plotted Development on 24 Acres of Pristine Greenery
+
+Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate represents the pinnacle of residential township living. This meticulously planned development by Godrej Properties offers the perfect blend of modern amenities, strategic location, and sustainable living in India's cleanest city.
+
+🏆 WHY CHOOSE RESIDENTIAL PLOTS AT GODREJ VERDANIA?
+• Complete Transparency in all dealings and documentation
+• Enriched Lifestyle with world-class amenities and green spaces
+• Trust of Godrej Properties - a legacy of excellence
+• Proven Execution Expertise ensuring timely delivery
+
+🌟 WHY INDORE - THE SMART CHOICE?
+• 8 Consecutive Years as India's Cleanest City (Swachh Survekshan)
+• Ranked #4 in National Quality of Living Index
+• Thriving startup ecosystem with 116+ emerging companies
+• Robust infrastructure with 146+ ongoing development projects
+
+🏨 PREMIUM HOSPITALITY NEARBY:
+• Sheraton Hotel - 10 minutes • Radisson Blu - 20 minutes • Indore Marriott Hotel - 24 minutes
+
+🛍️ SHOPPING & ENTERTAINMENT:
+• Phoenix Citadel Mall - 15 minutes • C21 Mall - 22 minutes • Treasure Island Mall - 30 minutes
+
+🏥 HEALTHCARE EXCELLENCE:
+• Bombay Hospital - 20 minutes • Medanta Hospital - 20 minutes • Apollo Hospital - 22 minutes
+
+💼 IT PARKS & INDUSTRIAL CONNECTIVITY:
+• Indore Industrial Area - 28 minutes • Crystal IT Park - 35 minutes • Infosys, TCS, Yash IT Park - 35 minutes
+
+🚗 UNMATCHED ACCESSIBILITY:
+• Just 800 meters from A.B. Road • 1.3 km from Bypass Road (Hotel Exotica) • Quick access to Indore-Ujjain Road via Kshipra Link
+
+📍 KEY DESTINATIONS:
+• Nipania - 15 min • Palasia - 25 min • Vijay Nagar - 30 min • Indore Junction - 30 min • Indore Airport - 35 min
+
+🏞️ PROJECT HIGHLIGHTS:
+• 2.4 Acres of Open Community Space for recreation
+• 40 ft (12 meters) wide Boulevard Road for seamless connectivity
+• 11,000 sq. ft. The Verdania Enclave - Premium Clubhouse
+• 5,000 sq. ft. dedicated Kids Play Area
+• Flexible plot sizes from 1500-2500 sq. ft. starting at ₹1.50 Cr*
+• Complete construction freedom on freehold property
+• RERA Approved (P-SWR-25-5891) ensuring legal compliance`,
     floorPlans: {
       "Plot Layouts": [
         {
@@ -118,9 +169,12 @@ export const properties: Property[] = [
       { type: "2500 sq. ft. Plot", size: "2500 Sq.Ft." }
     ],
     projectSpecs: {
-      landParcel: "24 Acres",
-      totalUnits: "Multiple Phases",
-      clubHouse: "The Verdania Clubhouse (~11,000 sq. ft.)",
+      landParcel: "24 Acres of Greenery Based Township",
+      totalUnits: "Multiple Plot Sizes (1500-2500 sq. ft.)",
+      clubHouse: "The Verdania Enclave - 11,000 sq. ft.",
+      openSpace: "2.4 Acres Open Community Space",
+      roadWidth: "40 ft (12 meters) Boulevard Road",
+      kidsArea: "5,000 sq. ft. Kids Play Area",
       carParking: "Individual Plot Parking",
       possession: "2026-2027",
       rera: "P-SWR-25-5891",
@@ -128,12 +182,37 @@ export const properties: Property[] = [
       bookingAmount: "EOI Amount: ₹75,000/-"
     },
     nearbyPlaces: [
-      { name: "Devi Ahilya Bai Holkar International Airport", distance: "20 km", type: "transport" },
-      { name: "NH-52 Highway", distance: "5 km", type: "connectivity" },
-      { name: "Ujjain City", distance: "30 km", type: "connectivity" },
-      { name: "Indore City Center", distance: "25 km", type: "commercial" },
-      { name: "Super Corridor", distance: "15 km", type: "commercial" },
-      { name: "Industrial Areas", distance: "10-15 km", type: "commercial" }
+      // Hotels
+      { name: "Sheraton Hotel", distance: "10 mins", type: "hotel" },
+      { name: "Radisson Blu", distance: "20 mins", type: "hotel" },
+      { name: "Indore Marriott Hotel", distance: "24 mins", type: "hotel" },
+      
+      // Malls & Shopping
+      { name: "Phoenix Citadel Mall", distance: "15 mins", type: "shopping" },
+      { name: "C21 Mall", distance: "22 mins", type: "shopping" },
+      { name: "Treasure Island Mall", distance: "30 mins", type: "shopping" },
+      
+      // Hospitals
+      { name: "Bombay Hospital", distance: "20 mins", type: "hospital" },
+      { name: "Medanta Hospital", distance: "20 mins", type: "hospital" },
+      { name: "Apollo Hospital", distance: "22 mins", type: "hospital" },
+      
+      // IT Parks & Industrial
+      { name: "Indore Industrial Area", distance: "28 mins", type: "commercial" },
+      { name: "Crystal IT Park", distance: "35 mins", type: "commercial" },
+      { name: "Infosys, TCS, Yash IT Park", distance: "35 mins", type: "commercial" },
+      
+      // Key Areas
+      { name: "Nipania", distance: "15 mins", type: "area" },
+      { name: "Palasia", distance: "25 mins", type: "area" },
+      { name: "Vijay Nagar", distance: "30 mins", type: "area" },
+      { name: "Indore Junction", distance: "30 mins", type: "transport" },
+      { name: "Indore Airport", distance: "35 mins", type: "transport" },
+      
+      // Connectivity
+      { name: "A.B. Road", distance: "800 meters", type: "connectivity" },
+      { name: "Bypass Road (Hotel Exotica)", distance: "1.3 km", type: "connectivity" },
+      { name: "Indore-Ujjain Road via Kshipra Link", distance: "Quick Access", type: "connectivity" }
     ],
     agent: {
       name: "Kapil Dhawan",
@@ -1675,6 +1754,11 @@ QUALITY CONSTRUCTION ON 60 METER ROAD AND NEAR TO DELHI.`,
 // Helper function to get property by ID
 export const getPropertyById = (id: string | number): Property | undefined => {
   return properties.find(property => property.id === Number(id))
+}
+
+// Helper function to get property by slug
+export const getPropertyBySlug = (slug: string): Property | undefined => {
+  return properties.find(property => property.slug === slug)
 }
 
 // Helper function to get properties by type

@@ -247,7 +247,7 @@ export default function GodrejVerdaniaBlogPost() {
                     </Link>
                   </Button>
                   <Button variant="outline" className="border-navy-900 text-navy-900" asChild>
-                    <Link href={`/properties/${godrejVerdania.id}`}>
+                    <Link href={`/properties/${godrejVerdania.slug || godrejVerdania.id}`}>
                       View Full Details
                     </Link>
                   </Button>

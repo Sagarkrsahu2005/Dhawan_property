@@ -12,6 +12,7 @@ interface Property {
   bedrooms: number
   status: string
   image: string
+  slug?: string
 }
 
 interface PropertySearchProps {
@@ -54,11 +55,11 @@ export default function PropertySearch({ className = "", isMobile = false }: Pro
     }
   }
 
-  const handleSearchResultClick = (propertyId: number) => {
+  const handleSearchResultClick = (property: Property) => {
     setShowSearchResults(false)
     setSearchQuery("")
     setShowMobileSearch(false)
-    window.location.href = `/properties/${propertyId}`
+    window.location.href = `/properties/${property.slug || property.id}`
   }
 
   const clearSearch = () => {
@@ -154,7 +155,7 @@ export default function PropertySearch({ className = "", isMobile = false }: Pro
                   {searchResults.map((property) => (
                     <div
                       key={property.id}
-                      onClick={() => handleSearchResultClick(property.id)}
+                      onClick={() => handleSearchResultClick(property)}
                       className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg cursor-pointer hover:bg-gray-100"
                     >
                       <img
@@ -236,7 +237,7 @@ export default function PropertySearch({ className = "", isMobile = false }: Pro
             {searchResults.map((property) => (
               <div
                 key={property.id}
-                onClick={() => handleSearchResultClick(property.id)}
+                onClick={() => handleSearchResultClick(property)}
                 className="flex items-center gap-3 p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-b-0"
               >
                 <img

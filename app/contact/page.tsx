@@ -228,7 +228,7 @@ export default function ContactPage() {
                         +91 99996-28400
                       </a>
                       <a href="tel:+918882568981" className="text-gray-600 hover:text-navy-900 transition-colors block">
-                        +91 8882-568981
+                        +91 88825-68981
                       </a>
                     </div>
                   </div>

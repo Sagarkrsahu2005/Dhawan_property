@@ -37,13 +37,13 @@ import {
   IndianRupee,
 } from "lucide-react"
 import Link from "next/link"
-import { getPropertyById, properties, getSimilarProperties } from "@/lib/property-data"
+import { getPropertyBySlug, properties, getSimilarProperties } from "@/lib/property-data"
 import BrochureDownload from "@/components/brochure-download"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 
 export default function GodrejVerdaniaPage() {
-  const propertyData = getPropertyById(21)
+  const propertyData = getPropertyBySlug("godrej-verdania-estate")
   
   // State for image gallery
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
@@ -154,7 +154,7 @@ export default function GodrejVerdaniaPage() {
           name: enquiryName,
           phone: enquiryPhone,
           message: enquiryMessage,
-          page: `property-${propertyData.id}`,
+          page: `property-${propertyData.slug}`,
         }),
       });
       if (!res.ok) throw new Error("Failed to submit");
