@@ -65,6 +65,10 @@ export default function GodrejVerdaniaPage() {
 
   // FAQ state
   const [openFAQ, setOpenFAQ] = useState<number | null>(null)
+  
+  // Amenity image modal state
+  const [selectedAmenityImage, setSelectedAmenityImage] = useState<string>("")
+  const [amenityImageModal, setAmenityImageModal] = useState(false)
 
   // Pricing data
   const pricingPlans = [
@@ -105,6 +109,51 @@ export default function GodrejVerdaniaPage() {
       features: ["Signature Plots", "Park Facing", "50x50 ft dimensions"]
     }
   ]
+
+  // Amenities data with high-quality images
+  const amenitiesData = [
+    {
+      title: "Resort-Style Swimming Pool",
+      description: "Olympic-sized infinity pool with poolside lounge and cabana areas",
+      image: "/WhatsApp Image 2025-09-05 at 20.04.05.jpeg", // Official project render
+      features: ["25-meter lap pool", "Kids' splash zone", "Pool deck seating", "Poolside café"]
+    },
+    {
+      title: "The Verdania Enclave",
+      description: "11,000 sq.ft luxury clubhouse with premium facilities and event spaces",
+      image: "/WhatsApp Image 2025-09-05 at 20.03.47.jpeg", // Official project render
+      features: ["Multi-purpose hall", "Party lawn", "Business center", "Lounge areas"]
+    },
+    {
+      title: "Sports & Recreation Complex",
+      description: "Professional sports facilities with multiple courts and coaching",
+      image: "/WhatsApp Image 2025-09-05 at 20.04.18.jpeg", // Official project render - aerial view
+      features: ["Tennis courts", "Badminton courts", "Basketball court", "Cricket practice nets"]
+    },
+    {
+      title: "Fitness Center",
+      description: "State-of-the-art gym with modern equipment and personal training",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+      features: ["Cardio equipment", "Weight training", "Yoga studio", "Personal trainers"]
+    },
+    {
+      title: "Children's Play Area",
+      description: "5,000 sq.ft dedicated kids zone with safe play equipment and activities",
+      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
+      features: ["Adventure playground", "Toddler area", "Sand pit", "Safety surfacing"]
+    },
+    {
+      title: "Premium Plotted Community",
+      description: "24 acres of beautifully planned residential plots with modern infrastructure",
+      image: "/WhatsApp Image 2025-09-05 at 20.04.36.jpeg", // Official project render - evening view
+      features: ["40ft wide roads", "Underground utilities", "Gated community", "RERA approved"]
+    }
+  ]
+
+  const handleAmenityImageClick = (imageSrc: string) => {
+    setSelectedAmenityImage(imageSrc)
+    setAmenityImageModal(true)
+  }
 
   // FAQ data
   const faqData = [
@@ -648,30 +697,75 @@ export default function GodrejVerdaniaPage() {
               </div>
             </div>
 
-            {/* Amenities */}
+            {/* Premium Amenities */}
             <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
-              <h3 className="text-2xl font-bold text-navy-900 mb-6 tracking-tight">Premium Amenities</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {propertyData.amenities && propertyData.amenities.length > 0 ? (
-                  propertyData.amenities.map((amenity, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center gap-3 p-3 bg-white border border-gray-100 rounded-lg shadow-sm hover:shadow-md transition-shadow"
-                    >
-                      <div className="w-8 h-8 flex items-center justify-center rounded-md bg-navy-100 text-navy-900">
-                        <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
-                          <circle cx="12" cy="12" r="9" stroke="#1e293b" strokeWidth="2" fill="#f1f5f9" />
-                          <path d="M9.5 12.5l2 2 3-4" stroke="#1e293b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </div>
-                      <span className="text-navy-900 text-sm font-medium leading-relaxed">{amenity}</span>
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-bold text-navy-900 mb-4 tracking-tight">Premium Amenities</h3>
+                <p className="text-lg text-gray-600">World-class amenities designed for modern living</p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {amenitiesData.map((amenity, index) => (
+                  <div 
+                    key={index}
+                    className="relative group overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer transform hover:scale-105 transition-all duration-300"
+                    onClick={() => handleAmenityImageClick(amenity.image)}
+                  >
+                    <img 
+                      src={amenity.image}
+                      alt={amenity.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                      <h4 className="text-lg font-semibold">{amenity.title}</h4>
                     </div>
-                  ))
-                ) : (
-                  <div className="col-span-full text-center text-gray-500 py-8">
-                    Amenities information will be updated soon.
+                    <div className="absolute top-3 right-3 bg-white/20 backdrop-blur-sm rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    </div>
                   </div>
-                )}
+                ))}
+              </div>
+
+              {/* Additional Amenities List */}
+              <div className="mt-12 p-6 bg-gradient-to-br from-navy-50 to-blue-50 rounded-xl border border-navy-200">
+                <h4 className="text-lg font-semibold text-navy-900 mb-4 text-center">Additional Premium Features</h4>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
+                    <span className="text-navy-700">24/7 Security</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
+                    <span className="text-navy-700">Power Backup</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
+                    <span className="text-navy-700">Water Treatment</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
+                    <span className="text-navy-700">Solar Lighting</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
+                    <span className="text-navy-700">Jogging Track</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
+                    <span className="text-navy-700">Community Hall</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
+                    <span className="text-navy-700">Underground Parking</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
+                    <span className="text-navy-700">Yoga & Meditation</span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -947,6 +1041,43 @@ export default function GodrejVerdaniaPage() {
           </div>
         )}
       </div>
+
+      {/* Amenity Image Preview Modal */}
+      {amenityImageModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
+          <div className="relative max-w-5xl max-h-[90vh] mx-4">
+            <button
+              onClick={() => setAmenityImageModal(false)}
+              className="absolute top-4 right-4 z-10 bg-white/20 backdrop-blur-sm text-white rounded-full p-3 hover:bg-white/30 transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <img
+              src={selectedAmenityImage}
+              alt="Amenity Preview"
+              className="w-full h-full object-contain rounded-2xl shadow-2xl"
+            />
+            <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-sm text-white p-4 rounded-xl">
+              <h3 className="text-xl font-bold mb-2">
+                {amenitiesData.find(amenity => amenity.image === selectedAmenityImage)?.title}
+              </h3>
+              <p className="text-sm opacity-90 mb-3">
+                {amenitiesData.find(amenity => amenity.image === selectedAmenityImage)?.description}
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                {amenitiesData.find(amenity => amenity.image === selectedAmenityImage)?.features.map((feature, index) => (
+                  <div key={index} className="flex items-center text-xs text-gray-200">
+                    <div className="w-1.5 h-1.5 bg-white rounded-full mr-2" />
+                    {feature}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <Footer />

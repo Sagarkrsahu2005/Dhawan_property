@@ -67,7 +67,7 @@ export const properties: Property[] = [
     type: "residential",
     status: "new-launch",
     tag: "Premium Plotted Development",
-    image: "https://www.godrejgroupsindia.com/project_pics/godrej-verdania-banner-81889.jpg",
+    image: "/WhatsApp Image 2025-09-05 at 20.03.47.jpeg",
     amenities: [
       "24 Acres of Resort-Style Township Living",
       "The Verdania Enclave - 11,000 sq. ft. Premium Clubhouse",
@@ -96,11 +96,15 @@ export const properties: Property[] = [
       "RERA Approved (P-SWR-25-5891)"
     ],
     images: [
-      "https://www.godrejgroupsindia.com/project_pics/godrej-verdania-banner-81889.jpg"
+      "https://www.godrejgroupsindia.com/project_pics/godrej-verdania-banner-81889.jpg",
+      "/WhatsApp Image 2025-09-05 at 20.03.47.jpeg", // The Verdania Enclave - Clubhouse Exterior
+      "/WhatsApp Image 2025-09-05 at 20.04.05.jpeg", // Swimming Pool - Resort Style Interior
+      "/WhatsApp Image 2025-09-05 at 20.04.18.jpeg", // Aerial Master Plan - Sports & Recreation
+      "/WhatsApp Image 2025-09-05 at 20.04.36.jpeg"  // Evening Aerial View - Clubhouse & Plots
     ],
-    description: `Godrej Verdania Estate - Indore's Premier Plotted Development on 24 Acres of Pristine Greenery
+  description: `Discover Verdania — where refined living meets open-air freedom. Godrej Verdania Estate is a landmark 24-acre plotted community that reimagines township living with resort-style amenities, curated green spaces, and meticulous infrastructure.
 
-Located strategically off Bypass Road in Manglia, Indore, Godrej Verdania Estate represents the pinnacle of residential township living. This meticulously planned development by Godrej Properties offers the perfect blend of modern amenities, strategic location, and sustainable living in India's cleanest city.
+Perched strategically off Bypass Road in Manglia, Indore, Verdania blends unmatched connectivity with a serene, sustainable lifestyle — all backed by Godrej's legacy of trust and timely delivery. Experience premium plots, an exclusive clubhouse, and thoughtfully planned public spaces designed for modern families and discerning investors. With smart master-planning, landscaped boulevards and future-ready utilities, Verdania delivers both leisurely living and long-term capital growth. Move-in ready infrastructure, stringent quality controls and preferred financing tie-ups make Verdania a hassle-free and high-value investment.
 
 🏆 WHY CHOOSE RESIDENTIAL PLOTS AT GODREJ VERDANIA?
 • Complete Transparency in all dealings and documentation

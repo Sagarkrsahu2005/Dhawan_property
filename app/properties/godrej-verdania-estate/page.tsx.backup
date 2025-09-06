@@ -66,9 +66,50 @@ export default function GodrejVerdaniaPage() {
   // FAQ state
   const [openFAQ, setOpenFAQ] = useState<number | null>(null)
 
-  // Amenity image preview state
-  const [selectedAmenityImage, setSelectedAmenityImage] = useState<string | null>(null)
-  const [amenityImageModal, setAmenityImageModal] = useState(false)
+  // Pricing data
+  const pricingPlans = [
+      category: "security",
+      icon: "�️",
+      gradient: "from-green-400 to-emerald-500",
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop&auto=format",
+      description: "Advanced 24/7 security with surveillance and trained personnel",
+      features: ["CCTV surveillance", "Security guards", "Access control", "Emergency response"],
+      stats: { size: "24/7", unit: "active" }
+    },
+    {
+      name: "Smart Infrastructure",
+      category: "infrastructure",
+      icon: "🏗️",
+      gradient: "from-gray-400 to-slate-500",
+      image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&h=400&fit=crop&auto=format",
+      description: "40ft wide roads with premium infrastructure and connectivity",
+      features: ["Wide boulevards", "Street lighting", "Drainage", "Paved surfaces"],
+      stats: { size: "40", unit: "ft roads" }
+    },
+    {
+      name: "Eco Systems",
+      category: "eco",
+      icon: "🌱",
+      gradient: "from-green-400 to-lime-400",
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop&auto=format",
+      description: "Sustainable living with solar lighting and rainwater harvesting",
+      features: ["Solar lighting", "Water harvesting", "Energy saving", "Eco-friendly"],
+      stats: { size: "100%", unit: "green" }
+    }
+  ]
+
+  const amenityCategories = [
+    { id: "all", name: "All", icon: "✨", count: enhancedAmenities.length },
+    { id: "lifestyle", name: "Lifestyle", icon: "🏛️", count: enhancedAmenities.filter(a => a.category === "lifestyle").length },
+    { id: "sports", name: "Sports", icon: "🏊‍♂️", count: enhancedAmenities.filter(a => a.category === "sports").length },
+    { id: "infrastructure", name: "Infrastructure", icon: "🏗️", count: enhancedAmenities.filter(a => a.category === "infrastructure").length },
+    { id: "security", name: "Security", icon: "🛡️", count: enhancedAmenities.filter(a => a.category === "security").length },
+    { id: "eco", name: "Eco", icon: "🌱", count: enhancedAmenities.filter(a => a.category === "eco").length }
+  ]
+
+  const filteredAmenities = selectedAmenityCategory === "all" 
+    ? enhancedAmenities 
+    : enhancedAmenities.filter(amenity => amenity.category === selectedAmenityCategory)
 
   // Pricing data
   const pricingPlans = [
@@ -110,51 +151,6 @@ export default function GodrejVerdaniaPage() {
     }
   ]
 
-  // Amenities data with high-quality images
-  const amenitiesData = [
-    {
-      title: "Resort-Style Swimming Pool",
-      description: "Olympic-sized infinity pool with poolside lounge and cabana areas",
-      image: "/WhatsApp Image 2025-09-05 at 20.04.05.jpeg", // Official project render
-      features: ["25-meter lap pool", "Kids' splash zone", "Pool deck seating", "Poolside café"]
-    },
-    {
-      title: "The Verdania Enclave",
-      description: "11,000 sq.ft luxury clubhouse with premium facilities and event spaces",
-      image: "/WhatsApp Image 2025-09-05 at 20.03.47.jpeg", // Official project render
-      features: ["Multi-purpose hall", "Party lawn", "Business center", "Lounge areas"]
-    },
-    {
-      title: "Sports & Recreation Complex",
-      description: "Professional sports facilities with multiple courts and coaching",
-      image: "/WhatsApp Image 2025-09-05 at 20.04.18.jpeg", // Official project render - aerial view
-      features: ["Tennis courts", "Badminton courts", "Basketball court", "Cricket practice nets"]
-    },
-    {
-      title: "Fitness Center",
-      description: "State-of-the-art gym with modern equipment and personal training",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80",
-      features: ["Cardio equipment", "Weight training", "Yoga studio", "Personal trainers"]
-    },
-    {
-      title: "Children's Play Area",
-      description: "5,000 sq.ft dedicated kids zone with safe play equipment and activities",
-      image: "https://images.unsplash.com/photo-1575783970733-1aaedde1db74?q=80&w=1752&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      features: ["Adventure playground", "Toddler area", "Sand pit", "Safety surfacing"]
-    },
-    {
-      title: "Premium Plotted Community",
-      description: "24 acres of beautifully planned residential plots with modern infrastructure",
-      image: "/WhatsApp Image 2025-09-05 at 20.04.36.jpeg", // Official project render - evening view
-      features: ["40ft wide roads", "Underground utilities", "Gated community", "RERA approved"]
-    }
-  ]
-
-  const handleAmenityImageClick = (imageSrc: string) => {
-    setSelectedAmenityImage(imageSrc)
-    setAmenityImageModal(true)
-  }
-
   // FAQ data
   const faqData = [
     {
@@ -182,12 +178,12 @@ export default function GodrejVerdaniaPage() {
       answer: "No, this is a freehold property offering complete construction freedom. You can build your custom dream home as per your requirements while following basic community guidelines."
     },
     {
-      question: "Payment plan?",
-      answer: "We offer flexible payment plans with easy EMI options. The EOI amount secures your plot with priority allotment advantage. Detailed payment schedule available on inquiry."
-    },
+    question: "What is the payment plan structure?",
+    answer: "We offer flexible payment plans with easy EMI options. The EOI amount secures your plot with priority allotment advantage. Detailed payment schedule available on inquiry."
+     },
     {
       question: "How is the connectivity from Manglia, Indore?",
-      answer: "Construction Linked Plan (CLP)"
+      answer: "Excellent connectivity via Indore-Ujjain Road, 20 km from airport, direct access to NH-52 Highway, and close to the upcoming Super Corridor development."
     }
   ]
 
@@ -477,9 +473,9 @@ export default function GodrejVerdaniaPage() {
             {/* Description */}
             <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
               <h3 className="text-2xl font-bold text-navy-900 mb-6">About Godrej Verdania Estate</h3>
-                <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-                  Godrej Verdania Estate presents premium residential plots in Manglia, Indore, with a luxury clubhouse, resort-style pool, sports and fitness facilities, and 24/7 gated security. Choose from flexible plot sizes, all RERA approved, and enjoy seamless connectivity to major roads and city hubs. Build your dream home in a thoughtfully planned, vibrant community.
-                </p>
+              <p className="text-gray-700 mb-8 leading-relaxed text-lg">
+                Indore's Premier Plotted Development on 24 Acres of Pristine Greenery. Located strategically off Bypass Road in Manglia, Indore, offering the perfect blend of modern amenities, strategic location, and sustainable living in India's cleanest city.
+              </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl">
@@ -697,77 +693,109 @@ export default function GodrejVerdaniaPage() {
               </div>
             </div>
 
-            {/* Premium Amenities */}
-            <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
-              <div className="text-center mb-12">
-                <h3 className="text-3xl font-bold text-navy-900 mb-4 tracking-tight">Premium Amenities</h3>
-                <p className="text-lg text-gray-600">World-class amenities designed for modern living</p>
-              </div>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {amenitiesData.map((amenity, index) => (
-                  <div 
-                    key={index}
-                    className="relative group overflow-hidden rounded-2xl aspect-[4/3] cursor-pointer transform hover:scale-105 transition-all duration-300"
-                    onClick={() => handleAmenityImageClick(amenity.image)}
-                  >
-                    <img 
-                      src={amenity.image}
-                      alt={amenity.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
-                      <h4 className="text-lg font-semibold">{amenity.title}</h4>
-                    </div>
-                    <div className="absolute top-3 right-3 bg-white/20 backdrop-blur-sm rounded-full p-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                      </svg>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            {/* Modern Minimal Amenities */}
+            <section className="py-20 bg-white">
+              <div className="max-w-6xl mx-auto px-4">
+                <div className="text-center mb-16">
+                  <h3 className="text-4xl font-bold text-gray-900 mb-4">Premium Amenities</h3>
+                  <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                    World-class amenities designed for modern living
+                  </p>
+                </div>
 
-              {/* Additional Amenities List */}
-              <div className="mt-12 p-6 bg-gradient-to-br from-navy-50 to-blue-50 rounded-xl border border-navy-200">
-                <h4 className="text-lg font-semibold text-navy-900 mb-4 text-center">Additional Premium Features</h4>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                    <span className="text-navy-700">24/7 Security</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                    <span className="text-navy-700">Power Backup</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                    <span className="text-navy-700">Water Treatment</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                    <span className="text-navy-700">Solar Lighting</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                    <span className="text-navy-700">Jogging Track</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                    <span className="text-navy-700">Community Hall</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                    <span className="text-navy-700">Underground Parking</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-gold-500 rounded-full"></div>
-                    <span className="text-navy-700">Yoga & Meditation</span>
-                  </div>
+                {/* Clean Amenities Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {[
+                    {
+                      name: "Resort-Style Swimming Pool",
+                      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&h=300&fit=crop",
+                      description: "Olympic-sized infinity pool with poolside lounge"
+                    },
+                    {
+                      name: "Luxury Clubhouse",
+                      image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=500&h=300&fit=crop",
+                      description: "11,000 sq.ft clubhouse with premium facilities"
+                    },
+                    {
+                      name: "Fitness Center",
+                      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop",
+                      description: "State-of-the-art gym with modern equipment"
+                    },
+                    {
+                      name: "Children's Play Area",
+                      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=300&fit=crop",
+                      description: "5,000 sq.ft dedicated kids zone with safe play equipment"
+                    },
+                    {
+                      name: "Landscaped Gardens",
+                      image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=500&h=300&fit=crop",
+                      description: "24 acres of beautifully landscaped green spaces"
+                    },
+                    {
+                      name: "Sports Complex",
+                      image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=500&h=300&fit=crop",
+                      description: "Tennis, badminton and basketball courts"
+                    },
+                    {
+                      name: "Jogging Track",
+                      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop",
+                      description: "Dedicated jogging and cycling tracks"
+                    },
+                    {
+                      name: "24/7 Security",
+                      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&h=300&fit=crop",
+                      description: "Advanced security system with CCTV surveillance"
+                    },
+                    {
+                      name: "Banquet Hall",
+                      image: "https://images.unsplash.com/photo-1519167758481-83f29ba852c0?w=500&h=300&fit=crop",
+                      description: "Elegant banquet hall for celebrations"
+                    }
+                  ].map((amenity, index) => (
+                    <div
+                      key={index}
+                      className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                    >
+                      <div className="relative h-64 overflow-hidden">
+                        <img
+                          src={amenity.image}
+                          alt={amenity.name}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                          <h4 className="text-xl font-semibold mb-2">{amenity.name}</h4>
+                          <p className="text-sm text-gray-200 opacity-90">{amenity.description}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                        </div>
+
+                        {/* Enhanced Click Indicator */}
+                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/20 backdrop-blur-sm">
+                          <div className="relative">
+                            <div className="w-16 h-16 bg-white/20 backdrop-blur-lg rounded-full flex items-center justify-center border border-white/30 animate-pulse">
+                              <span className="text-white text-2xl">👁️</span>
+                            </div>
+                            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/30 to-purple-400/30 rounded-full animate-ping"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* CTA Button */}
+                <div className="text-center mt-16">
+                  <button className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full text-white font-bold text-lg hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-105">
+                    <span className="relative z-10">Explore All Amenities</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </button>
                 </div>
               </div>
-            </div>
+            </section>
 
             {/* FAQ Section */}
             <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
@@ -1041,43 +1069,6 @@ export default function GodrejVerdaniaPage() {
           </div>
         )}
       </div>
-
-      {/* Amenity Image Preview Modal */}
-      {amenityImageModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
-          <div className="relative max-w-5xl max-h-[90vh] mx-4">
-            <button
-              onClick={() => setAmenityImageModal(false)}
-              className="absolute top-4 right-4 z-10 bg-white/20 backdrop-blur-sm text-white rounded-full p-3 hover:bg-white/30 transition-colors"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-            <img
-              src={selectedAmenityImage}
-              alt="Amenity Preview"
-              className="w-full h-full object-contain rounded-2xl shadow-2xl"
-            />
-            <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-sm text-white p-4 rounded-xl">
-              <h3 className="text-xl font-bold mb-2">
-                {amenitiesData.find(amenity => amenity.image === selectedAmenityImage)?.title}
-              </h3>
-              <p className="text-sm opacity-90 mb-3">
-                {amenitiesData.find(amenity => amenity.image === selectedAmenityImage)?.description}
-              </p>
-              <div className="grid grid-cols-2 gap-2">
-                {amenitiesData.find(amenity => amenity.image === selectedAmenityImage)?.features.map((feature, index) => (
-                  <div key={index} className="flex items-center text-xs text-gray-200">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full mr-2" />
-                    {feature}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Footer */}
       <Footer />
