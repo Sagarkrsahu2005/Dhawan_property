@@ -30,15 +30,21 @@ export default function Navigation() {
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {/* Logo + Text */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
-              <img 
-                src="/dhawan-properties-logo.png"
-                alt="Dhawan Properties"
-                className="h-12 w-auto"
-              />
-            </Link>
+            <div className="flex items-center">
+              <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+                <img 
+                  src="/dhawan-properties-logo.png"
+                  alt="Dhawan Properties"
+                  className="h-12 w-auto"
+                />
+              </Link>
+              <Link href="/" className="ml-2 text-left hover:opacity-80 transition-opacity">
+                <div className="font-bold text-l text-navy-900 leading-tight">DHAWAN PROPERTIES</div>
+                <div className="text-sm text-gray-700 leading-tight">Famous For Fair Deals</div>
+              </Link>
+            </div>
           </div>
 
           {/* Desktop Navigation */}

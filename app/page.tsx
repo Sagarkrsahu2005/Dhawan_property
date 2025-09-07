@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-import { MapPin, Bed, Bath, Square, Phone, Star } from "lucide-react"
+import { MapPin, Bed, Bath, Square, Phone, Star, ChevronLeft, ChevronRight } from "lucide-react"
 import Link from "next/link"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
@@ -16,6 +16,186 @@ import { Textarea } from "@/components/ui/textarea"
 import { HeroAnimations, PropertyCardAnimations, SectionAnimations, StatCounterAnimation, TextRevealAnimation } from "@/components/animations"
 import FloatingParticles, { AnimatedBackground } from "@/components/floating-particles"
 import MagneticHover, { TiltHover } from "@/components/magnetic-hover"
+
+// Testimonials data
+const testimonials = [
+  {
+    name: "Rajesh Kumar",
+    location: "Gurgaon",
+    quote: "Dhawan Properties made our home buying journey incredibly smooth. Their transparency and attention to detail is unmatched.",
+    result: "Closed in 14 days",
+    rating: 5,
+  },
+  {
+    name: "Gatik Sharma",
+    location: "Delhi",
+    quote: "I saved lakhs thanks to their negotiation skills and market knowledge. Highly recommend for first-time buyers.",
+    result: "Saved ₹12L",
+    rating: 5,
+  },
+  {
+    name: "Amit Patel",
+    location: "Noida",
+    quote: "Professional service from start to finish. They handled all documentation and made the process stress-free.",
+    result: "Hassle-free experience",
+    rating: 5,
+  },
+  {
+    name: "Priya Sharma",
+    location: "Mumbai",
+    quote: "Outstanding service! They found me the perfect investment property with excellent ROI potential. Very professional team.",
+    result: "15% ROI achieved",
+    rating: 5,
+  },
+  {
+    name: "Vikash Gupta",
+    location: "Indore",
+    quote: "Excellent guidance throughout the property purchase. Their local market knowledge in Indore is exceptional.",
+    result: "Perfect location found",
+    rating: 5,
+  },
+  {
+    name: "Neha Singh",
+    location: "Pune",
+    quote: "They helped me sell my property at 20% above market rate. Their marketing strategy and negotiation skills are top-notch.",
+    result: "20% above market price",
+    rating: 5,
+  },
+  {
+    name: "Rohit Agarwal",
+    location: "Bangalore",
+    quote: "From property search to final documentation, everything was handled professionally. Highly recommend their services.",
+    result: "Seamless transaction",
+    rating: 5,
+  },
+  {
+    name: "Anita Verma",
+    location: "Hyderabad",
+    quote: "Best real estate consultants I've worked with. They understood my requirements and delivered exactly what I wanted.",
+    result: "Dream home delivered",
+    rating: 5,
+  },
+  {
+    name: "Kiran Patel",
+    location: "Ahmedabad",
+    quote: "Their post-sale support is amazing. Even after closing, they helped with interior designers and loan processing.",
+    result: "Complete support",
+    rating: 5,
+  }
+]
+
+// Testimonials Carousel Component
+function TestimonialsCarousel() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (!isAutoPlaying) return
+    
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => 
+        prevIndex === testimonials.length - 3 ? 0 : prevIndex + 1
+      )
+    }, 4000)
+
+    return () => clearInterval(interval)
+  }, [isAutoPlaying])
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === testimonials.length - 3 ? 0 : prevIndex + 1
+    )
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? testimonials.length - 3 : prevIndex - 1
+    )
+  }
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index)
+  }
+
+  return (
+    <div 
+      className="relative"
+      onMouseEnter={() => setIsAutoPlaying(false)}
+      onMouseLeave={() => setIsAutoPlaying(true)}
+    >
+      {/* Carousel Container */}
+      <div className="overflow-hidden">
+        <div 
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * (100 / 3)}%)` }}
+        >
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="w-1/3 flex-shrink-0 px-4">
+              <TiltHover>
+                <Card className="p-6 bg-white/80 backdrop-blur-sm border border-gray-100/50 hover:shadow-lg transition-all duration-300 h-full">
+                  <div className="flex items-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-gold-500 text-gold-500" />
+                    ))}
+                  </div>
+                  <p className="text-gray-600 mb-4 italic">"{testimonial.quote}"</p>
+                  <div className="border-t pt-4">
+                    <div className="font-semibold text-navy-900">{testimonial.name}</div>
+                    <div className="text-sm text-gray-500">{testimonial.location}</div>
+                    <Badge variant="secondary" className="mt-2 bg-gold-100 text-gold-800">
+                      {testimonial.result}
+                    </Badge>
+                  </div>
+                </Card>
+              </TiltHover>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Navigation Arrows */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full p-2 shadow-lg hover:bg-white transition-all duration-300 z-10"
+        aria-label="Previous testimonials"
+      >
+        <ChevronLeft className="w-5 h-5 text-navy-900" />
+      </button>
+      
+      <button
+        onClick={nextSlide}
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-full p-2 shadow-lg hover:bg-white transition-all duration-300 z-10"
+        aria-label="Next testimonials"
+      >
+        <ChevronRight className="w-5 h-5 text-navy-900" />
+      </button>
+
+      {/* Dots Indicator */}
+      <div className="flex justify-center mt-8 space-x-2">
+        {Array.from({ length: testimonials.length - 2 }).map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentIndex
+                ? 'bg-gold-500 scale-110'
+                : 'bg-gray-300 hover:bg-gray-400'
+            }`}
+            aria-label={`Go to testimonial ${index + 1}`}
+          />
+        ))}
+      </div>
+
+      {/* Mobile View - Stack vertically on small screens */}
+      <div className="md:hidden mt-8">
+        <div className="text-center text-sm text-gray-500 mb-4">
+          {currentIndex + 1} - {Math.min(currentIndex + 3, testimonials.length)} of {testimonials.length} reviews
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default function HomePage() {
   const [showInquiry, setShowInquiry] = useState(false)
@@ -152,8 +332,8 @@ export default function HomePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
             {/* Left Content */}
-            <div className="text-white space-y-6">
-              <div className="inline-block">
+            <div className="text-white space-y-6 text-center lg:text-left">
+              <div className="flex justify-center lg:justify-start">
                 <span className="px-4 py-2 bg-gold-500/20 backdrop-blur-sm border border-gold-500/30 rounded-full text-gold-300 text-sm font-medium">
                   ✨ Latest Project
                 </span>
@@ -166,31 +346,31 @@ export default function HomePage() {
                 </span>
               </h1>
 
-              <p ref={subtitleRef} className="text-xl text-gray-200 leading-relaxed max-w-lg">
+              <p ref={subtitleRef} className="text-xl text-gray-200 leading-relaxed max-w-lg mx-auto lg:mx-0">
                 Experience luxury living with our newest premium property featuring world-class amenities and prime
                 location.
               </p>
 
-              <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4">
+              <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <MagneticHover strength={0.2}>
                   <Button
                     asChild
                     size="lg"
                     className="bg-gold-500 hover:bg-gold-600 text-navy-900 font-semibold shadow-2xl hover:shadow-gold-500/25 transition-all duration-300"
                   >
-                    <Link href={`/properties/${latestProject.slug || latestProject.id}`}>View Details</Link>
+                    <Link href="/contact">Schedule Visit</Link>
                   </Button>
                 </MagneticHover>
-                <MagneticHover strength={0.2}>
+                {/* <MagneticHover strength={0.2}>
                   <Button
                     asChild
                     size="lg"
                     variant="outline"
                     className="border-white/30 text-white hover:bg-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300"
                   >
-                    <Link href="/contact">Schedule Visit</Link>
+                      <Link href="/contact">Schedule Visit</Link>
                   </Button>
-                </MagneticHover>
+                </MagneticHover> */}
               </div>
             </div>
 
@@ -213,23 +393,23 @@ export default function HomePage() {
                   </div>
 
                   {/* Property Details */}
-                  <div className="space-y-4">
+                  <div className="space-y-4 text-center">
                     <div>
                       <h3 className="text-2xl font-bold text-white mb-2">{latestProject.title}</h3>
-                      <div className="flex items-center text-gray-300">
+                      <div className="flex items-center justify-center text-gray-300">
                         <MapPin className="w-4 h-4 mr-2" />
                         <span className="text-sm">{latestProject.location}</span>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-4 mt-2">
+                    <div className="flex flex-col items-center gap-4 mt-2">
                       <div>
                         <span className="text-gray-400 text-sm">Contact for Pricing</span>
-                        <div className="text-3xl font-bold text-gold-400">Price on Request</div>
+                        {/* <div className="text-3xl font-bold text-gold-400">Price on Request</div> */}
                       </div>
                       <MagneticHover strength={0.1}>
                         <Button asChild className="bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm border border-white/30 whitespace-nowrap">
-                          <Link href="/contact">Schedule Visit</Link>
+                          <Link href={`/properties/${latestProject.slug || latestProject.id}`}>View Details</Link>
                         </Button>
                       </MagneticHover>
                     </div>
@@ -249,7 +429,7 @@ export default function HomePage() {
       </section>
 
       {/* Quick Search */}
-      <section className="py-12 bg-gray-50">
+      {/* <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div ref={quickSearchRef}>
             <TextRevealAnimation className="text-center mb-8">
@@ -294,7 +474,7 @@ export default function HomePage() {
             </TiltHover>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Featured Listings */}
       <section className="py-16">
@@ -469,52 +649,7 @@ export default function HomePage() {
             <p className="text-gray-600">Real experiences from real customers</p>
           </TextRevealAnimation>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Rajesh Kumar",
-                location: "Gurgaon",
-                quote:
-                  "Dhawan Properties made our home buying journey incredibly smooth. Their transparency and attention to detail is unmatched.",
-                result: "Closed in 14 days",
-                rating: 5,
-              },
-              {
-                name: "Gatik Sharma",
-                location: "Delhi",
-                quote:
-                  "I saved lakhs thanks to their negotiation skills and market knowledge. Highly recommend for first-time buyers.",
-                result: "Saved ₹12L",
-                rating: 5,
-              },
-              {
-                name: "Amit Patel",
-                location: "Noida",
-                quote:
-                  "Professional service from start to finish. They handled all documentation and made the process stress-free.",
-                result: "Hassle-free experience",
-                rating: 5,
-              },
-            ].map((testimonial, index) => (
-              <TiltHover key={index}>
-                <Card className="p-6 bg-white/80 backdrop-blur-sm border border-gray-100/50 hover:shadow-lg transition-all duration-300">
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-gold-500 text-gold-500" />
-                    ))}
-                  </div>
-                  <p className="text-gray-600 mb-4 italic">"{testimonial.quote}"</p>
-                  <div className="border-t pt-4">
-                    <div className="font-semibold text-navy-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-500">{testimonial.location}</div>
-                    <Badge variant="secondary" className="mt-2 bg-gold-100 text-gold-800">
-                      {testimonial.result}
-                    </Badge>
-                  </div>
-                </Card>
-              </TiltHover>
-            ))}
-          </div>
+          <TestimonialsCarousel />
         </div>
       </section>
 

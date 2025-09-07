@@ -115,7 +115,7 @@ export default function GodrejVerdaniaPage() {
     {
       title: "Resort-Style Swimming Pool",
       description: "Olympic-sized infinity pool with poolside lounge and cabana areas",
-      image: "/WhatsApp Image 2025-09-05 at 20.04.05.jpeg", // Official project render
+      image: "https://images.unsplash.com/photo-1626313680130-d18000ed7303?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Official project render
       features: ["25-meter lap pool", "Kids' splash zone", "Pool deck seating", "Poolside café"]
     },
     {
@@ -143,7 +143,7 @@ export default function GodrejVerdaniaPage() {
       features: ["Adventure playground", "Toddler area", "Sand pit", "Safety surfacing"]
     },
     {
-      title: "Premium Plotted Community",
+      title: "Clubhouse",
       description: "24 acres of beautifully planned residential plots with modern infrastructure",
       image: "/WhatsApp Image 2025-09-05 at 20.04.36.jpeg", // Official project render - evening view
       features: ["40ft wide roads", "Underground utilities", "Gated community", "RERA approved"]
@@ -183,7 +183,7 @@ export default function GodrejVerdaniaPage() {
     },
     {
       question: "Payment plan?",
-      answer: "We offer flexible payment plans with easy EMI options. The EOI amount secures your plot with priority allotment advantage. Detailed payment schedule available on inquiry."
+      answer: "Construction Linked Plan (CLP)"
     },
     {
       question: "How is the connectivity from Manglia, Indore?",
@@ -477,9 +477,9 @@ export default function GodrejVerdaniaPage() {
             {/* Description */}
             <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
               <h3 className="text-2xl font-bold text-navy-900 mb-6">About Godrej Verdania Estate</h3>
-                <p className="text-gray-700 mb-8 leading-relaxed text-lg">
-                  Godrej Verdania Estate presents premium residential plots in Manglia, Indore, with a luxury clubhouse, resort-style pool, sports and fitness facilities, and 24/7 gated security. Choose from flexible plot sizes, all RERA approved, and enjoy seamless connectivity to major roads and city hubs. Build your dream home in a thoughtfully planned, vibrant community.
-                </p>
+              <p className="text-gray-700 mb-8 leading-relaxed text-lg">
+                Indore's Premier Plotted Development on 24 Acres of Pristine Greenery. Located strategically off Bypass Road in Manglia, Indore, offering the perfect blend of modern amenities, strategic location, and sustainable living in India's cleanest city.
+              </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-4 backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl">
@@ -568,6 +568,24 @@ export default function GodrejVerdaniaPage() {
                   <h4 className="font-bold text-navy-900 mb-1">146+</h4>
                   <p className="text-sm text-gray-600">Infrastructure Projects</p>
                 </div>
+                
+                <div className="text-center p-4 backdrop-blur-sm bg-gradient-to-br from-yellow-50 to-orange-50 border border-white/20 rounded-xl">
+                  <div className="text-3xl mb-3">🛣️</div>
+                  <h4 className="font-bold text-navy-900 mb-1">High Speed Corridors</h4>
+                  <p className="text-sm text-gray-600">Connecting Indore & Beyond</p>
+                </div>
+                
+                <div className="text-center p-4 backdrop-blur-sm bg-gradient-to-br from-cyan-50 to-blue-50 border border-white/20 rounded-xl">
+                  <div className="text-3xl mb-3">🚇</div>
+                  <h4 className="font-bold text-navy-900 mb-1">Metro Expansion</h4>
+                  <p className="text-sm text-gray-600">Smoother, Faster Commutes Ahead!</p>
+                </div>
+                
+                <div className="text-center p-4 backdrop-blur-sm bg-gradient-to-br from-amber-50 to-yellow-50 border border-white/20 rounded-xl">
+                  <div className="text-3xl mb-3">🕉️</div>
+                  <h4 className="font-bold text-navy-900 mb-1">Boost to Tourism</h4>
+                  <p className="text-sm text-gray-600">Gateway to Mahakaleshwar!</p>
+                </div>
               </div>
             </div>
 
@@ -575,43 +593,97 @@ export default function GodrejVerdaniaPage() {
             <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-navy-900 mb-3">Premium Connectivity</h3>
-                <p className="text-gray-600">Strategically located for easy access to key destinations</p>
+                <p className="text-gray-600">Every road leads you home - Seamlessly connected to everywhere you need to be</p>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="p-6 backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl">
-                  <div className="flex items-center mb-4">
-                    <MapPin className="w-5 h-5 text-blue-600 mr-2" />
-                    <h4 className="font-semibold text-navy-900">Major Roads</h4>
+                <div 
+                  className="backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl overflow-hidden cursor-pointer hover:bg-white/40 transition-all group"
+                  onClick={() => {
+                    setFullScreenImages([
+                      "/Screenshot 2025-09-07 at 10.34.30 PM.png",
+                      "/Screenshot 2025-09-07 at 10.36.32 PM.png", 
+                      "/Screenshot 2025-09-07 at 10.36.55 PM.png"
+                    ])
+                    setFullScreenImageIndex(0)
+                    setIsFullScreenOpen(true)
+                  }}
+                >
+                  <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
+                    <img
+                      src="/connectivity1.png"
+                      alt="Connectivity Image 1"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        console.error('Failed to load image:', e.currentTarget.src);
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.parentElement!.innerHTML = '<div class="text-center text-gray-500 p-4 h-full flex items-center justify-center"><div><div class="text-lg">📊</div><div>Connectivity Details</div><div class="text-xs">Loading image...</div></div></div>';
+                      }}
+                    />
                   </div>
-                  <div className="space-y-2 text-sm">
-                    <p className="text-gray-700">• A.B. Road - 800 meters</p>
-                    <p className="text-gray-700">• Bypass Road - 1.3 km</p>
-                    <p className="text-gray-700">• Indore-Ujjain Road - Quick Access</p>
+                  <div className="p-4 text-center">
+                    <h4 className="font-semibold text-navy-900 mb-1">Connectivity Details</h4>
+                    <p className="text-sm text-gray-600">Click to view full image</p>
                   </div>
                 </div>
                 
-                <div className="p-6 backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl">
-                  <div className="flex items-center mb-4">
-                    <Building className="w-5 h-5 text-green-600 mr-2" />
-                    <h4 className="font-semibold text-navy-900">Key Areas</h4>
+                <div 
+                  className="backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl overflow-hidden cursor-pointer hover:bg-white/40 transition-all group"
+                  onClick={() => {
+                    setFullScreenImages([
+                      "/Screenshot 2025-09-07 at 10.34.30 PM.png",
+                      "/Screenshot 2025-09-07 at 10.36.32 PM.png", 
+                      "/Screenshot 2025-09-07 at 10.36.55 PM.png"
+                    ])
+                    setFullScreenImageIndex(1)
+                    setIsFullScreenOpen(true)
+                  }}
+                >
+                  <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
+                    <img
+                      src="/connectivity2.png"
+                      alt="Connectivity Image 2"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        console.error('Failed to load image:', e.currentTarget.src);
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.parentElement!.innerHTML = '<div class="text-center text-gray-500 p-4 h-full flex items-center justify-center"><div><div class="text-lg">🗺️</div><div>Location Access</div><div class="text-xs">Loading image...</div></div></div>';
+                      }}
+                    />
                   </div>
-                  <div className="space-y-2 text-sm">
-                    <p className="text-gray-700">• Nipania - 15 mins</p>
-                    <p className="text-gray-700">• Palasia - 25 mins</p>
-                    <p className="text-gray-700">• Vijay Nagar - 30 mins</p>
+                  <div className="p-4 text-center">
+                    <h4 className="font-semibold text-navy-900 mb-1">Location Access</h4>
+                    <p className="text-sm text-gray-600">Click to view full image</p>
                   </div>
                 </div>
                 
-                <div className="p-6 backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl">
-                  <div className="flex items-center mb-4">
-                    <Car className="w-5 h-5 text-purple-600 mr-2" />
-                    <h4 className="font-semibold text-navy-900">Transport</h4>
+                <div 
+                  className="backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl overflow-hidden cursor-pointer hover:bg-white/40 transition-all group"
+                  onClick={() => {
+                    setFullScreenImages([
+                      "/Screenshot 2025-09-07 at 10.34.30 PM.png",
+                      "/Screenshot 2025-09-07 at 10.36.32 PM.png", 
+                      "/Screenshot 2025-09-07 at 10.36.55 PM.png"
+                    ])
+                    setFullScreenImageIndex(2)
+                    setIsFullScreenOpen(true)
+                  }}
+                >
+                  <div className="w-full h-48 bg-gray-200 flex items-center justify-center">
+                    <img
+                      src="/connectivity3.png"
+                      alt="Connectivity Image 3"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      onError={(e) => {
+                        console.error('Failed to load image:', e.currentTarget.src);
+                        e.currentTarget.style.display = 'none';
+                        e.currentTarget.parentElement!.innerHTML = '<div class="text-center text-gray-500 p-4 h-full flex items-center justify-center"><div><div class="text-lg">🚌</div><div>Transport Hub</div><div class="text-xs">Loading image...</div></div></div>';
+                      }}
+                    />
                   </div>
-                  <div className="space-y-2 text-sm">
-                    <p className="text-gray-700">• Indore Junction - 30 mins</p>
-                    <p className="text-gray-700">• Indore Airport - 35 mins</p>
-                    <p className="text-gray-700">• IT Parks - 35 mins</p>
+                  <div className="p-4 text-center">
+                    <h4 className="font-semibold text-navy-900 mb-1">Transport Hub</h4>
+                    <p className="text-sm text-gray-600">Click to view full image</p>
                   </div>
                 </div>
               </div>
@@ -861,9 +933,28 @@ export default function GodrejVerdaniaPage() {
               </div>
             )}
 
+            {/* Services Nearby */}
+            <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
+              <h3 className="text-2xl font-bold text-navy-900 mb-6">Services Nearby</h3>
+              <p className="text-gray-600 mb-6">Discover the amenities and services available in the vicinity of Godrej Verdania Estate</p>
+              
+              {/* PDF Document */}
+              <div className="backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl overflow-hidden">
+                <iframe
+                  src="/GODREJ Manglia_Opp Doc_V7.pdf"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  title="Godrej Verdania Estate Services Nearby"
+                  className="w-full"
+                />
+              </div>
+            </div>
+
             {/* Location */}
             <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-8 shadow-2xl">
               <h3 className="text-2xl font-bold text-navy-900 mb-6">Location</h3>
+              
               <div className="backdrop-blur-sm bg-white/30 border border-white/20 rounded-xl overflow-hidden">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.0074596218606!2d75.92223757504753!3d22.802187479328886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631df5e6dfc8f3%3A0xfd8abbe13d8df486!2sVerdania%20Estate%20%7C%20Godrej%20Plots%20Indore!5e0!3m2!1sen!2sus!4v1757015017807!5m2!1sen!2sus"

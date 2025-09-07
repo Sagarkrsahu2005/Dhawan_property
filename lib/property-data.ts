@@ -67,7 +67,7 @@ export const properties: Property[] = [
     type: "residential",
     status: "new-launch",
     tag: "Premium Plotted Development",
-    image: "/WhatsApp Image 2025-09-05 at 20.03.47.jpeg",
+    image: "/WhatsApp Image 2025-09-05 at 20.04.05.jpeg",
     amenities: [
       "24 Acres of Resort-Style Township Living",
       "The Verdania Enclave - 11,000 sq. ft. Premium Clubhouse",
