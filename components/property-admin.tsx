@@ -165,7 +165,7 @@ export default function PropertyAdmin() {
               />
               <Input
                 type="number"
-                placeholder="Year Built"
+                placeholder="Possession"
                 value={formData.yearBuilt}
                 onChange={(e) => handleInputChange('yearBuilt', e.target.value)}
                 required

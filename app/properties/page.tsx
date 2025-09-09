@@ -160,9 +160,9 @@ export default function PropertiesPage() {
                     </SelectContent>
                   </Select>
                 </div>
-                {/* Year Built */}
+                {/* Possession */}
                 <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Year Built</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Possession</label>
                   <Select value={yearBuilt} onValueChange={setYearBuilt}>
                     <SelectTrigger><SelectValue /></SelectTrigger>
                     <SelectContent>

@@ -10,7 +10,7 @@ This guide will help you export **EVERYTHING** from your WordPress site and migr
 - ✅ Property titles and descriptions
 - ✅ Bedrooms, bathrooms, area
 - ✅ Property type and status
-- ✅ Year built and location
+- ✅ Possession and location
 - ✅ Price and pricing details
 - ✅ Custom fields and meta data
 

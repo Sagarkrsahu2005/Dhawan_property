@@ -923,7 +923,7 @@ export default function HomePage() {
                   <div className="text-center p-4 bg-gray-50 rounded-lg">
                     <div className="w-6 h-6 mx-auto mb-2 text-navy-900 font-bold text-lg">📅</div>
                     <div className="font-semibold">{selectedProperty.yearBuilt}</div>
-                    <div className="text-sm text-gray-600">Year Built</div>
+                    <div className="text-sm text-gray-600">Possession</div>
                   </div>
                 </div>
 

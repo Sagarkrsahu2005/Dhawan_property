@@ -391,7 +391,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                 <span className="font-semibold text-navy-900">{propertyData.area} sq.ft</span>
               </div>
               <div className="flex justify-between items-center py-3 border-b border-white/20">
-                <span className="text-gray-700">Year Built</span>
+                <span className="text-gray-700">Possession</span>
                 <span className="font-semibold text-navy-900">{propertyData.yearBuilt}</span>
               </div>
               <div className="flex justify-between items-center py-3">
@@ -447,7 +447,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
           <div className="backdrop-blur-md bg-white/40 border border-white/30 rounded-2xl p-6 text-center shadow-xl">
             <Calendar className="w-8 h-8 text-navy-900 mx-auto mb-2" />
             <div className="text-2xl font-bold text-navy-900">{propertyData.yearBuilt}</div>
-            <div className="text-gray-600">Year Built</div>
+            <div className="text-gray-600">Possession</div>
           </div>
         </div>
 
