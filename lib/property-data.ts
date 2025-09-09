@@ -62,7 +62,7 @@ export const properties: Property[] = [
     bedrooms: 0, // Not specified, assuming plots or various configs
     bathrooms: 0,
     area: 1500, // Placeholder average size
-    yearBuilt: 2025, // Placeholder
+    yearBuilt: 2030, // Placeholder
     type: "residential",
     status: "new-launch",
     tag: "Mediterranean Themed Township",
