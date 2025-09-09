@@ -413,7 +413,7 @@ const amenitiesData = [
               </div>
               <div className="flex justify-between items-center py-3 border-b border-white/20">
                 <span className="text-gray-700">Possession</span>
-                <span className="font-semibold text-navy-900">2025</span>
+                <span className="font-semibold text-navy-900">Mar, 2030</span>
               </div>
               <div className="flex justify-between items-center py-3 border-b border-white/20">
                 <span className="text-gray-700">RERA</span>

@@ -96,7 +96,7 @@ export const properties: Property[] = [
     projectSpecs: {
       clubHouse: "1.5 Lakh sq. ft.",
       rera: "PRM/KA/RERA/1250/303/PR/010425/007644",
-      possession: "2025"
+      possession: "Mar, 2030"
     },
     nearbyPlaces: [
       { name: "Delhi Public School", distance: "nearby", type: "school" },
