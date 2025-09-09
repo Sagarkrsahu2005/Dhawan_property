@@ -54,6 +54,91 @@ export interface Property {
 }
 
 export const properties: Property[] = [
+  {
+    id: 22,
+    slug: "godrej-msr-city",
+    title: "Godrej MSR City",
+    location: "North Bengaluru",
+    bedrooms: 0, // Not specified, assuming plots or various configs
+    bathrooms: 0,
+    area: 1500, // Placeholder average size
+    yearBuilt: 2025, // Placeholder
+    type: "residential",
+    status: "new-launch",
+    tag: "Mediterranean Themed Township",
+    image: "https://newprojects.99acres.com/projects/m_s_ramaiah_ventures_llp/barca_at_godrej_msr_city/images/1ugwtsa_1753082618_621618409_optOrig.jpg", // Placeholder
+    amenities: [
+      "Skateboarding Rink",
+      "Lap Pool",
+      "Outdoor Gym",
+      "Community Cafe",
+      "Children's Play Area",
+      "1.5 Lakh sq. ft. Grand Clubhouse",
+      "Co-working space",
+      "Business center",
+      "Kids' arena",
+      "Large gym",
+      "Mediterranean Theme",
+      "Sun-lit spaces and breezy balconies"
+    ],
+    images: [
+      "https://godrejsbangalore.com/godrej-shettigere/img/gallery/g1.webp",
+      "https://godrejsbangalore.com/godrej-shettigere/img/gallery/g2.webp",
+      "https://godrejsbangalore.com/godrej-shettigere/img/gallery/g3.webp",
+      "https://godrejsbangalore.com/godrej-shettigere/img/gallery/g4.webp",
+      "https://newprojects.99acres.com/projects/m_s_ramaiah_ventures_llp/barca_at_godrej_msr_city/images/1ugwtsa_1753082618_621618409_optOrig.jpg",
+      "https://www.godrejshettiigere.com/assets/img/gallery/1.webp",
+      "https://www.godrejshettiigere.com/assets/img/gallery/2.webp",
+      "https://www.godrejshettiigere.com/assets/img/gallery/3.webp",
+      "https://www.godrejshettiigere.com/assets/img/gallery/4.webp"
+    ],
+    description: `Experience the Mediterranean lifestyle in the heart of North Bengaluru. Godrej MSR City is a landmark project that combines the charm of European architecture with modern amenities, creating a unique living experience. The project is well-connected via Bellary Road (NH 44) and the upcoming Doddajala Metro Station. It is also close to the Kempegowda International Airport.`,
+    projectSpecs: {
+      clubHouse: "1.5 Lakh sq. ft.",
+      rera: "PRM/KA/RERA/1250/303/PR/010425/007644",
+      possession: "2025"
+    },
+    nearbyPlaces: [
+      { name: "Delhi Public School", distance: "nearby", type: "school" },
+      { name: "Akash International School", distance: "nearby", type: "school" },
+      { name: "Canadian International School", distance: "nearby", type: "school" },
+      { name: "Aster CMI", distance: "nearby", type: "hospital" },
+      { name: "Cytecare Cancer Hospital", distance: "nearby", type: "hospital" },
+      { name: "Manipal Hospital", distance: "nearby", type: "hospital" },
+      { name: "Manyata Tech Park", distance: "nearby", type: "commercial" },
+      { name: "KIADB Aerospace Park", distance: "nearby", type: "commercial" },
+      { name: "Ecopolis", distance: "nearby", type: "commercial" },
+      { name: "Galleria Mall", distance: "nearby", type: "shopping" },
+      { name: "Esteem Mall", distance: "nearby", type: "shopping" },
+      { name: "RMZ Mall", distance: "nearby", type: "shopping" },
+      { name: "NH 44 - Bellary Road", distance: "2 Kms", type: "connectivity" },
+      { name: "Doddajala Metro Station", distance: "4 Kms (Upcoming)", type: "connectivity" },
+      { name: "Kempegowda International Airport", distance: "9 Kms", type: "connectivity" }
+    ],
+    agent: {
+      name: "Kapil Dhawan",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
+      image: "/professional-real-estate-agent.png"
+    },
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3884.4966704413546!2d77.65732017508033!3d13.194104387142039!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1d8829723495%3A0x42397d8ede95b3d1!2sBarca%20at%20Godrej%20MSR%20City%2C%20North%20Bengaluru!5e0!3m2!1sen!2sin!4v1757443076795!5m2!1sen!2sin",
+    brochures: [
+      {
+        title: "Barca at Godrej MSR City Brochure",
+        type: "Project Brochure",
+        fileUrl: "/Barca/Barca at Godrej MSR City_Brochure.pdf",
+        thumbnail: "https://newprojects.99acres.com/projects/m_s_ramaiah_ventures_llp/barca_at_godrej_msr_city/images/1ugwtsa_1753082618_621618409_optOrig.jpg",
+        description: "Official project brochure with detailed information."
+      },
+      {
+        title: "Barca at Godrej MSR City MLP",
+        type: "Master Layout Plan",
+        fileUrl: "/Barca/Barca at Godrej MSR City_MLP.pdf",
+        thumbnail: "https://newprojects.99acres.com/projects/m_s_ramaiah_ventures_llp/barca_at_godrej_msr_city/images/1ugwtsa_1753082618_621618409_optOrig.jpg",
+        description: "Detailed Master Layout Plan of the project."
+      }
+    ]
+  },
   // Latest Project - Godrej Verdania Estate (Featured as Hero Project)
   {
     id: 21,
