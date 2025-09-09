@@ -299,6 +299,12 @@ const amenitiesData = [
                     </Button>
                   </div>
                 </div>
+
+                <div className="mt-4 text-center lg:text-left">
+                  <p className="text-lg font-semibold text-white bg-black/30 backdrop-blur-sm rounded-md px-3 py-1 inline-block">
+                    Just pay 20% amount now 80% after 4 years or at the time of possession
+                  </p>
+                </div>
               </div>
 
               {/* Navigation arrows */}

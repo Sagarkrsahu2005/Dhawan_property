@@ -351,7 +351,23 @@ export default function HomePage() {
                 location.
               </p>
 
-              <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              {/* Minimal Payment Badge */}
+              <div className="mt-6 inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-black/30 to-black/20 backdrop-blur-md rounded-full border border-gold-500/30 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer">
+                <div className="flex items-center space-x-1">
+                  <div className="w-2 h-2 bg-gold-500 rounded-full animate-ping"></div>
+                  <span className="text-sm font-semibold text-white">Employee Special</span>
+                </div>
+                <div className="h-4 w-px bg-gold-500/50"></div>
+                <div className="flex items-center space-x-2 text-white">
+                  <span className="text-lg font-bold text-gold-400">20%</span>
+                  <span className="text-xs">now</span>
+                  <span className="text-gold-400">→</span>
+                  <span className="text-lg font-bold text-gold-400">80%</span>
+                  <span className="text-xs">@possession</span>
+                </div>
+              </div>
+
+              <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6">
                 <MagneticHover strength={0.2}>
                   <Button
                     asChild
