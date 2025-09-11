@@ -66,7 +66,7 @@ export const properties: Property[] = [
     type: "residential",
     status: "new-launch",
     tag: "Mediterranean Themed Township",
-    image: "https://newprojects.99acres.com/projects/m_s_ramaiah_ventures_llp/barca_at_godrej_msr_city/images/1ugwtsa_1753082618_621618409_optOrig.jpg", // Placeholder
+    image: "https://i.postimg.cc/bwp4C29h/godrej-msr-city-barca.png", // Placeholder
     amenities: [
       "Skateboarding Rink",
       "Lap Pool",
@@ -86,7 +86,7 @@ export const properties: Property[] = [
       "https://godrejsbangalore.com/godrej-shettigere/img/gallery/g2.webp",
       "https://godrejsbangalore.com/godrej-shettigere/img/gallery/g3.webp",
       "https://godrejsbangalore.com/godrej-shettigere/img/gallery/g4.webp",
-      "https://newprojects.99acres.com/projects/m_s_ramaiah_ventures_llp/barca_at_godrej_msr_city/images/1ugwtsa_1753082618_621618409_optOrig.jpg",
+      "https://i.postimg.cc/bwp4C29h/godrej-msr-city-barca.png",
       "https://www.godrejshettiigere.com/assets/img/gallery/1.webp",
       "https://www.godrejshettiigere.com/assets/img/gallery/2.webp",
       "https://www.godrejshettiigere.com/assets/img/gallery/3.webp",
@@ -127,14 +127,14 @@ export const properties: Property[] = [
         title: "Barca at Godrej MSR City Brochure",
         type: "Project Brochure",
         fileUrl: "/Barca/Barca at Godrej MSR City_Brochure.pdf",
-        thumbnail: "https://newprojects.99acres.com/projects/m_s_ramaiah_ventures_llp/barca_at_godrej_msr_city/images/1ugwtsa_1753082618_621618409_optOrig.jpg",
+        thumbnail: "https://i.postimg.cc/bwp4C29h/godrej-msr-city-barca.png",
         description: "Official project brochure with detailed information."
       },
       {
         title: "Barca at Godrej MSR City MLP",
         type: "Master Layout Plan",
         fileUrl: "/Barca/Barca at Godrej MSR City_MLP.pdf",
-        thumbnail: "https://newprojects.99acres.com/projects/m_s_ramaiah_ventures_llp/barca_at_godrej_msr_city/images/1ugwtsa_1753082618_621618409_optOrig.jpg",
+        thumbnail: "https://i.postimg.cc/bwp4C29h/godrej-msr-city-barca.png",
         description: "Detailed Master Layout Plan of the project."
       }
     ]

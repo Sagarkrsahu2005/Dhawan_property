@@ -351,19 +351,38 @@ export default function HomePage() {
                 location.
               </p>
 
-              {/* Minimal Payment Badge */}
-              <div className="mt-6 inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-black/30 to-black/20 backdrop-blur-md rounded-full border border-gold-500/30 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer">
-                <div className="flex items-center space-x-1">
-                  <div className="w-2 h-2 bg-gold-500 rounded-full animate-ping"></div>
-                  <span className="text-sm font-semibold text-white">Employee Special</span>
+              {/* Payment Scheme Badges */}
+              <div className="mt-6 space-y-3">
+                {/* General Scheme for All */}
+                <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-md rounded-full border border-white/20 shadow-lg transition-all duration-300">
+                  <div className="flex items-center space-x-1">
+                    <div className="w-2 h-2 bg-white/60 rounded-full animate-ping"></div>
+                    <span className="text-sm font-medium text-white">Exclusives Offer </span>
+                  </div>
+                  <div className="h-4 w-px bg-white/30"></div>
+                  <div className="flex items-center space-x-2 text-white">
+                    <span className="text-lg font-bold text-white">20%</span>
+                    <span className="text-xs">now</span>
+                    <span className="text-white">→</span>
+                    <span className="text-lg font-bold text-white">80%</span>
+                    <span className="text-xs">@possession</span>
+                  </div>
                 </div>
-                <div className="h-4 w-px bg-gold-500/50"></div>
-                <div className="flex items-center space-x-2 text-white">
-                  <span className="text-lg font-bold text-gold-400">20%</span>
-                  <span className="text-xs">now</span>
-                  <span className="text-gold-400">→</span>
-                  <span className="text-lg font-bold text-gold-400">80%</span>
-                  <span className="text-xs">@possession</span>
+                
+                {/* Exclusive Employee Scheme */}
+                <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-gold-500/30 to-gold-600/20 backdrop-blur-md rounded-full border border-gold-500/40 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer">
+                  <div className="flex items-center space-x-1">
+                    <div className="w-2 h-2 bg-gold-500 rounded-full animate-ping"></div>
+                    <span className="text-sm font-semibold text-white">🎯 Employee Exclusives Await!</span>
+                  </div>
+                  {/* <div className="h-4 w-px bg-gold-500/50"></div> */}
+                  {/* <div className="flex items-center space-x-2 text-white">
+                    <span className="text-lg font-bold text-gold-400">10%</span>
+                    <span className="text-xs">now</span>
+                    <span className="text-gold-400">→</span>
+                    <span className="text-lg font-bold text-gold-400">90%</span>
+                    <span className="text-xs">@possession</span>
+                  </div> */}
                 </div>
               </div>
 

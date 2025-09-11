@@ -405,7 +405,11 @@ const amenitiesData = [
               </div>
               <div className="flex justify-between items-center py-3 border-b border-white/20">
                 <span className="text-gray-700">Configurations</span>
-                <span className="font-semibold text-navy-900">2, 3 & 4 BHK</span>
+                <span className="font-semibold text-navy-900">3BHK</span>
+              </div>
+              <div className="flex justify-between items-center py-3 border-b border-white/20">
+                <span className="text-gray-700">Sizes</span>
+                <span className="font-semibold text-navy-900">1700 | 1800 | 1900 sq.ft</span>
               </div>
               <div className="flex justify-between items-center py-3 border-b border-white/20">
                 <span className="text-gray-700">Clubhouse</span>
