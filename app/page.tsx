@@ -316,7 +316,7 @@ export default function HomePage() {
         />
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-900/70 via-blue-900/60 to-indigo-900/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/80 via-navy-900/70 to-black/80" />
 
         {/* Animated Background Elements */}
         <AnimatedBackground />
@@ -373,7 +373,7 @@ export default function HomePage() {
                 <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-gold-500/30 to-gold-600/20 backdrop-blur-md rounded-full border border-gold-500/40 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer">
                   <div className="flex items-center space-x-1">
                     <div className="w-2 h-2 bg-gold-500 rounded-full animate-ping"></div>
-                    <span className="text-sm font-semibold text-white">🎯 Employee Exclusives Await!</span>
+                    <span className="text-sm font-semibold text-white">🎯 Unique Finance Schemes for Employees </span>
                   </div>
                   {/* <div className="h-4 w-px bg-gold-500/50"></div> */}
                   {/* <div className="flex items-center space-x-2 text-white">
@@ -570,10 +570,10 @@ export default function HomePage() {
                           <span>{property.bedrooms} BHK</span>
                         </div>
                       )}
-                      <div className="flex items-center">
+                      {/* <div className="flex items-center">
                         <Bath className="w-4 h-4 mr-1" />
                         <span>{property.bathrooms} Bath</span>
-                      </div>
+                      </div> */}
                       <div className="flex items-center">
                         <Square className="w-4 h-4 mr-1" />
                         <span>{property.area} sq.ft</span>
@@ -945,11 +945,11 @@ export default function HomePage() {
                       <div className="text-sm text-gray-600">Bedrooms</div>
                     </div>
                   )}
-                  <div className="text-center p-4 bg-gray-50 rounded-lg">
+                  {/* <div className="text-center p-4 bg-gray-50 rounded-lg">
                     <Bath className="w-6 h-6 mx-auto mb-2 text-navy-900" />
                     <div className="font-semibold">{selectedProperty.bathrooms}</div>
                     <div className="text-sm text-gray-600">Bathrooms</div>
-                  </div>
+                  </div> */}
                   <div className="text-center p-4 bg-gray-50 rounded-lg">
                     <Square className="w-6 h-6 mx-auto mb-2 text-navy-900" />
                     <div className="font-semibold">{selectedProperty.area}</div>
