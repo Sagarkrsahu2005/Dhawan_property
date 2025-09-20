@@ -55,6 +55,9 @@ export const metadata: Metadata = generateSEOMetadata({
   ],
   canonicalUrl: "/",
   ogImage: "/dhawan-properties-logo.png",
+  verification: {
+    google: "13qt55xB_MjCtrPsTxHSlVONSP89gKSJ5k6Dst-H49o",
+  },
 })
 
 export default function RootLayout({

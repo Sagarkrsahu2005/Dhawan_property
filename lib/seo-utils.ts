@@ -10,6 +10,9 @@ export interface SEOData {
   ogImage?: string
   twitterCard?: "summary_large_image" | "summary" | "player" | "app"
   structuredData?: any
+  verification?: {
+    google?: string | number | (string | number)[]
+  }
 }
 
 export function generateSEOMetadata(data: SEOData, baseUrl: string = "https://www.dhawanproperties.com"): Metadata {
@@ -74,7 +77,7 @@ export function generateSEOMetadata(data: SEOData, baseUrl: string = "https://ww
     
     // Verification
     verification: {
-      google: "AZhUgcfdRva2q2lQc6HqJUyTYfg9sbeRM4NaiRwhj7M"
+      google: data.verification?.google || "AZhUgcfdRva2q2lQc6HqJUyTYfg9sbeRM4NaiRwhj7M"
     },
     
     // Icons
