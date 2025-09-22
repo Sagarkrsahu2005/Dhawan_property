@@ -100,7 +100,7 @@ Crafted by the trusted legacy of Properties, this gated community is enriched wi
 
 A Grand Royal Luxurious Project - Premium 100 - 500 Sq.yd plots in a secure enclave. Promising returns in Panipat's booming growth corridor with eco-wise living featuring rainwater reuse & smart lighting. Experience luxe clubhouse with pool, spa, gym & lush green spaces at this prime address with swift access to highways & Delhi-NCR.`,
     projectSpecs: {
-      landParcel: "47 Acres",
+      landParcel: "43 Acres",
       totalUnits: "750 Total Plots",
       possession: "In 1 Year",
       paymentPlan: "1-1.5 Years Flexi Payment Plan",

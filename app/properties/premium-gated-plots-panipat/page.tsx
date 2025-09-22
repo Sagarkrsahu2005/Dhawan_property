@@ -142,7 +142,7 @@ export default function PremiumGatedPlotsPanipatPage() {
   const faqData = [
     {
       question: "What is the total project area and number of plots?",
-      answer: "This premium gated development spans over 47 acres offering 750 independent plots ranging from 100-500 Sq.Yd in a secure enclave."
+      answer: "This premium gated development spans over 43 Acres offering 750 independent plots ranging from 100-500 Sq.Yd in a secure enclave."
     },
     {
       question: "What are the available plot sizes and payment options?",
@@ -423,7 +423,7 @@ export default function PremiumGatedPlotsPanipatPage() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Total Area:</span>
-                  <span className="font-medium text-navy-900">47 Acres</span>
+                  <span className="font-medium text-navy-900">43 Acres</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Total Plots:</span>
@@ -600,7 +600,7 @@ export default function PremiumGatedPlotsPanipatPage() {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
-                  "47 Acres Premium Gated Community",
+                  "43 Acres Premium Gated Community",
                   "750 Total Plots (100-500 Sq.Yd)",
                   "Luxe Clubhouse with Pool, Spa & Gym",
                   "Multi Purpose Hall & Games Room",

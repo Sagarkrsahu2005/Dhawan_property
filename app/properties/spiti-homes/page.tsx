@@ -139,7 +139,7 @@ export default function SpitiHomesPage() {
   const faqData = [
     {
       question: "What is the total project area and number of plots?",
-      answer: "This premium gated development spans over 47 acres offering 750 independent plots ranging from 100-500 Sq.Yd in a secure enclave."
+      answer: "This premium gated development spans over 43 Acres offering 750 independent plots ranging from 100-500 Sq.Yd in a secure enclave."
     },
     {
       question: "What are the available plot sizes and payment options?",
@@ -463,7 +463,7 @@ export default function SpitiHomesPage() {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
-                  "47 Acres Premium Gated Community",
+                  "43 Acres Premium Gated Community",
                   "750 Total Plots (100-500 Sq.Yd)",
                   "Luxe Clubhouse with Pool, Spa & Gym",
                   "Multi Purpose Hall & Games Room",
@@ -568,7 +568,7 @@ export default function SpitiHomesPage() {
                   />
                 </div>
                 <p className="text-gray-600">
-                  Detailed layout plan showing all 750 plots across 47 acres with premium amenities and infrastructure.
+                  Detailed layout plan showing all 750 plots across 43 Acres with premium amenities and infrastructure.
                 </p>
               </div>
             </div>
