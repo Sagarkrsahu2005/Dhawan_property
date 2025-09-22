@@ -55,6 +55,82 @@ export interface Property {
 
 export const properties: Property[] = [
   {
+    id: 23,
+    slug: "premium-gated-plots-panipat",
+    title: "No 1 Developer Launched a New Gated Plotted in Panipat",
+    location: "Sector 40, Panipat, Haryana",
+    bedrooms: 0, // Residential plots
+    bathrooms: 0, // Residential plots
+    area: 900, // Starting plot size in sq ft
+    yearBuilt: 2025,
+    type: "residential",
+    status: "new-launch",
+    tag: "Premium Gated Plots",
+    image: "https://images.unsplash.com/photo-1587745890135-20db8c79b027?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Placeholder - will need actual image
+    amenities: [
+      "Multi Purpose Hall",
+      "Games Room",
+      "Gymnasium",
+      "Iconic Fountain",
+      "Swimming Pool",
+      "30+ Life Designed Amenities",
+      "Gated Community with 3-Tier Security",
+      "24x7 Surveillance",
+      "Luxe Clubhouse with Pool, Spa, Gym",
+      "Lush Green Spaces",
+      "Wide Tree-lined Avenues",
+      "Modern Infrastructure",
+      "Eco-conscious Features",
+      "Rainwater Reuse System",
+      "Smart Lighting",
+      "Landscaped Gardens",
+      "Dedicated Sports Zones",
+      "Grand Clubhouse",
+      "Prime Highway Access"
+    ],
+    images: [
+      "https://images.unsplash.com/photo-1587745890135-20db8c79b027?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Placeholder
+      "https://images.unsplash.com/photo-1751301348228-39ba87ad82ba?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Placeholder
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Placeholder
+      "https://images.unsplash.com/photo-1706164971299-cfa23ec76083?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Placeholder
+    ],
+    description: `Discover a place where your aspirations take root and flourish. Set amidst lush, open landscapes, these premium plots—ranging from 900 to 1500 sq. ft.—offer the freedom to design a home that reflects your individuality. With effortless access to highways, key city hubs, and daily conveniences, this address strikes the perfect balance between calm retreat and seamless connectivity in one of Haryana's fastest-growing destinations.
+
+Crafted by the trusted legacy of Properties, this gated community is enriched with thoughtful luxuries: a grand clubhouse, refreshing pool, landscaped gardens, and dedicated sports zones for recreation. Wide tree-lined avenues, modern infrastructure, and eco-conscious features make every day smoother, greener, and more refined. Backed by round-the-clock security, this is more than land—it's a foundation for a lifestyle that grows richer with time.
+
+A Grand Royal Luxurious Project - Premium 100 - 500 Sq.yd plots in a secure enclave. Promising returns in Panipat's booming growth corridor with eco-wise living featuring rainwater reuse & smart lighting. Experience luxe clubhouse with pool, spa, gym & lush green spaces at this prime address with swift access to highways & Delhi-NCR.`,
+    projectSpecs: {
+      landParcel: "47 Acres",
+      totalUnits: "750 Total Plots",
+      possession: "In 1 Year",
+      paymentPlan: "1-1.5 Years Flexi Payment Plan",
+      bookingAmount: "EOI Amount: ₹5,00,000/-",
+      rera: "Bank on NH-44 Delhi-Punjab Highway"
+    },
+    sizes: [
+      { type: "100 Sq.Yd Plot", size: "100 Sq.Yd" },
+      { type: "200 Sq.Yd Plot", size: "200 Sq.Yd" },
+      { type: "300 Sq.Yd Plot", size: "300 Sq.Yd" },
+      { type: "400 Sq.Yd Plot", size: "400 Sq.Yd" },
+      { type: "500 Sq.Yd Plot", size: "500 Sq.Yd" }
+    ],
+    nearbyPlaces: [
+      { name: "Panipat City Centre", distance: "7 Mins", type: "commercial" },
+      { name: "Delhi Public School, Panipat", distance: "10 Mins", type: "school" },
+      { name: "Park Hospital, Panipat", distance: "8 Mins", type: "hospital" },
+      { name: "City Centre Shopping", distance: "7 Mins", type: "shopping" },
+      { name: "Panipat Business Park", distance: "11 Mins", type: "commercial" },
+      { name: "NH-44 Delhi-Punjab Highway", distance: "Direct Access", type: "connectivity" }
+    ],
+    agent: {
+      name: "Kapil Dhawan",
+      phone: "+91 9999628400",
+      email: "Dhawanproperties2019@gmail.com",
+      image: "/professional-real-estate-agent.png"
+    },
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.123!2d76.968!3d29.388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390e65c8c6a7ae87%3A0x123456789!2sSector%2040%2C%20Panipat%2C%20Haryana!5e0!3m2!1sen!2sin!4v1234567890!5m2!1sen!2sin"
+  },
+  {
     id: 22,
     slug: "godrej-msr-city",
     title: "Godrej MSR City",
