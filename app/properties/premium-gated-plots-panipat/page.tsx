@@ -458,22 +458,22 @@ export default function PremiumGatedPlotsPanipatPage() {
         </div>
 
         {/* Main content sections */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
           {/* Left column - Main content */}
           <div className="lg:col-span-2 space-y-6">
             {/* Description */}
             <div className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-2xl p-8 shadow-lg">
               <h2 className="text-2xl font-bold text-navy-900 mb-6">About This Premium Gated Development</h2>
               <div className="prose max-w-none text-gray-700 leading-relaxed">
-                <p className="mb-4">
-                  Discover a place where your aspirations take root and flourish. Set amidst lush, open landscapes, these premium plots—ranging from 900 to 4500 sq. ft.—offer the freedom to design a home that reflects your individuality. With effortless access to highways, key city hubs, and daily conveniences, this address strikes the perfect balance between calm retreat and seamless connectivity in one of Haryana's fastest-growing destinations.
-                </p>
-                <p className="mb-4">
-                  Crafted by the trusted legacy of Properties, this gated community is enriched with thoughtful luxuries: a grand clubhouse, refreshing pool, landscaped gardens, and dedicated sports zones for recreation. Wide tree-lined avenues, modern infrastructure, and eco-conscious features make every day smoother, greener, and more refined.
-                </p>
-                <p>
-                  Backed by round-the-clock security, this is more than land—it's a foundation for a lifestyle that grows richer with time. A Grand Royal Luxurious Project offering premium 100 - 500 Sq.yd plots in a secure enclave, promising returns in Panipat's booming growth corridor with eco-wise living featuring rainwater reuse & smart lighting.
-                </p>
+            <p className="mb-4">
+              Discover a place where your aspirations take root and flourish. Set amidst lush, open landscapes, these premium plots—ranging from 900 to 4500 sq. ft.—offer the freedom to design a home that reflects your individuality. With effortless access to highways, key city hubs, and daily conveniences, this address strikes the perfect balance between calm retreat and seamless connectivity in one of Haryana's fastest-growing destinations.
+            </p>
+            <p className="mb-4">
+              Crafted by the trusted legacy of Properties, this gated community is enriched with thoughtful luxuries: a grand clubhouse, refreshing pool, landscaped gardens, and dedicated sports zones for recreation. Wide tree-lined avenues, modern infrastructure, and eco-conscious features make every day smoother, greener, and more refined.
+            </p>
+            <p>
+              Backed by round-the-clock security, this is more than land—it's a foundation for a lifestyle that grows richer with time. A Grand Royal Luxurious Project offering premium 100 - 500 Sq.yd plots in a secure enclave, promising returns in Panipat's booming growth corridor with eco-wise living featuring rainwater reuse & smart lighting.
+            </p>
               </div>
             </div>
 
