@@ -407,10 +407,10 @@ export default function PremiumGatedPlotsPanipatPage() {
                 <span>{propertyData.location}</span>
               </div>
 
-              <div className="flex items-center justify-between text-lg">
+              {/* <div className="flex items-center justify-between text-lg">
                 <span className="text-gray-600">EOI Amount:</span>
                 <span className="font-bold text-navy-900">₹5,00,000/-</span>
-              </div>
+              </div> */}
             </div>
 
             {/* Quick specs */}
@@ -466,7 +466,7 @@ export default function PremiumGatedPlotsPanipatPage() {
               <h2 className="text-2xl font-bold text-navy-900 mb-6">About This Premium Gated Development</h2>
               <div className="prose max-w-none text-gray-700 leading-relaxed">
                 <p className="mb-4">
-                  Discover a place where your aspirations take root and flourish. Set amidst lush, open landscapes, these premium plots—ranging from 900 to 1500 sq. ft.—offer the freedom to design a home that reflects your individuality. With effortless access to highways, key city hubs, and daily conveniences, this address strikes the perfect balance between calm retreat and seamless connectivity in one of Haryana's fastest-growing destinations.
+                  Discover a place where your aspirations take root and flourish. Set amidst lush, open landscapes, these premium plots—ranging from 900 to 4500 sq. ft.—offer the freedom to design a home that reflects your individuality. With effortless access to highways, key city hubs, and daily conveniences, this address strikes the perfect balance between calm retreat and seamless connectivity in one of Haryana's fastest-growing destinations.
                 </p>
                 <p className="mb-4">
                   Crafted by the trusted legacy of Properties, this gated community is enriched with thoughtful luxuries: a grand clubhouse, refreshing pool, landscaped gardens, and dedicated sports zones for recreation. Wide tree-lined avenues, modern infrastructure, and eco-conscious features make every day smoother, greener, and more refined.
@@ -779,10 +779,10 @@ export default function PremiumGatedPlotsPanipatPage() {
             <div className="bg-white/80 backdrop-blur-sm border border-white/50 rounded-2xl p-6 shadow-lg">
               <h3 className="text-lg font-semibold text-navy-900 mb-4">Payment Plan & Investment Highlights</h3>
               <div className="space-y-4">
-                <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg border border-green-100">
+                {/* <div className="flex justify-between items-center p-3 bg-green-50 rounded-lg border border-green-100">
                   <span className="text-gray-700 font-medium">EOI Amount:</span>
                   <span className="font-bold text-green-700">₹5,00,000/-</span>
-                </div>
+                </div> */}
                 <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg border border-blue-100">
                   <span className="text-gray-700 font-medium">Payment Plan:</span>
                   <span className="font-bold text-blue-700">1-1.5 Years Flexi</span>

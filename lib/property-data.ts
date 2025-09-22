@@ -57,7 +57,7 @@ export const properties: Property[] = [
   {
     id: 23,
     slug: "premium-gated-plots-panipat",
-    title: "No 1 Developer Launched a New Gated Plotted in Panipat",
+    title: "No. 1 Developer Launched a New Gated Plots in Panipat",
     location: "Sector 40, Panipat, Haryana",
     bedrooms: 0, // Residential plots
     bathrooms: 0, // Residential plots
@@ -94,7 +94,7 @@ export const properties: Property[] = [
       "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Placeholder
       "https://images.unsplash.com/photo-1706164971299-cfa23ec76083?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Placeholder
     ],
-    description: `Discover a place where your aspirations take root and flourish. Set amidst lush, open landscapes, these premium plots—ranging from 900 to 1500 sq. ft.—offer the freedom to design a home that reflects your individuality. With effortless access to highways, key city hubs, and daily conveniences, this address strikes the perfect balance between calm retreat and seamless connectivity in one of Haryana's fastest-growing destinations.
+    description: `Discover a place where your aspirations take root and flourish. Set amidst lush, open landscapes, these premium plots—ranging from 900 to 4500 sq. ft.—offer the freedom to design a home that reflects your individuality. With effortless access to highways, key city hubs, and daily conveniences, this address strikes the perfect balance between calm retreat and seamless connectivity in one of Haryana's fastest-growing destinations.
 
 Crafted by the trusted legacy of Properties, this gated community is enriched with thoughtful luxuries: a grand clubhouse, refreshing pool, landscaped gardens, and dedicated sports zones for recreation. Wide tree-lined avenues, modern infrastructure, and eco-conscious features make every day smoother, greener, and more refined. Backed by round-the-clock security, this is more than land—it's a foundation for a lifestyle that grows richer with time.
 
@@ -104,7 +104,7 @@ A Grand Royal Luxurious Project - Premium 100 - 500 Sq.yd plots in a secure encl
       totalUnits: "750 Total Plots",
       possession: "In 1 Year",
       paymentPlan: "1-1.5 Years Flexi Payment Plan",
-      bookingAmount: "EOI Amount: ₹5,00,000/-",
+      // bookingAmount: "EOI Amount: ₹5,00,000/-",
       rera: "Bank on NH-44 Delhi-Punjab Highway"
     },
     sizes: [
