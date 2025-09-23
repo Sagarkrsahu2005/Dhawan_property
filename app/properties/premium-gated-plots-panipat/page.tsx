@@ -449,7 +449,11 @@ export default function PremiumGatedPlotsPanipatPage() {
                 <MessageCircle className="w-4 h-4 mr-2" />
                 Quick Enquiry
               </Button>
-              <Button variant="outline" className="border-navy-200 text-navy-700 hover:bg-navy-50">
+              <Button
+                variant="outline"
+                className="border-navy-200 text-navy-700 hover:bg-navy-50"
+                onClick={() => window.open(`tel:${propertyData.agent?.phone}`)}
+              >
                 <Phone className="w-4 h-4 mr-2" />
                 Call Now
               </Button>
