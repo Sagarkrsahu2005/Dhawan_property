@@ -435,7 +435,7 @@ export default function PremiumGatedPlotsPanipatPage() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Possession:</span>
-                  <span className="font-medium text-navy-900">In 1 Year</span>
+                  <span className="font-medium text-navy-900">2027</span>
                 </div>
               </div>
             </div>

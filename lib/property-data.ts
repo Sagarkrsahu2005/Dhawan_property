@@ -105,7 +105,7 @@ A Grand Royal Luxurious Project - Premium 100 - 500 Sq.yd plots in a secure encl
       possession: "In 1 Year",
       paymentPlan: "1-1.5 Years Flexi Payment Plan",
       // bookingAmount: "EOI Amount: ₹5,00,000/-",
-      rera: "Bank on NH-44 Delhi-Punjab Highway"
+      // rera: "Bank on NH-44 Delhi-Punjab Highway"
     },
     sizes: [
       { type: "100 Sq.Yd Plot", size: "100 Sq.Yd" },
