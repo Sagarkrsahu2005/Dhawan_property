@@ -142,15 +142,15 @@ export default function PremiumGatedPlotsPanipatPage() {
   const faqData = [
     {
       question: "What is the total project area and number of plots?",
-      answer: "This premium gated development spans over 43 Acres offering 750 independent plots ranging from 100-500 Sq.Yd in a secure enclave."
+      answer: "This premium gated development spans over 43 Acres offering 750 independent plots ranging from 100-179 Sq. Yd in a secure enclave."
     },
     {
       question: "What are the available plot sizes and payment options?",
-      answer: "Plot sizes range from 100 to 500 Sq.Yd with flexible 1-1.5 years payment plan. EOI amount is ₹5,00,000/-. Contact our sales team for detailed pricing."
+      answer: "Plot sizes range from 100 to 179 Sq. Yd with flexible 1-1.5 years payment plan. EOI amount is ₹5,00,000/-. Contact our sales team for detailed pricing."
     },
     {
       question: "What are the possession and payment details?",
-      answer: "Possession is available in 1 year with a flexible 1-1.5 years payment plan. The project offers easy payment terms for your convenience."
+      answer: "Possession is available 2027 with a flexible 1-1.5 years payment plan. The project offers easy payment terms for your convenience."
     },
     {
       question: "What are the key amenities offered?",
@@ -431,7 +431,7 @@ export default function PremiumGatedPlotsPanipatPage() {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Plot Sizes:</span>
-                  <span className="font-medium text-navy-900">100-500 Sq.Yd</span>
+                  <span className="font-medium text-navy-900">100-179 Sq. Yd</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-gray-600">Possession:</span>
@@ -476,7 +476,7 @@ export default function PremiumGatedPlotsPanipatPage() {
               Crafted by the trusted legacy of Properties, this gated community is enriched with thoughtful luxuries: a grand clubhouse, refreshing pool, landscaped gardens, and dedicated sports zones for recreation. Wide tree-lined avenues, modern infrastructure, and eco-conscious features make every day smoother, greener, and more refined.
             </p>
             <p>
-              Backed by round-the-clock security, this is more than land—it's a foundation for a lifestyle that grows richer with time. A Grand Royal Luxurious Project offering premium 100 - 500 Sq.yd plots in a secure enclave, promising returns in Panipat's booming growth corridor with eco-wise living featuring rainwater reuse & smart lighting.
+              Backed by round-the-clock security, this is more than land—it's a foundation for a lifestyle that grows richer with time. A Grand Royal Luxurious Project offering premium 100 - 179 Sq. Yd plots in a secure enclave, promising returns in Panipat's booming growth corridor with eco-wise living featuring rainwater reuse & smart lighting.
             </p>
               </div>
             </div>
@@ -605,7 +605,7 @@ export default function PremiumGatedPlotsPanipatPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
                   "43 Acres Premium Gated Community",
-                  "750 Total Plots (100-500 Sq.Yd)",
+                  "750 Total Plots (100-179 Sq. Yd)",
                   "Luxe Clubhouse with Pool, Spa & Gym",
                   "Multi Purpose Hall & Games Room",
                   "Iconic Fountain & Swimming Pool",
@@ -793,7 +793,7 @@ export default function PremiumGatedPlotsPanipatPage() {
                 </div>
                 <div className="flex justify-between items-center p-3 bg-purple-50 rounded-lg border border-purple-100">
                   <span className="text-gray-700 font-medium">Possession:</span>
-                  <span className="font-bold text-purple-700">In 1 Year</span>
+                  <span className="font-bold text-purple-700">2027</span>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-orange-50 rounded-lg border border-orange-100">
                   <span className="text-gray-700 font-medium">Highway Access:</span>

@@ -98,11 +98,11 @@ export const properties: Property[] = [
 
 Crafted by the trusted legacy of Properties, this gated community is enriched with thoughtful luxuries: a grand clubhouse, refreshing pool, landscaped gardens, and dedicated sports zones for recreation. Wide tree-lined avenues, modern infrastructure, and eco-conscious features make every day smoother, greener, and more refined. Backed by round-the-clock security, this is more than land—it's a foundation for a lifestyle that grows richer with time.
 
-A Grand Royal Luxurious Project - Premium 100 - 500 Sq.yd plots in a secure enclave. Promising returns in Panipat's booming growth corridor with eco-wise living featuring rainwater reuse & smart lighting. Experience luxe clubhouse with pool, spa, gym & lush green spaces at this prime address with swift access to highways & Delhi-NCR.`,
+A Grand Royal Luxurious Project - Premium 100 - 179 Sq. Yd plots in a secure enclave. Promising returns in Panipat's booming growth corridor with eco-wise living featuring rainwater reuse & smart lighting. Experience luxe clubhouse with pool, spa, gym & lush green spaces at this prime address with swift access to highways & Delhi-NCR.`,
     projectSpecs: {
       landParcel: "43 Acres",
       totalUnits: "750 Total Plots",
-      possession: "In 1 Year",
+      possession: "2027",
       paymentPlan: "1-1.5 Years Flexi Payment Plan",
       // bookingAmount: "EOI Amount: ₹5,00,000/-",
       // rera: "Bank on NH-44 Delhi-Punjab Highway"
@@ -112,7 +112,7 @@ A Grand Royal Luxurious Project - Premium 100 - 500 Sq.yd plots in a secure encl
       { type: "200 Sq.Yd Plot", size: "200 Sq.Yd" },
       { type: "300 Sq.Yd Plot", size: "300 Sq.Yd" },
       { type: "400 Sq.Yd Plot", size: "400 Sq.Yd" },
-      { type: "500 Sq.Yd Plot", size: "500 Sq.Yd" }
+      { type: "179 Sq. Yd Plot", size: "179 Sq. Yd" }
     ],
     nearbyPlaces: [
       { name: "Panipat City Centre", distance: "7 Mins", type: "commercial" },
