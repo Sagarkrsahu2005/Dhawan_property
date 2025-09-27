@@ -57,7 +57,7 @@ export const properties: Property[] = [
   {
     id: 23,
     slug: "premium-gated-plots-panipat",
-    title: "No. 1 Developer Launched a New Gated Plots in Panipat",
+    title: "Plot in Panipat",
     location: "Sector 40, Panipat, Haryana",
     bedrooms: 0, // Residential plots
     bathrooms: 0, // Residential plots
